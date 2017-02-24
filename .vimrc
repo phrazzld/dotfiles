@@ -1,17 +1,38 @@
 " Always use Vim instead of Vi
 set nocompatible
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
+" Set runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" Add your plugins here
+" Python PEP8 indentation rules
+Plugin 'Vimjas/vim-python-pep8-indent'
+
+" All your plugins must be added before this line:
+call vundle#end()
+" Required for Vundle
+filetype plugin indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Non-Plugin stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn syntax highlighting on
 syntax enable
+
+" Show invisible characters
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 " Indent next line based on last line
 set autoindent
 
-" Indent based on filetype
-filetype plugin indent on
-
-" Expand scope of html indentation
-:let g:html_indent_inctags = "html,body,head,tbody"
+" Indent after colons and the like
+set smartindent
 
 " Number of visual spaces per tab
 set tabstop=4
@@ -22,8 +43,11 @@ set softtabstop=4
 " Turn tabs into spaces
 set expandtab
 
-" Turn on line numbers
-set number
+" Number of spaces to user for auto-indent
+set shiftwidth=4
+
+" Turn on line and col numbers
+set ruler
 
 " Show command in bottom bar
 set showcmd
@@ -47,19 +71,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Configure language-specific settings for certain filetypes
-augroup configgroup
-	autocmd!
-	autocmd VimEnter * highlight clear SignColumn
-	autocmd FileType python setlocal commentstring=#\ %s
-	autocmd BufEnter *.sh setlocal tabstop=2
-	autocmd BufEnter *.sh setlocal shiftwidth=2
-	autocmd BufEnter *.sh setlocal softtabstop=2
+" Watch for changes to .vimrc and automatically reload config when necessary
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
-
-" Enable backup support
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/vmp,/tmp
-set writebackup
