@@ -1,78 +1,66 @@
-" Always use Vim instead of Vi
-set nocompatible
+set nocompatible                          " use vim instead of vi
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle setup
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-" Set runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Add your plugins here
-" Python PEP8 indentation rules
-Plugin 'Vimjas/vim-python-pep8-indent'
+"""""""""""""""""""""""""""""""""""""""""""
+filetype off                              " required (vundle)
+set rtp+=~/.vim/bundle/Vundle.vim         " include vundle in runtime path
+call vundle#begin()                       " start vundle
+Plugin 'VundleVim/Vundle.vim'             " let vundle manage vundle
+" My favorite plugins
+Plugin 'Vimjas/vim-python-pep8-indent'    " prettify python indentation
+Plugin 'tpope/vim-fugitive'               " git tools
+call vundle#end()                         " end vundle handling
+filetype plugin indent on                 " required (vundle)
 
-" All your plugins must be added before this line:
-call vundle#end()
-" Required for Vundle
-filetype plugin indent on
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Non-Plugin stuff
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn syntax highlighting on
-syntax enable
+" Appearance
+"""""""""""""""""""""""""""""""""""""""""""
+syntax enable                             " turn on syntax highlighting
+set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅  " show invisible characters
+set autoindent                            " indent based on last line
+set smartindent                           " indent after colons and the like
+set tabstop=4                             " num. visual spaces per tab
+set softtabstop=4                         " num. spaces in tab (editing)
+set expandtab                             " turn tabs into spaces
+set shiftwidth=4                          " num. spaces for auto-indent
+set ruler                                 " show line and col nums in status
+set number                                " show line numbers inline
+set showcmd                               " show command in status bar
+set cursorline                            " highlight the current line
+set showmatch                             " highlight matching [{()}]
 
-" Show invisible characters
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
-" Indent next line based on last line
-set autoindent
-
-" Indent after colons and the like
-set smartindent
-
-" Number of visual spaces per tab
-set tabstop=4
-
-" Number of spaces in tab when editing
-set softtabstop=4
-
-" Turn tabs into spaces
-set expandtab
-
-" Number of spaces to user for auto-indent
-set shiftwidth=4
-
-" Turn on line and col numbers
-set ruler
-
-" Show command in bottom bar
-set showcmd
-
-" Underline the current line
-set cursorline
-
-" Highlight matching [{()}]
-set showmatch
-
-" Search as characters are entered
-set incsearch
-
-" Highlight search matches
-set hlsearch
-
-" Turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-" Move vertically by visual line (take that line wraps!)
+" Navigation
+"""""""""""""""""""""""""""""""""""""""""""
+" Move vertically by visual line (take THAT line wraps!)
 nnoremap j gj
 nnoremap k gk
+" Hey! You! No arrow keys!
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
-" Watch for changes to .vimrc and automatically reload config when necessary
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
+
+" Search
+"""""""""""""""""""""""""""""""""""""""""""
+set incsearch                             " search as chars are entered
+set hlsearch                              " highlight search matches
+" hit spacebar to kill search highlights
+nnoremap <space> :noh<return><esc>
+
+
+" Functions
+"""""""""""""""""""""""""""""""""""""""""""
+" Automatically cd into the file's parent dir
+autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+" Remove any trailing whitespace in the file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+" Reload changes to .vimrc automatically
+autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+" Make text files prettier to look and and smoother to write in
+autocmd FileType text setlocal wrap linebreak nolist cursorline!

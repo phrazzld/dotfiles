@@ -1,0 +1,19 @@
+# Vim temporary files
+*~
+*.swo
+*.swp
+
+# Packages
+*.dmg
+*.tar
+*.zip
+*.gz
+*.iso
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store*
