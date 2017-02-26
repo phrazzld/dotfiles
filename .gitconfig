@@ -11,3 +11,12 @@
 	browser = google-chrome
 [github]
 	user = phrazzld
+[alias]
+	s = status
+	a = add
+	aa = add -A .
+	ap = add -p
+	c = commit
+    h = push
+    l = pull
+    cm = commit -m

@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'             " let vundle manage vundle
 " My favorite plugins
 Plugin 'Vimjas/vim-python-pep8-indent'    " prettify python indentation
 Plugin 'tpope/vim-fugitive'               " git tools
+Plugin 'pangloss/vim-javascript'          " style js
 call vundle#end()                         " end vundle handling
 filetype plugin indent on                 " required (vundle)
 
@@ -56,8 +57,6 @@ nnoremap <space> :noh<return><esc>
 
 " Functions
 """""""""""""""""""""""""""""""""""""""""""
-" Automatically cd into the file's parent dir
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " Remove any trailing whitespace in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Reload changes to .vimrc automatically
