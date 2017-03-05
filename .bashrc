@@ -1,7 +1,6 @@
 # Personal .bashrc config
 export PS1='\[\e[96m\]\u@\h:\[\e[0m\]\W \[\e[97m\]$\[\e[0m\] '
 eval "$(dircolors)"
-source ~/.autoenv/activate.sh
 
 # Trisquel GNU/Linux default .bashrc config (mostly)
 # If not running interactively, don't do anything
