@@ -17,3 +17,6 @@
 
 # OS generated files
 .DS_Store*
+
+# Virtual environment configurations
+venv/
