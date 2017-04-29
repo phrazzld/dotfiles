@@ -2,7 +2,7 @@ set nocompatible                          " use vim instead of vi
 
 " Vundle setup
 """""""""""""""""""""""""""""""""""""""""""
-filetype off                              " required (vundle)
+filetype off                              " required for vundle
 set rtp+=~/.vim/bundle/Vundle.vim         " include vundle in runtime path
 call vundle#begin()                       " start vundle
 Plugin 'VundleVim/Vundle.vim'             " let vundle manage vundle
@@ -10,8 +10,11 @@ Plugin 'VundleVim/Vundle.vim'             " let vundle manage vundle
 Plugin 'Vimjas/vim-python-pep8-indent'    " prettify python indentation
 Plugin 'tpope/vim-fugitive'               " git tools
 Plugin 'pangloss/vim-javascript'          " style js
+Plugin 'mxw/vim-jsx'                      " react friendly
+Plugin 'morhetz/gruvbox'                  " culluhh
+Plugin 'luochen1990/rainbow'              " better parentheses
 call vundle#end()                         " end vundle handling
-filetype plugin indent on                 " required (vundle)
+filetype plugin indent on                 " required for vundle
 
 
 " Appearance
@@ -21,14 +24,17 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅  " show invisible characters
 set autoindent                            " indent based on last line
 set smartindent                           " indent after colons and the like
 set tabstop=4                             " num. visual spaces per tab
-set softtabstop=4                         " num. spaces in tab (editing)
+set softtabstop=4                         " num. spaces in tab while editing
 set expandtab                             " turn tabs into spaces
 set shiftwidth=4                          " num. spaces for auto-indent
 set ruler                                 " show line and col nums in status
 set number                                " show line numbers inline
 set showcmd                               " show command in status bar
-set cursorline                            " highlight the current line
 set showmatch                             " highlight matching [{()}]
+let g:jsx_ext_required = 0                " jsx highlighting for js files
+colorscheme gruvbox
+set background=dark
+let g:rainbow_active = 1
 
 
 " Navigation
