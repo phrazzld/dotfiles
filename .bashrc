@@ -1,6 +1,10 @@
 # Personal .bashrc config
 export PS1='\[\e[96m\]\u@\h:\[\e[0m\]\W \[\e[97m\]$\[\e[0m\] '
 eval "$(dircolors)"
+export PATH=~/.local/bin:$PATH
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # Trisquel GNU/Linux default .bashrc config (mostly)
 # If not running interactively, don't do anything
