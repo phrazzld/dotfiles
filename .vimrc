@@ -23,10 +23,10 @@ syntax enable                             " turn on syntax highlighting
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅  " show invisible characters
 set autoindent                            " indent based on last line
 set smartindent                           " indent after colons and the like
-set tabstop=4                             " num. visual spaces per tab
-set softtabstop=4                         " num. spaces in tab while editing
+set tabstop=2                             " num. visual spaces per tab
+set softtabstop=2                         " num. spaces in tab while editing
 set expandtab                             " turn tabs into spaces
-set shiftwidth=4                          " num. spaces for auto-indent
+set shiftwidth=2                          " num. spaces for auto-indent
 set ruler                                 " show line and col nums in status
 set number                                " show line numbers inline
 set showcmd                               " show command in status bar
@@ -69,3 +69,4 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 autocmd BufWritePost  ~/.vimrc source ~/.vimrc
 " Make text files prettier to look and and smoother to write in
 autocmd FileType text setlocal wrap linebreak nolist cursorline!
+autocmd FileType markdown setlocal wrap linebreak nolist cursorline!
