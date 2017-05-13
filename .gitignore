@@ -20,3 +20,6 @@
 
 # Virtual environment configurations
 venv/
+
+# npm packages
+node_modules/
