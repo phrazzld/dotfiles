@@ -6,7 +6,8 @@ export CLICOLOR=1
 # Set colors for `ls` command
 export LSCOLORS=ExFxBxDxCxegedabagacad
 # Run ls with deets
-alias ls='ls -GFh'
+alias ls='ls -F'
+alias lsa='ls -Fa'
 alias imgdim='sips -g pixelHeight -g pixelWidth $1'
 
 export CUDA_HOME=/usr/local/cuda
@@ -29,3 +30,6 @@ alias top='vtop -t brew'
 # snazzy standard for jslinting
 alias sstandard='standard --verbose | snazzy'
 alias standardf='standard --fix'
+
+# cheery startup message
+printf "\"I'm bored\" is a useless thing to say. You live in a great, big, vast world that you've seen none percent of. Even the inside of your own mind is endless; it goes on forever, inwardly, do you understand? The fact that you're alive is amazing, so you don't get to say \"I'm bored.\"\n\t--Louis C.K.\n\n"
