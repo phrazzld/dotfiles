@@ -133,3 +133,5 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " Load rainbow parentheses by default
 au VimEnter * RainbowParenthesesToggle
+" backup jots on jot save
+" autocmd BufWritePost ~/Documents/jots/* backup_jots
