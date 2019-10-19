@@ -18,4 +18,10 @@
     c = commit -m
     h = push
     l = pull
-
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
