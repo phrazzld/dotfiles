@@ -1,7 +1,0 @@
-# get right to it
-startup_message off
-
-# where am i?
-caption always "%{= Wk}%-w%{= Bw}%n %t%{-}%+w %-="
-
-shell -$SHELL

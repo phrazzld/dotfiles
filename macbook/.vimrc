@@ -1,5 +1,6 @@
 set nocompatible                          " use vim instead of vi
 
+
 " Vundle setup
 """""""""""""""""""""""""""""""""""""""""""
 filetype off                              " required for vundle
@@ -46,15 +47,19 @@ set backspace=indent,eol,start            " backspace in insert mode
 let g:jsx_ext_required = 0                " jsx highlighting for js files
 let g:rainbow_active = 1
 set visualbell
+colorscheme 1989
+set background=dark
+"colorscheme Chasing_Logic
+"colorscheme Tomorrow-Night-Eighties
 " Change background based on time of day
-let hour = strftime("%H")
-if 7 <= hour && hour < 19
-  colorscheme PaperColor
-  set background=light
-else
-  colorscheme Tomorrow-Night-Eighties
-  set background=dark
-endif
+"if 7 <= hour && hour < 19
+  "colorscheme PaperColor
+  "set background=light
+"else
+  "colorscheme Tomorrow-Night-Eighties
+  "colorscheme 1989
+  "set background=dark
+"endif
 " More colorschemes
 " PaperColor
 " CandyPaper
@@ -64,6 +69,11 @@ endif
 " molokai
 " Tomorrow-Night-Blue
 " Tomorrow-Night-Eighties
+" corporation-modified
+
+" Statusline
+"""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
 
 " Navigation
 """""""""""""""""""""""""""""""""""""""""""
@@ -108,13 +118,13 @@ nnoremap <space> :noh<return><esc>
 
 " Functions
 """""""""""""""""""""""""""""""""""""""""""
-" Remove any trailing whitespace in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-" Reload changes to .vimrc automatically
-autocmd BufWritePost  ~/.vimrc source ~/.vimrc
-" Make text files prettier to look and and smoother to write in
-autocmd FileType text setlocal wrap linebreak nolist cursorline!
-autocmd FileType markdown setlocal wrap linebreak nolist cursorline!
+ Remove any trailing whitespace in the file
+utocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+ Reload changes to .vimrc automatically
+utocmd BufWritePost  ~/.vimrc source ~/.vimrc
+ Make text files prettier to look and and smoother to write in
+utocmd FileType text setlocal wrap linebreak nolist cursorline!
+utocmd FileType markdown setlocal wrap linebreak nolist cursorline!
 " Better jots
 let g:vim_markdown_folding_disabled = 1
 " Limelight configs
@@ -125,9 +135,31 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " Change colorscheme based on filetype
 autocmd BufEnter *.md colorscheme PaperColor
+"autocmd BufEnter *.md set background=light
+"let hour = strftime("%H")
+"if 7 > hour || hour >= 14
+  "set background=dark
+"endif
+"autocmd BufEnter *.md if hour < 7 || hour >= 19 | set background=dark | else | set background=light | endif
+autocmd BufEnter *.md call AdjustBackground()
 " Highlight React properly
 autocmd BufEnter *.js set ft=javascript
 " Use DeepTabNine autocompleter
 set rtp+=~/tabnine-vim
 " Automatically import Golang modules on save
 let g:go_fmt_command = "goimports"
+
+function AdjustBackground()
+  let hour = strftime("%H")
+  if hour < 7 || hour >= 19
+    set background=dark
+  else
+    set background=light
+  endif
+endfunction
+
+" Lint JS
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType css setlocal formatprg=prettier\ --parser\ css
