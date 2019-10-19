@@ -22,13 +22,29 @@ export ZSH="/Users/phaedrus/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="nanotech"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME_RANDOM_CANDIDATES=(
+#    "dallas"
+#    "nanotech"
+#    "jaischeema"
+#    "nicoulaj"
+#    "sammy"
+#    "trapd00r"
+#    "macovsky"
+#    "essembeh"
+#    "3den"
+#    "gozilla"
+#    "crcandy"
+#    "gnzsh"
+#    "bureau"
+#    "intheloop"
+#    "obraun"
+#)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -124,8 +140,8 @@ export ATLANTIS='/Volumes/Atlantis'
 pluck /Users/phaedrus/Documents/startup_messages.md
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship
 
 # History
 HISTFILE=~/.zsh_history
