@@ -14,6 +14,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/perl5/perlbrew/bin
+export PATH=$PATH:/usr/local/opt/coreutils/libexec/gnubin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/phaedrus/.oh-my-zsh"
@@ -123,7 +124,7 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias v="vim"
+alias v="nvim"
 alias l="ls -alh"
 alias top="vtop -t brew"
 alias agent='eval "$(ssh-agent -s)"; ssh-add -K ~/.ssh/id_rsa'
@@ -131,13 +132,16 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 alias pluck="/Users/phaedrus/Dev/bamm-bamm/pluck"
 alias heavyblock="noti --title 'Heavy Block' pomodoro 90"
 alias lightblock="noti --title 'Light Block' pomodoro 30"
+alias nvim-config="nvim ~/.config/nvim/init.vim"
+alias gottago="cd ~/go/src/github.com/phrazzld"
+alias superpush="git push heroku master && git push origin master"
 
 export ALEXANDRIA='/Volumes/Alexandria'
 export ALEXANDRIA_TV='/Volumes/Alexandria/channel_sixty_two/tv'
 export ATLANTIS='/Volumes/Atlantis'
 
 # Print a startup message
-pluck /Users/phaedrus/Documents/startup_messages.md
+pluck $HOME/Documents/startup_messages.md
 
 # Set Spaceship ZSH as a prompt
 #autoload -U promptinit; promptinit
@@ -155,3 +159,9 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 setopt bang_hist
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/phaedrus/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/phaedrus/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc'; fi
