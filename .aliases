@@ -1,0 +1,37 @@
+# Editing
+alias v="nvim"
+alias vz="v ~/.zshrc"
+alias vn="v ~/.config/nvim/init.lua"
+alias sz="exec zsh"
+
+# Gitting
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gap='git add -p'
+alias gch='git checkout'
+alias gchb='gch -b'
+alias gf='git diff'
+alias resolve-conflicts='git diff --name-only | uniq | xargs nvim'
+alias gurt='git checkout main && git pull && git fetch'
+alias gspf='git checkout stable && git pull && git fetch'
+alias gstbl='git checkout stable && git pull && git fetch'
+alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
+
+# Looking
+alias l="exa --long"
+alias la="exa --long --all"
+alias lt="exa --long --tree"
+alias lta="exa --long --all --tree"
+alias cat="bat"
+alias f='fzf --bind "enter:execute(nvim {})"'
+
+# Sourcing
+alias clear="clear && sz"
+
+# Authenticating
+alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
+
+# Rubberducking
+alias r='rubberduck'
