@@ -8,14 +8,15 @@ plugins=(
   git
   node
   fzf
-  autojump 
-  zsh-autosuggestions 
+  autojump
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 # Env first, cuz it loads OMZ
 source $HOME/.env
 source $HOME/.aliases
+source $HOME/.fun
 source $HOME/.cerego
 
 # History
@@ -31,23 +32,6 @@ setopt inc_append_history
 setopt share_history
 setopt bang_hist
 
-# Functions
-pullpasses() {
-    if [ -n "$1" ]; then
-        lpass show $(lpass ls | grep -i "$1" | awk '{ print $3 }' | sed 's/.$//')
-    else
-        echo "Error: missing search term"
-    fi
-}
-
-pullpass() {
-    if [ -n "$1" ]; then
-        pullpasses "$1" | grep -i "Password:" | awk '{ print $2 }' | head -1 | pbcopy
-    else
-        echo "Error: missing search term"
-    fi
-}
-
 # thefuck
 eval $(thefuck --alias)
 
@@ -61,8 +45,3 @@ if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
