@@ -15,9 +15,10 @@ plugins=(
 
 # Env first, cuz it loads OMZ
 source $HOME/.env
-source $HOME/.aliases
 source $HOME/.fun
+source $HOME/.aliases
 source $HOME/.cerego
+source $HOME/.secrets
 
 # History
 HISTFILE=~/.zsh_history
@@ -49,3 +50,12 @@ if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# change theme based on time of day
+if command -v "sunshine" >/dev/null; then
+  if [[ "$(sunshine -s "@$LOCATION_COORDINATES")" = "day" ]]; then
+    golight
+  else
+    godark
+  fi
+fi

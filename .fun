@@ -42,3 +42,8 @@ unlock() {
     gpg --output $TARFILE $GPGFILE
     tar xzf $TARFILE
 }
+
+# Change iTerm profile
+chprof() {
+    echo -e "\033]50;SetProfile=$1\a"
+}

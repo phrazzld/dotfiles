@@ -39,3 +39,7 @@ alias r='rubberduck'
 # Compression
 alias compress='tar czf'
 alias decompress='tar xzf'
+
+# Theming
+alias golight='chprof Light'
+alias godark='chprof Dark'
