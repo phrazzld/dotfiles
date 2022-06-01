@@ -33,7 +33,11 @@ setopt share_history
 setopt bang_hist
 
 # thefuck
-eval $(thefuck --alias)
+if command -v thefuck >/dev/null 2>&1; then
+  fuck() {
+    eval "$(thefuck --alias)" && fuck
+  }
+fi
 
 # Autojump
 [[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
