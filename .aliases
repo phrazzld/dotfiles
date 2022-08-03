@@ -9,13 +9,14 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gl='git pull'
 alias gap='git add -p'
 alias gch='git checkout'
 alias gchb='gch -b'
 alias gf='git diff'
 alias resolve-conflicts='git diff --name-only | uniq | xargs nvim'
-alias gmrt='git checkout main && git pull && git fetch'
-alias gspf='git checkout stable && git pull && git fetch'
+alias gmlf='git checkout main && git pull && git fetch'
+alias gslf='git checkout stable && git pull && git fetch'
 alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 
 # Looking
@@ -43,3 +44,6 @@ alias decompress='tar xzf'
 # Theming
 alias golight='chprof Light'
 alias godark='chprof Dark'
+
+# Testing
+alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
