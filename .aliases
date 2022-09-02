@@ -4,6 +4,10 @@ alias vz="v ~/.zshrc"
 alias vn="v ~/.config/nvim/init.lua"
 alias dev="cd $DEVELOPMENT"
 
+# Rails
+alias rubocop-it="rubocop -a $(git diff --name-only HEAD)"
+alias berc="bundle exec rails c"
+
 # Gitting
 alias gs='git status'
 alias ga='git add'
