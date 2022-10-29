@@ -51,17 +51,11 @@ if type rg &> /dev/null; then
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# change theme based on time of day
-if command -v "sunshine" >/dev/null; then
-  if [[ "$(sunshine -s "@$LOCATION_COORDINATES")" = "day" ]]; then
-    golight
-  else
-    godark
-  fi
-fi
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 . ~/.rvm/scripts/rvm
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Nodenv
+eval "$(nodenv init -)"

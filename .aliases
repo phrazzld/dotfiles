@@ -1,11 +1,10 @@
 # Editing
-alias v="nvim"
+alias v=$NEOVIM
 alias vz="v ~/.zshrc"
 alias vn="v ~/.config/nvim/init.lua"
 alias dev="cd $DEVELOPMENT"
 
 # Rails
-alias rubocop-it="rubocop -a $(git diff --name-only HEAD)"
 alias berc="bundle exec rails c"
 
 # Gitting
@@ -18,7 +17,7 @@ alias gap='git add -p'
 alias gch='git checkout'
 alias gchb='gch -b'
 alias gf='git diff'
-alias resolve-conflicts='git diff --name-only | uniq | xargs nvim'
+alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
 alias gmlf='git checkout main && git pull && git fetch'
 alias gslf='git checkout stable && git pull && git fetch'
 alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
@@ -28,8 +27,7 @@ alias l="exa --long"
 alias la="exa --long --all"
 alias lt="exa --long --tree"
 alias lta="exa --long --all --tree"
-alias cat="bat"
-alias f='fzf --bind "enter:execute(nvim {})"'
+alias f='fzf --bind "enter:execute($NEOVIM {})"'
 
 # Sourcing
 alias sz="exec zsh"
@@ -40,14 +38,12 @@ alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
 
 # Rubberducking
 alias r='rubberduck'
+alias ponder="$DEVELOPMENT/rust/ponder/target/release/ponder"
+alias p='ponder'
 
 # Compression
 alias compress='tar czf'
 alias decompress='tar xzf'
-
-# Theming
-alias golight='chprof Light'
-alias godark='chprof Dark'
 
 # Testing
 alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
