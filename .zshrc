@@ -41,8 +41,11 @@ if command -v thefuck >/dev/null 2>&1; then
 fi
 
 # Autojump
-[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+# [[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
+# autoload -U compinit && compinit -u
+
+# Zoxide
+eval "$(zoxide init zsh)"
 
 # fzf
 # use ripgrep
