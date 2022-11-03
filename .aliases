@@ -50,3 +50,5 @@ alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Goo
 
 # Theming
 alias at="alacritty-themes"
+alias golight="at github_light"
+alias godark='at Catppuccin'

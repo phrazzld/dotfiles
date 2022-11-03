@@ -166,7 +166,7 @@ font:
     y: 6
 
   # Better font rendering for mac
-  use_thin_strokes: true
+  # use_thin_strokes: true
   # Use built-in font for box drawing characters.
   #
   # If `true`, Alacritty will use a custom built-in font for box drawing
