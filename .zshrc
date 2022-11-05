@@ -8,7 +8,6 @@ plugins=(
   git
   node
   fzf
-  autojump
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -17,7 +16,7 @@ plugins=(
 source $HOME/.env
 source $HOME/.fun
 source $HOME/.aliases
-source $HOME/.cerego
+source $HOME/.memre
 source $HOME/.secrets
 
 # History
@@ -39,10 +38,6 @@ if command -v thefuck >/dev/null 2>&1; then
     eval "$(thefuck --alias)" && fuck
   }
 fi
-
-# Autojump
-# [[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
-# autoload -U compinit && compinit -u
 
 # Zoxide
 eval "$(zoxide init zsh)"

@@ -164,7 +164,6 @@ font:
   glyph_offset:
     x: 0
     y: 6
-
   # Better font rendering for mac
   # use_thin_strokes: true
   # Use built-in font for box drawing characters.
@@ -346,7 +345,6 @@ font:
   #     args: ["Hello, World!"]
   #
   #command: None
-
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
