@@ -40,6 +40,9 @@ alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
 alias r='rubberduck'
 alias ponder="$DEVELOPMENT/rust/ponder/target/release/ponder"
 alias p='ponder'
+alias scratch='v $HOME/scratch.md'
+alias watched="$DEVELOPMENT/rust/rusty-tomatoes/target/release/rusty-tomatoes movie create"
+alias seen="$DEVELOPMENT/rust/rusty-tomatoes/target/release/rusty-tomatoes movie show"
 
 # Compression
 alias compress='tar czf'
