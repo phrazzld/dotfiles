@@ -21,6 +21,7 @@ alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
 alias gmlf='git checkout main && git pull && git fetch'
 alias gslf='git checkout stable && git pull && git fetch'
 alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
+alias gu='git config --local --list | grep "user"'
 
 # Looking
 alias l="exa --long"
@@ -36,9 +37,8 @@ alias clear="clear && sz"
 # Authenticating
 alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
 
-# Rubberducking
-alias r='rubberduck'
-alias ponder="$DEVELOPMENT/rust/ponder/target/release/ponder"
+# Writing
+alias ponder="$DEVELOPMENT/ponder/target/release/ponder"
 alias p='ponder'
 alias scratch='v $HOME/scratch.md'
 alias watched="$DEVELOPMENT/rust/rusty-tomatoes/target/release/rusty-tomatoes movie create"

@@ -1,10 +1,7 @@
 autoload -U promptinit; promptinit
 prompt pure
 
-export NVM_LAZY_LOAD=true
-
 plugins=(
-  zsh-nvm
   git
   node
   fzf
@@ -49,11 +46,7 @@ if type rg &> /dev/null; then
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-. ~/.rvm/scripts/rvm
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Nodenv
-eval "$(nodenv init -)"
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
