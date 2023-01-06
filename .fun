@@ -50,7 +50,12 @@ golight() {
 
     alacritty-themes github_light_default
 
-    asdf local nodejs $ORIGINAL_NODE_VERSION
+    # If original node version doesn't exist, use latest
+    if [ -z "$ORIGINAL_NODE_VERSION" ]; then
+        asdf local nodejs $(asdf latest nodejs)
+    else
+        asdf local nodejs $ORIGINAL_NODE_VERSION
+    fi
 }
 
 godark() {
@@ -60,5 +65,10 @@ godark() {
 
     alacritty-themes Catppuccin
 
-    asdf local nodejs $ORIGINAL_NODE_VERSION
+    # If original node version doesn't exist, use latest
+    if [ -z "$ORIGINAL_NODE_VERSION" ]; then
+        asdf local nodejs $(asdf latest nodejs)
+    else
+        asdf local nodejs $ORIGINAL_NODE_VERSION
+    fi
 }
