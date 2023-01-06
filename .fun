@@ -42,3 +42,23 @@ unlock() {
     gpg --output $TARFILE $GPGFILE
     tar xzf $TARFILE
 }
+
+golight() {
+    ORIGINAL_NODE_VERSION=$(asdf current nodejs | awk '{ print $2 }')
+
+    asdf local nodejs 17.9.1
+
+    alacritty-themes github_light_default
+
+    asdf local nodejs $ORIGINAL_NODE_VERSION
+}
+
+godark() {
+    ORIGINAL_NODE_VERSION=$(asdf current nodejs | awk '{ print $2 }')
+
+    asdf local nodejs 17.9.1
+
+    alacritty-themes Catppuccin
+
+    asdf local nodejs $ORIGINAL_NODE_VERSION
+}
