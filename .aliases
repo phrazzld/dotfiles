@@ -51,3 +51,6 @@ alias decompress='tar xzf'
 # Testing
 alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 alias yt='yarn test'
+
+# Quotes
+alias getquote='echo $(shuf -n 1 $DEVELOPMENT/dotfiles/quotes.txt) | fold -s -w 120'

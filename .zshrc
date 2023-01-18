@@ -50,3 +50,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+source /Users/phaedrus/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+getquote
