@@ -48,7 +48,7 @@ golight() {
 
     asdf local nodejs 17.9.1
 
-    alacritty-themes github_light_default
+    alacritty-themes Tokyonight_Day
 
     # If original node version doesn't exist, use latest
     if [ -z "$ORIGINAL_NODE_VERSION" ]; then

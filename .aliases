@@ -54,3 +54,9 @@ alias yt='yarn test'
 
 # Quotes
 alias getquote='echo $(shuf -n 1 $DEVELOPMENT/dotfiles/quotes.txt) | fold -s -w 120'
+
+# Tmux
+alias tns='tmux new -s ship'
+alias tas='tmux attach -t ship'
+
+alias python='python3'
