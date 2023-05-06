@@ -844,38 +844,36 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
+  name: TokyoNight Day
+  author: Folke
   # Default colors
   primary:
-    background: '0x1E1D2F'
-    foreground: '0xD9E0EE'
-
-  cursor:
-    text: '0x1E1D2F'
-    cursor: '0xF5E0DC'
+    background: '0xe1e2e7'
+    foreground: '0x3760bf'
 
   # Normal colors
   normal:
-    black: '0x6E6C7E'
-    red: '0xF28FAD'
-    green: '0xABE9B3'
-    yellow: '0xFAE3B0'
-    blue: '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan: '0x89DCEB'
-    white: '0xD9E0EE'
+    black: '0xe9e9ed'
+    red: '0xf52a65'
+    green: '0x587539'
+    yellow: '0x8c6c3e'
+    blue: '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan: '0x007197'
+    white: '0x6172b0'
 
   # Bright colors
   bright:
-    black: '0x988BA2'
-    red: '0xF28FAD'
-    green: '0xABE9B3'
-    yellow: '0xFAE3B0'
-    blue: '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan: '0x89DCEB'
-    white: '0xD9E0EE'
+    black: '0xa1a6c5'
+    red: '0xf52a65'
+    green: '0x587539'
+    yellow: '0x8c6c3e'
+    blue: '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan: '0x007197'
+    white: '0x3760bf'
 
   indexed_colors:
-    - { index: 16, color: '0xF8BD96' }
-    - { index: 17, color: '0xF5E0DC' }
-theme: Catppuccin
+    - { index: 16, color: '0xb15c00' }
+    - { index: 17, color: '0xc64343' }
+theme: Tokyonight_Day
