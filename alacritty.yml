@@ -844,36 +844,29 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  name: TokyoNight Day
-  author: Folke
-  # Default colors
   primary:
-    background: '0xe1e2e7'
-    foreground: '0x3760bf'
+    background: '#2e3436'
+    foreground: '#eeeeec'
 
   # Normal colors
   normal:
-    black: '0xe9e9ed'
-    red: '0xf52a65'
-    green: '0x587539'
-    yellow: '0x8c6c3e'
-    blue: '0x2e7de9'
-    magenta: '0x9854f1'
-    cyan: '0x007197'
-    white: '0x6172b0'
+    black: '#2e3436'
+    red: '#cc0000'
+    green: '#73d216'
+    yellow: '#edd400'
+    blue: '#3465a4'
+    magenta: '#75507b'
+    cyan: '#f57900'
+    white: '#d3d7cf'
 
   # Bright colors
   bright:
-    black: '0xa1a6c5'
-    red: '0xf52a65'
-    green: '0x587539'
-    yellow: '0x8c6c3e'
-    blue: '0x2e7de9'
-    magenta: '0x9854f1'
-    cyan: '0x007197'
-    white: '0x3760bf'
-
-  indexed_colors:
-    - { index: 16, color: '0xb15c00' }
-    - { index: 17, color: '0xc64343' }
-theme: Tokyonight_Day
+    black: '#2e3436'
+    red: '#ef2929'
+    green: '#8ae234'
+    yellow: '#fce94f'
+    blue: '#729fcf'
+    magenta: '#ad7fa8'
+    cyan: '#fcaf3e'
+    white: '#eeeeec'
+theme: Tangoish

@@ -18,7 +18,8 @@ alias gch='git checkout'
 alias gchb='gch -b'
 alias gf='git diff'
 alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
-alias gmlf='git checkout main && git pull && git fetch'
+alias gilf='git checkout main && git pull && git fetch'
+alias galf='git checkout master && git pull && git fetch'
 alias gslf='git checkout stable && git pull && git fetch'
 alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 alias gu='git config --local --list | grep "user"'
@@ -58,5 +59,7 @@ alias getquote='echo $(shuf -n 1 $DEVELOPMENT/dotfiles/quotes.txt) | fold -s -w 
 # Tmux
 alias tns='tmux new -s ship'
 alias tas='tmux attach -t ship'
+alias tnf='tmuxinator start faith'
+alias taf='tmux attach -t faith'
 
 alias python='python3'
