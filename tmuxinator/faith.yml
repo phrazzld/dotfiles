@@ -1,0 +1,50 @@
+# /Users/phaedrus/.config/tmuxinator/faith.yml
+
+name: faith
+root: ~/Development/faith-forward
+
+windows:
+  - servers:
+      layout: even-horizontal
+      panes:
+        - mobile:
+          - cd $FAITH_FORWARD/mobile-app
+          - asdf local nodejs 18.14.0
+          - git pull
+          - git fetch
+          - yarn install
+          - yarn ios
+        - web:
+          - cd $FAITH_FORWARD/church-app
+          - asdf local nodejs 18.14.0
+          - git pull
+          - git fetch
+          - yarn install
+          - yarn dev
+  - tests:
+      layout: even-horizontal
+      panes:
+        - firestore:
+          - cd $FAITH_FORWARD/firebase-services/firestore
+          - asdf local nodejs 17.9.1
+          - git pull
+          - git fetch
+          - yarn install
+          - yarn test
+        - cloud functions:
+          - cd $FAITH_FORWARD/firebase-services/functions
+          - asdf local nodejs 18.14.0
+          - yarn install
+          - yarn test
+  - eng:
+      layout: even-horizontal
+      panes:
+        - core:
+          - cd $FAITH_FORWARD
+          - ls -alh
+on_project_first_start: echo "Project FAITH is starting for the first time"
+on_project_start: echo "Project FAITH is starting"
+on_project_exit: echo "Project FAITH has exited"
+on_project_restart: echo "Project FAITH has restarted"
+on_project_stop: echo "Project FAITH has stopped"
+startup_window: servers

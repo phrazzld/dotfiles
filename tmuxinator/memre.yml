@@ -1,0 +1,88 @@
+# /Users/phaedrus/.config/tmuxinator/memre.yml
+
+name: memre
+root: ~/Development/memre
+
+# Optional tmux socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+
+# Runs on project start, always
+# on_project_start: command
+
+# Run on project start, the first time
+# on_project_first_start: command
+
+# Run on project start, after the first time
+# on_project_restart: command
+
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+
+# Run on project stop
+# on_project_stop: command
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+windows:
+  - lde:
+      layout: main-vertical
+      panes:
+        - api:
+          - cd $MEMRE/drydock/smart_api
+          - asdf local ruby 2.6.8
+          - bundle install
+          - bundle exec rails s -p 3001
+        - iknow-rails:
+          - cd $MEMRE/drydock/iknow
+          - asdf local nodejs 16.18.1
+          - asdf local ruby 2.6.8
+          - yarn install --check-files
+          - bundle install
+          - bundle exec rails s
+        - webpack:
+          - cd $MEMRE/drydock/iknow
+          - asdf local nodejs 16.18.1
+          - asdf local ruby 2.6.8
+          - yarn install --check-files
+          - bundle install
+          - ./bin/webpack-dev-server
+        - react:
+          - cd $MEMRE/drydock/iknow/react
+          - asdf local nodejs 16.18.1
+          - yarn install --check-files
+          - yarn start
+  - tests:
+      layout: main-vertical
+      panes:
+        - rspec:
+            - cd $MEMRE/drydock/smart_api
+        - jest:
+            - cd $MEMRE/drydock/iknow/react
+            - yarn test
+        - cypress:
+            - cd $MEMRE/drydock/iknow/react
+            - yarn e2e-headless
+  - smart_api: cd $MEMRE/drydock/smart_api
+  - iknow: cd $MEMRE/drydock/iknow
+  - docs: cd $MEMRE/docs

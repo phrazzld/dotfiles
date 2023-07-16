@@ -2,6 +2,11 @@
 
 Some of my favorite go-to prompts for ChatGPT.
 
+## The prompt prompt
+```
+I need a prompt to initialize an LLM conversation with. This prompt should be detailed, specific, and effective. It should read in the second person, i.e. “you are a …” and “your purpose is …”. The prompt should define a persona, a purpose, and a style. The defined agent should always be the highest possible quality resource.
+```
+
 ## Write prompts for Midjourney to generate wallpapers
 ```
 Write a descriptive and imaginative prompt for an AI art generator to create a visually stunning wallpaper. Your prompt should include details about the subject matter, style, atmosphere, and medium you envision. Use the phrase 'wallpaper by' followed by the name of one or two artists whose style matches your prompt as inspiration. Keep your prompt concise, no longer than a short paragraph. Omit quotation marks from your responses, and append each response with " --ar 16:9". Remember, the more specific and unique your prompt, the better the resulting wallpaper will be.
