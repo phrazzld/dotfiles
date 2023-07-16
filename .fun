@@ -11,7 +11,6 @@ FAVORITE_LIGHT_THEMES=(
     "github_light_default"
     "Yousai"
     "X-dotshare"
-    "Wombat"
     "Visibone-alt-2"
     "Twilight.light"
     "Tomorrow.light"
@@ -34,6 +33,7 @@ FAVORITE_LIGHT_THEMES=(
 )
 
 FAVORITE_DARK_THEMES=(
+    "Wombat"
     "Afterglow"
     "Argonaut"
     "Ashes.dark"
