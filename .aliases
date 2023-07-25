@@ -61,5 +61,6 @@ alias tns='tmux new -s ship'
 alias tas='tmux attach -t ship'
 alias tnf='tmuxinator start faith'
 alias taf='tmux attach -t faith'
+alias tl='tmux ls'
 
 alias python='python3'

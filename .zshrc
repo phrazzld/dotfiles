@@ -2,9 +2,6 @@ autoload -U promptinit; promptinit
 prompt pure
 
 plugins=(
-  git
-  node
-  fzf
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
