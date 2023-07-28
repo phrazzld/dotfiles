@@ -50,7 +50,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 source /Users/phaedrus/.docker/init-zsh.sh || true # Added by Docker Desktop
 
-getquote
+random_quote
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`

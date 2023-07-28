@@ -13,6 +13,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
+alias gd='git diff'
 alias gap='git add -p'
 alias gch='git checkout'
 alias gchb='gch -b'
@@ -64,3 +65,5 @@ alias taf='tmux attach -t faith'
 alias tl='tmux ls'
 
 alias python='python3'
+
+alias xit="exit"

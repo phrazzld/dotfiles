@@ -194,3 +194,7 @@ godark() {
         asdf local nodejs $ORIGINAL_NODE_VERSION
     fi
 }
+
+function random_quote() {
+    jq -c '.quotes[]' $DEVELOPMENT/dotfiles/quotes.json | shuf -n 1 | jq -r '"\(.content)\n-- \(.source)"'
+}

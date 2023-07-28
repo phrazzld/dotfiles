@@ -1,0 +1,552 @@
+{
+  "quotes": [
+    {
+      "content": "Never outshine the master.",
+      "source": "Robert Greene, 48 Laws of Power, Law #01"
+    },
+    {
+      "content": "Never put too much trust in friends, learn how to use enemies.",
+      "source": "Robert Greene, 48 Laws of Power, Law #02"
+    },
+    {
+      "content": "Conceal your intentions.",
+      "source": "Robert Greene, 48 Laws of Power, Law #03"
+    },
+    {
+      "content": "Always say less than necessary.",
+      "source": "Robert Greene, 48 Laws of Power, Law #04"
+    },
+    {
+      "content": "So much depends on reputation--guard it with your life.",
+      "source": "Robert Greene, 48 Laws of Power, Law #05"
+    },
+    {
+      "content": "Court attention at all cost.",
+      "source": "Robert Greene, 48 Laws of Power, Law #06"
+    },
+    {
+      "content": "Get others to do the work for you, but always take the credit.",
+      "source": "Robert Greene, 48 Laws of Power, Law #07"
+    },
+    {
+      "content": "Make other people come to you--use bait if necessary.",
+      "source": "Robert Greene, 48 Laws of Power, Law #08"
+    },
+    {
+      "content": "Win through your actions, never through argument.",
+      "source": "Robert Greene, 48 Laws of Power, Law #09"
+    },
+    {
+      "content": "Infection: Avoid the unhappy and unlucky.",
+      "source": "Robert Greene, 48 Laws of Power, Law #10"
+    },
+    {
+      "content": "Learn to keep people dependent on you.",
+      "source": "Robert Greene, 48 Laws of Power, Law #11"
+    },
+    {
+      "content": "Use selective honesty and generosity to disarm your victim.",
+      "source": "Robert Greene, 48 Laws of Power, Law #12"
+    },
+    {
+      "content": "When asking for help, appeal to people's self-interest, never to their mercy or gratitude.",
+      "source": "Robert Greene, 48 Laws of Power, Law #13"
+    },
+    {
+      "content": "Pose as a friend, work as a spy.",
+      "source": "Robert Greene, 48 Laws of Power, Law #14"
+    },
+    {
+      "content": "Crush your enemy totally.",
+      "source": "Robert Greene, 48 Laws of Power, Law #15"
+    },
+    {
+      "content": "Use absence to increase respect and honor.",
+      "source": "Robert Greene, 48 Laws of Power, Law #16"
+    },
+    {
+      "content": "Keep others in suspended terror: Cultivate an air of unpredictability.",
+      "source": "Robert Greene, 48 Laws of Power, Law #17"
+    },
+    {
+      "content": "Do not build fortresses to protect yourself--isolation is dangerous.",
+      "source": "Robert Greene, 48 Laws of Power, Law #18"
+    },
+    {
+      "content": "Know who you're dealing with--do not offend the wrong person.",
+      "source": "Robert Greene, 48 Laws of Power, Law #19"
+    },
+    {
+      "content": "Do not commit to anyone.",
+      "source": "Robert Greene, 48 Laws of Power, Law #20"
+    },
+    {
+      "content": "Play a sucker to catch a sucker--seem dumber than your mark.",
+      "source": "Robert Greene, 48 Laws of Power, Law #21"
+    },
+    {
+      "content": "Use the surrender tactic: Transform weakness into power.",
+      "source": "Robert Greene, 48 Laws of Power, Law #22"
+    },
+    {
+      "content": "Concentrate your forces.",
+      "source": "Robert Greene, 48 Laws of Power, Law #23"
+    },
+    {
+      "content": "Play the perfect courtier.",
+      "source": "Robert Greene, 48 Laws of Power, Law #24"
+    },
+    {
+      "content": "Re-create yourself.",
+      "source": "Robert Greene, 48 Laws of Power, Law #25"
+    },
+    {
+      "content": "Keep your hands clean.",
+      "source": "Robert Greene, 48 Laws of Power, Law #26"
+    },
+    {
+      "content": "Play on people's need to believe to create a cultlike following.",
+      "source": "Robert Greene, 48 Laws of Power, Law #27"
+    },
+    {
+      "content": "Enter action with boldness.",
+      "source": "Robert Greene, 48 Laws of Power, Law #28"
+    },
+    {
+      "content": "Plan all the way to the end.",
+      "source": "Robert Greene, 48 Laws of Power, Law #29"
+    },
+    {
+      "content": "Make accomplishments seem effortless.",
+      "source": "Robert Greene, 48 Laws of Power, Law #30"
+    },
+    {
+      "content": "Control the options: Get others to play with the cards you deal.",
+      "source": "Robert Greene, 48 Laws of Power, Law #31"
+    },
+    {
+      "content": "Play to people's fantasies.",
+      "source": "Robert Greene, 48 Laws of Power, Law #32"
+    },
+    {
+      "content": "Discover each man's thumbscrew.",
+      "source": "Robert Greene, 48 Laws of Power, Law #33"
+    },
+    {
+      "content": "Be royal in your own fashion: Act like a king to be treated like one.",
+      "source": "Robert Greene, 48 Laws of Power, Law #34"
+    },
+    {
+      "content": "Master the art of timing.",
+      "source": "Robert Greene, 48 Laws of Power, Law #35"
+    },
+    {
+      "content": "Disdain things you cannot have: Ignoring them is the best revenge.",
+      "source": "Robert Greene, 48 Laws of Power, Law #36"
+    },
+    {
+      "content": "Create compelling spectacles.",
+      "source": "Robert Greene, 48 Laws of Power, Law #37"
+    },
+    {
+      "content": "Think as you like but behave like others.",
+      "source": "Robert Greene, 48 Laws of Power, Law #38"
+    },
+    {
+      "content": "Stir up waters to catch fish.",
+      "source": "Robert Greene, 48 Laws of Power, Law #39"
+    },
+    {
+      "content": "Despise the free lunch.",
+      "source": "Robert Greene, 48 Laws of Power, Law #40"
+    },
+    {
+      "content": "Avoid stepping into a great man's shoes.",
+      "source": "Robert Greene, 48 Laws of Power, Law #41"
+    },
+    {
+      "content": "Strike the shepherd and the sheep will scatter.",
+      "source": "Robert Greene, 48 Laws of Power, Law #42"
+    },
+    {
+      "content": "Work on the hearts and minds of others.",
+      "source": "Robert Greene, 48 Laws of Power, Law #43"
+    },
+    {
+      "content": "Disarm and infuriate with the mirror effect.",
+      "source": "Robert Greene, 48 Laws of Power, Law #44"
+    },
+    {
+      "content": "Preach the need for change, but never reform too much at once.",
+      "source": "Robert Greene, 48 Laws of Power, Law #45"
+    },
+    {
+      "content": "Never appear too perfect.",
+      "source": "Robert Greene, 48 Laws of Power, Law #46"
+    },
+    {
+      "content": "Do not go past the mark you aimed for; in victory, learn when to stop.",
+      "source": "Robert Greene, 48 Laws of Power, Law #47"
+    },
+    {
+      "content": "Assume formlessness.",
+      "source": "Robert Greene, 48 Laws of Power, Law #48"
+    },
+    {
+      "content": "Entropy is not on your side.",
+      "source": "Elon Musk"
+    },
+    {
+      "content": "One game at a time.",
+      "source": "Tyrion Lannister, Game of Thrones"
+    },
+    {
+      "content": "The more you do the more you can do.",
+      "source": "Lucille Ball"
+    },
+    {
+      "content": "Drop by drop the bucket gets filled.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Now is the envy of all of the dead.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Seek happiness in sorrow. Work, work tirelessly.",
+      "source": "Fyodor Dostoevsky, The Brothers Karamazov"
+    },
+    {
+      "content": "A life oriented to leisure is in the end a life oriented to death--the greatest leisure of all.",
+      "source": "Anne Lamott"
+    },
+    {
+      "content": "Every day we change the world.",
+      "source": "Elliot Alderson"
+    },
+    {
+      "content": "More is lost by indecision than wrong decision.",
+      "source": "Carmela Soprano"
+    },
+    {
+      "content": "Everything you do matters.",
+      "source": "Jordan B. Peterson"
+    },
+    {
+      "content": "You are the blood of the dragon, you can make a hat.",
+      "source": "Daenerys Targaryen, Game of Thrones"
+    },
+    {
+      "content": "When you do things right, people won't be sure you've done anything at all.",
+      "source": "God, \"Futurama\""
+    },
+    {
+      "content": "The concept of waiting bewilders me.",
+      "source": "Whiterose, \"Mr. Robot\""
+    },
+    {
+      "content": "Put your oxygen mask on first.",
+      "source": "Unknown"
+    },
+    {
+      "content": "When action is the priority, vanity falls away.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Move fast, break things.",
+      "source": "Mark Zuckerberg"
+    },
+    {
+      "content": "The happiness of your life depends on the quality of your thoughts.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Program or be programmed.",
+      "source": "Douglas Rushkoff"
+    },
+    {
+      "content": "Not today.",
+      "source": "Syrio Forel"
+    },
+    {
+      "content": "Power belongs to those who take it.",
+      "source": "Tyrell Wellick"
+    },
+    {
+      "content": "Avoid boredom.",
+      "source": "Nassim Nicholas Taleb"
+    },
+    {
+      "content": "Friends don't lie.",
+      "source": "Eleven"
+    },
+    {
+      "content": "Sucks to suck.",
+      "source": "Samantha Rae"
+    },
+    {
+      "content": "New laws changed nothing in Jonesboro, but new men were changing everything.",
+      "source": "Unknown"
+    },
+    {
+      "content": "It is chiefly to my confidence in men and my ability to inspire their confidence in me that I owe my success in life.",
+      "source": "John D. Rockefeller"
+    },
+    {
+      "content": "If they don't have books, don't fuck 'em.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Excellence is not an act but a habit.",
+      "source": "Aristotle"
+    },
+    {
+      "content": "You are only as good as your nemesis.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Clean your room.",
+      "source": "Jordan B. Peterson"
+    },
+    {
+      "content": "The human heart in conflict with itself is the only thing worth writing about.",
+      "source": "William Faulkner"
+    },
+    {
+      "content": "Being nice is something stupid people do to hedge their bets.",
+      "source": "Rick Sanchez"
+    },
+    {
+      "content": "Rage against the dying of the light.",
+      "source": "Dylan Thomas"
+    },
+    {
+      "content": "Be mischievous and you will not be lonesome.",
+      "source": "Unknown"
+    },
+    {
+      "content": "Maximum effort.",
+      "source": "Deadpool"
+    },
+    {
+      "content": "A man must constantly exceed his level.",
+      "source": "Bruce Lee"
+    },
+    {
+      "content": "Persistently, patiently, you are bound to succeed.",
+      "source": "Unknown"
+    },
+    {
+      "content": "It is the nature of man to rise to greatness if greatness is expected of him.",
+      "source": "John Steinbeck"
+    },
+    {
+      "content": "Gotta risk it for the biscuit.",
+      "source": "Samantha Rae"
+    },
+    {
+      "content": "Engineering is the bottleneck.",
+      "source": "Elon Musk"
+    },
+    {
+      "content": "What's life without work?",
+      "source": "Jubal Early"
+    },
+    {
+      "content": "We are not descended from fearful men.",
+      "source": "Edward R. Murrow"
+    },
+    {
+      "content": "\"It is not the works, but the belief which is here decisive and determines the order of rank--to employ once more an old religious formula with a new and deeper meaning,--it is some fundamental certainty which a noble soul has about itself, something which is not to be sought, is not to be found, and perhaps, also, is not to be lost. The noble soul has reverence for itself.\"",
+      "source": "Friedrich Nietzsche, \"Beyond Good and Evil\""
+    },
+    {
+      "content": "\"It is not the works, but the belief which is here decisive and determines the order of rank--to employ once more an old religious formula with a new and deeper meaning,--it is some fundamental certainty which a noble soul has about itself, something which is not to be sought, is not to be found, and perhaps, also, is not to be lost. The noble soul has reverence for itself.\"\n--Friedrich Nietzsche, Beyond Good and Evil\n\nThis view of man has rarely been expressed in human history. Today, it is virtually non-existent. Yet this is the view with which--in various degrees of longing, wistfulness, passion and agonizing confusion--the best of mankind's youth start out in life. It is not even a view, for most of them, but a foggy, groping, undefined sense made of raw pain and incommunicable happiness. It is a sense of enormous expectation, the sense that one's life is important, that great achievements are within one's capacity, and that great things lie ahead.\n\n...Some give up at the first touch of pressure; some sell out; some run down by imperceptible degrees and lose their fire, never knowing when or how they lost it. Then all of these vanish in the vast swamp of their elders who tell them persistently that maturity consists of abandoning one's mind; security, of abandoning one's values; practicality, of losing self-esteem. Yet a few hold on and move on, knowing that that fire is not to be betrayed, learning how to give it shape, purpose and reality. But whatever their future, at the dawn of their lives, men seek a noble vision of man's nature and of life's potential.",
+      "source": "Ayn Rand"
+    },
+    {
+      "content": "The real use of gunpowder is to make all men tall.",
+      "source": "Thomas Carlyle"
+    },
+    {
+      "content": "The concept of total control is *erotic* to me.",
+      "source": "Rodney Ruxin, \"The League\""
+    },
+    {
+      "content": "If money can't buy happiness, I guess I'll have to rent it.",
+      "source": "Weird Al Yankovic"
+    },
+    {
+      "content": "The real damage is done by those millions who want to \"survive.\" The honest men who just want to be left in peace. Those who don't want their little lives disturbed by anything bigger than themselves. Those with no sides and no causes. Those who won't take measure of their own strength, for fear of antagonizing their own weakness. Those who don't like to make waves -- or enemies. Those for whom freedom, honor, truth, and principles are only literature. Those who live small, mate small, die small. It's the reductionist approach to life: if you keep it small, you'll keep it under control. If you don't make any noise, the bogeyman won't find you. But it's all an illusion, because they die too, those people who roll up their spirits into tiny little balls so as to be safe. Safe?! From what? Life is always on the edge of death; narrow streets lead to the same place as wide avenues, and a little candle burns itself out just like a flaming torch does. I choose my own way to burn.",
+      "source": "Sophie Scholl"
+    },
+    {
+      "content": "On two occasions I have been asked [by members of Parliament], 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able rightly to apprehend the kind of confusion of ideas that could provoke such a question.",
+      "source": "Charles Babbage"
+    },
+    {
+      "content": "The fact that she was dangerous made him like her the more. She made him extra watchful, which was good.",
+      "source": "Larry McMurtry, \"Lonesome Dove\""
+    },
+    {
+      "content": "Tell yourself first of all what kind of person you want to be, and then act accordingly in all that you do.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "What good and virtuous man can be miserable?",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "Why don't you reflect, then, that for man the source of all evils, and of his meanness of spirit and cowardice, is not death itself, but rather the fear of death? It is to confront this that you must train yourself, and it is towards that end that all your reasonings, all your studies, and all your readings should be directed, and then you'll recognize that it is in this way alone that human beings can attain freedom.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "That person is free who lives as he wishes, who can neither be constrained, nor hindered, nor compelled, whose motives are unimpeded, and who achieves his desires and doesn't fall into what he wants to avoid.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear. I will permit it to pass over me and through me. And when it has gone past I will turn the inner eye to see its path. Where the fear has gone there will be nothing. Only I will remain.",
+      "source": "Frank Herbert, \"Dune\""
+    },
+    {
+      "content": "The softer the life that it leads, the more it is a slave.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "The person who isn't subject to hindrance is free, he who has eveything at hand as he wants it; but one who is subject to hindrance, or constraint, or obstruction, or can be thrown into any difficulty against his will, is a slave. And who is the person who is free from all hindrance? He who desires nothing that is not his own. And what are the things that are not our own? Those that are not within our power, either to have or not to have, or to have with certain qualities, or under certain conditions. Our body is thus not our own, every part of it is not our own, and our property is not our own. So if you become attached to any of these as though it were your own, you'll suffer the punishment that a person deserves if he sets his aim on what is not his own. This is the road that leads to freedom, this is the only deliverance from slavery, to be able to say one day with your whole heart,\n\n\t\tGuide me, Zeus, and thou, O Destiny,\n\t\tTo wheresoever you have assigned me.\n",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "Ruin and deliverance alike come from within.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "Just as, when walking around, you take care not to tread on a nail or sprain your ankle, so take care likewise to avoid harming your ruling certre.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "If someone reports to you that a certain person is speaking ill of you, don't defend yourself against what has been said, but reply instead, 'Ah yes, he was plainly unaware of all my other faults, or else those wouldn't have been the only ones that he mentioned.'",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "How much longer will you delay before you think yourself worthy of what is best, and transgress in nothing the distinctions that reason imposes? You've acquired knowledge of the philosophical principles that you ought to accept, and have accepted them. What kind of teacher, then, are you still waiting for, that you should delay any effort to reform yourself until he appears? You're no longer a youth; you're a full-grown man. If you're now negligent and idle, and are constantly making one delay after another, and setting one day and then another as the date after which you'll devote proper attention to yourself, then you'll fail to appreciate that you're making no progress, but will continue to be a layman your whole life through until you die.\nSo you should think fit from this moment to live as an adult and as one who is making progress; and let everything that seems best to you be an inviolable law for you. And if you come up against anything that requires an effort, or is pleasant, or is glorious or inglorious, remember that this is the time of the contest, that the Olympic Games have now arrived, and that there is no possibility of further delay, and that it depends on a singlne day and single action whether progress is to be lost or secured.\nIt was in this way that Socrates became the man he was, by attending to nothing other than reason in everything that he had to deal with. And even if you're not yet a Socrates, you ought to live like someone who does in fact want to be a Socrates.",
+      "source": "Epictetus, \"Discourses, Fragments, Handbook\""
+    },
+    {
+      "content": "In every venture the bold man comes off best.",
+      "source": "Homer, \"The Odyssey\""
+    },
+    {
+      "content": "What greater glory attends a man, while he's alive, than what he wins with his racing feet and striving hands?",
+      "source": "Homer, \"The Odyssey\""
+    },
+    {
+      "content": "It's wrong to have such an iron, ruthless heart.\nEven the gods themselves can bend and change,",
+      "source": "Homer, \"The Iliad\""
+    },
+    {
+      "content": "Better to live or die, once and for all,\nthan die by inches, slowly crushed to death--\nhelpless against the hulls in the bloody press--\nby far inferior men!",
+      "source": "Homer, \"The Iliad\""
+    },
+    {
+      "content": "The harder the money, the more reliably we can provide for the future; the less uncertain the future is, the easier it is to think and plan for it, and the less it is discounted.",
+      "source": "Saifedean Ammous, \"The Fiat Standard\""
+    },
+    {
+      "content": "We cannot abolish war by outlawing it. We cannot end it by disarming the strong. War can be stopped, not by making the strong weak but by making every nation, weak or strong, able to defend itself. If no country can be attacked successfully, there can be no purpose in war.",
+      "source": "Nikola Tesla"
+    },
+    {
+      "content": "...the people of Constantinople had less than a year to reach consensus that cannons were of vital strategic importance which must be adopted despite their cost. This was apparently not enough time, so the people of Constantinople allowed Sultan Mehmed II to teach them how important this new technology was the hard way: by example.",
+      "source": "Jason Lowery, \"Softwar\""
+    },
+    {
+      "content": "But why would nations prefer something as lethal and destructive as warfare to resolve international policy disputes when they have a far more energy-efficient option of peaceful adjudication through a court? The answer is quite simple: because they don't trust, respect, or sympathize with the court. To borrow a concept from an anonymous software engineer, the root problem with peace is all the trust that is required to make it work.",
+      "source": "Jason Lowery, \"Softwar\""
+    },
+    {
+      "content": "Peak storytellers are peak predators.",
+      "source": "Jason Lowery, \"Softwar\""
+    },
+    {
+      "content": "Sapiens have become so high on the food chain that many eat thousands of animals without killing a single one. They have mastered predation and killing to a point where they have turned it into a subscription service. They outsource their predation services so effectively that they forget they're predators and they get upset -- even horrified -- when they're reminded about what they're paying for.",
+      "source": "Jason Lowery, \"Softwar\""
+    },
+    {
+      "content": "To accept everything is an exercise, to understand everything a strain. ... The poet only asks to get his head into the heavens. It is the logician who seeks to get the heavens into his head. And it is his head that splits.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "If a man would make his world large, he must be always making himself small ... for towers are not tall unless we look up at them.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "What we suffer from today is humility in the wrong place. ... A man was meant to be doubtful about himself, but undoubting about the truth, this has been exactly reversed. ... The old humility was a spur that prevented a man from stopping; not a nail in his boot that prevented him from going on. For the old humility made a man doubtful about his efforts, which might make him work harder. But the new humility makes a man doubtful about his aims, which will make him stop working altogether.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "The modern critics of religious authority are like men who should attack the police without ever having heard of burglars. For there is a great and possible peril to the human mind: a peril as practical as burglary. Against it religious authority was reared, rightly or wrongly, as a barrier. And against it something certainly must be reared as a barrier, if our race is to avoid ruin.\nThat peril is that the human intellect is free to destroy itself.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "There is a thought that stops thought. That is the only thought that ought to be stopped. That is the ultimate evil against which all religious authority was aimed.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "Mysticism keeps men sane. ... The ordinary man has always been sane because the ordinary man has always been a mystic. ... He has always cared more for truth than for consistency. If he saw two truths that seemed to contradict each other, he would take the two truths and the contradiction along with them.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "As long as the vision of heaven is always changing, the vision of earth will be exactly the same. No ideal will remain long enough to be realized, or even partly realized. The modern young man will never change his environment; for he will always change his mind.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "If any one says that the faith arose in ignorance and savagery the answer is simple: it didn't. It arose in the Mediterranean civilization in the full summer of the Roman Empire.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "Man is more himself, man is more manlike, when joy is the fundamental thing in him, and grief the superficial.",
+      "source": "G.K. Chesteron, \"Orthodoxy\""
+    },
+    {
+      "content": "He told me that the children would've died, if they hadn't found their way to the people-market. Professional recruiters, known as talent scouts, roamed from one catastrophe to another, from drought to earthquake to flood. Starving parents, who'd already watched one or more of their children sicken and die, blessed the scouts, kneeling to touch their feet. They begged them to buy a son or daughter, so that at least that one child would live.",
+      "source": "Gregory David, \"Shantaram\""
+    },
+    {
+      "content": "How you spend your day is how you spend your life.",
+      "source": "James A. Corey, \"The Vital Abyss\""
+    },
+    {
+      "content": "Don't tell me what you \"think,\" just tell me what's in your portfolio.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "Those who don't take risks should never be involved in making decisions.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "This doesn’t mean one should never regulate at all. Some systemic effects may require regulation (say hidden tail risks of environmental ruins that show up too late). If you can’t effectively sue, regulate.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "By regulating you are robbing people of freedom. Some of us believe that freedom is one’s first most essential good. This includes the freedom to make mistakes (those that harm only you); it is sacred to the point that it must never be traded against economic or other benefits.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "If you do not take risks for your opinion, you are nothing.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "Learning is rooted in repetition and convexity, meaning that the reading of a single text twice is more profitable than reading two different things once, provided of course that said text has some depth of content.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "Indeed much of the work of investment banks in my day was to play on regulations, find loopholes in the laws. And, counterintuitively, the more regulations, the easier it was to make money.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    },
+    {
+      "content": "A free person does not need to win arguments--just win.",
+      "source": "Nassim Nicholas Taleb, \"Skin in the Game\""
+    }
+  ]
+}
