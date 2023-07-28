@@ -844,30 +844,28 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  name: Mocha (dark)
-  author: Chris Kempson
+  # Default Colors
   primary:
-    background: "#3b3228"
-    foreground: "#d0c8c6"
-  cursor:
-    text: "#3b3228"
-    cursor: "#d0c8c6"
+    background: '#f1f1f1'
+    foreground: '#424242'
+  # Normal colors
   normal:
-    black: "#3b3228"
-    red: "#cb6077"
-    green: "#beb55b"
-    yellow: "#f4bc87"
-    blue: "#8ab3b5"
-    magenta: "#a89bb9"
-    cyan: "#7bbda4"
-    white: "#d0c8c6"
+    black: '#212121'
+    red: '#c30771'
+    green: '#10a778'
+    yellow: '#a89c14'
+    blue: '#008ec4'
+    magenta: '#523c79'
+    cyan: '#20a5ba'
+    white: '#e0e0e0'
+  # Bright colors
   bright:
-    black: "#7e705a"
-    red: "#cb6077"
-    green: "#beb55b"
-    yellow: "#f4bc87"
-    blue: "#8ab3b5"
-    magenta: "#a89bb9"
-    cyan: "#7bbda4"
-    white: "#f5eeeb"
-theme: Mocha.dark
+    black: '#212121'
+    red: '#fb007a'
+    green: '#5fd7af'
+    yellow: '#f3e430'
+    blue: '#20bbfc'
+    magenta: '#6855de'
+    cyan: '#4fb8cc'
+    white: '#f1f1f1'
+theme: Pencil-Light
