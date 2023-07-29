@@ -844,28 +844,30 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  # Default Colors
+  name: Railscasts (light)
+  author: Chris Kempson
   primary:
-    background: '#f1f1f1'
-    foreground: '#424242'
-  # Normal colors
+    background: "#f9f7f3"
+    foreground: "#3a4055"
+  cursor:
+    text: "#f9f7f3"
+    cursor: "#3a4055"
   normal:
-    black: '#212121'
-    red: '#c30771'
-    green: '#10a778'
-    yellow: '#a89c14'
-    blue: '#008ec4'
-    magenta: '#523c79'
-    cyan: '#20a5ba'
-    white: '#e0e0e0'
-  # Bright colors
+    black: "#2b2b2b"
+    red: "#da4939"
+    green: "#a5c261"
+    yellow: "#ffc66d"
+    blue: "#6d9cbe"
+    magenta: "#b6b3eb"
+    cyan: "#519f50"
+    white: "#e6e1dc"
   bright:
-    black: '#212121'
-    red: '#fb007a'
-    green: '#5fd7af'
-    yellow: '#f3e430'
-    blue: '#20bbfc'
-    magenta: '#6855de'
-    cyan: '#4fb8cc'
-    white: '#f1f1f1'
-theme: Pencil-Light
+    black: "#5a647e"
+    red: "#da4939"
+    green: "#a5c261"
+    yellow: "#ffc66d"
+    blue: "#6d9cbe"
+    magenta: "#b6b3eb"
+    cyan: "#519f50"
+    white: "#f9f7f3"
+theme: Railscasts.light
