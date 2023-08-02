@@ -14,11 +14,12 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gap='git add -p'
 alias gch='git checkout'
 alias gchb='gch -b'
-alias gf='git diff'
 alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
+alias rc='resolve-conflicts'
 alias gilf='git checkout main && git pull && git fetch'
 alias galf='git checkout master && git pull && git fetch'
 alias gslf='git checkout stable && git pull && git fetch'
@@ -67,3 +68,5 @@ alias tl='tmux ls'
 alias python='python3'
 
 alias xit="exit"
+
+alias kill-node="kill $(ps aux | grep '[n]ode' | awk '{print $2}')"

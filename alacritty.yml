@@ -844,30 +844,36 @@ key_bindings:
   # Highlight window damage information.
   #highlight_damage: false
 colors:
-  name: Railscasts (light)
-  author: Chris Kempson
+  name: TokyoNight Day
+  author: Folke
+  # Default colors
   primary:
-    background: "#f9f7f3"
-    foreground: "#3a4055"
-  cursor:
-    text: "#f9f7f3"
-    cursor: "#3a4055"
+    background: '0xe1e2e7'
+    foreground: '0x3760bf'
+
+  # Normal colors
   normal:
-    black: "#2b2b2b"
-    red: "#da4939"
-    green: "#a5c261"
-    yellow: "#ffc66d"
-    blue: "#6d9cbe"
-    magenta: "#b6b3eb"
-    cyan: "#519f50"
-    white: "#e6e1dc"
+    black: '0xe9e9ed'
+    red: '0xf52a65'
+    green: '0x587539'
+    yellow: '0x8c6c3e'
+    blue: '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan: '0x007197'
+    white: '0x6172b0'
+
+  # Bright colors
   bright:
-    black: "#5a647e"
-    red: "#da4939"
-    green: "#a5c261"
-    yellow: "#ffc66d"
-    blue: "#6d9cbe"
-    magenta: "#b6b3eb"
-    cyan: "#519f50"
-    white: "#f9f7f3"
-theme: Railscasts.light
+    black: '0xa1a6c5'
+    red: '0xf52a65'
+    green: '0x587539'
+    yellow: '0x8c6c3e'
+    blue: '0x2e7de9'
+    magenta: '0x9854f1'
+    cyan: '0x007197'
+    white: '0x3760bf'
+
+  indexed_colors:
+    - { index: 16, color: '0xb15c00' }
+    - { index: 17, color: '0xc64343' }
+theme: Tokyonight_Day
