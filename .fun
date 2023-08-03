@@ -25,9 +25,9 @@ FAVORITE_LIGHT_THEMES=(
     "Nova"
     "Marrakesh.light"
     "Iceberg-Light"
-    "Gutterslob-aikofog"
     "Gruvbox-Light"
     "Grayscale.light"
+    "Gutterslob - aikofog"
     "Google.light"
     "Codeschool.light"
 )
@@ -194,4 +194,8 @@ godark() {
 
 function random_quote() {
     jq -c '.quotes[]' $DEVELOPMENT/dotfiles/quotes.json | shuf -n 1 | jq -r '"\(.content)\n-- \(.source)"'
+}
+
+function vrg() {
+    $NEOVIM $(rg -il "$1")
 }
