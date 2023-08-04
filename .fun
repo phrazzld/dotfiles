@@ -28,7 +28,7 @@ FAVORITE_LIGHT_THEMES=(
     "Gruvbox-Light"
     "Grayscale.light"
     "Gutterslob - aikofog"
-    "Google.light"
+    "Google.light" #
     "Codeschool.light"
 )
 
@@ -90,7 +90,6 @@ FAVORITE_DARK_THEMES=(
     "Moonlight-II-VSCode"
     "Monotheme"
     "Monokai.dark"
-    "Monokai-Soda"
     "Monokai-Pro"
     "Molokai"
     "Mocha.dark"
@@ -192,8 +191,33 @@ godark() {
     fi
 }
 
+# function random_quote() {
+#     jq -c '.quotes[]' $DEVELOPMENT/dotfiles/quotes.json | shuf -n 1 | jq -r '"\(.content)\n-- \(.source)"'
+# }
 function random_quote() {
-    jq -c '.quotes[]' $DEVELOPMENT/dotfiles/quotes.json | shuf -n 1 | jq -r '"\(.content)\n-- \(.source)"'
+    # Path to the JSON file with quotes
+    local json_file="$DEVELOPMENT/dotfiles/quotes.json"
+
+    # Check if the file exists and is readable
+    if [[ ! -r $json_file ]]; then
+        echo "Unable to read the quotes file: $json_file" >&2
+        return 1
+    fi
+
+    # Use jq to extract the quotes and randomly select one
+    local selected_quote
+    selected_quote=$(jq -c '.quotes[]' "$json_file" | shuf -n 1) || {
+        echo "Failed to select a quote from the file: $json_file" >&2
+        return 1
+    }
+
+    # Use jq again to format the selected quote and fold to wrap the text
+    local content source
+    content=$(echo "$selected_quote" | jq -r .content | fold -s -w 80)
+    source=$(echo "$selected_quote" | jq -r .source)
+
+    # Print the formatted quote
+    echo -e "$content\n-- $source"
 }
 
 function vrg() {
