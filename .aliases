@@ -68,5 +68,3 @@ alias tl='tmux ls'
 alias python='python3'
 
 alias xit="exit"
-
-alias kill-node="kill $(ps aux | grep '[n]ode' | awk '{print $2}')"

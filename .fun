@@ -9,7 +9,7 @@ FAVORITE_LIGHT_THEMES=(
     "Atelierseaside.light"
     "paper-theme"
     "github_light_default"
-    "Yousai"
+    "Yousai" #
     "X-dotshare"
     "Visibone-alt-2"
     "Twilight.light"
@@ -101,7 +101,7 @@ FAVORITE_DARK_THEMES=(
     "Gruvbox-Dark"
     "Greenscreen.dark"
     "Grayscale.dark"
-    "Garuda.dr460nized"
+    "Garuda.dr460nized" #
     "Eighties.dark"
     "Dracula"
     "Dotshare"

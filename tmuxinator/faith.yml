@@ -5,38 +5,33 @@ root: ~/Development/faith-forward
 
 windows:
   - servers:
-      layout: even-horizontal
+      layout: tiled
       panes:
         - mobile:
-          - cd $FAITH_FORWARD/mobile-app
+          - cd $FAITH_FORWARD/blue-app-mobile
           - asdf local nodejs 18.14.0
           - git pull
           - git fetch
           - yarn install
           - yarn ios
         - web:
-          - cd $FAITH_FORWARD/church-app
+          - cd $FAITH_FORWARD/black-app-web
           - asdf local nodejs 18.14.0
           - git pull
           - git fetch
           - yarn install
           - yarn dev
-  - tests:
-      layout: even-horizontal
-      panes:
-        - firestore:
-          - cd $FAITH_FORWARD/firebase-services/firestore
-          - asdf local nodejs 17.9.1
-          - git pull
-          - git fetch
-          - yarn install
-          - yarn test
         - cloud functions:
           - cd $FAITH_FORWARD/firebase-services/functions
           - asdf local nodejs 18.14.0
+          - git pull
+          - git fetch
           - yarn install
-          - yarn test
-  - eng:
+          - yarn build:watch
+        - firebase emulators:
+          - cd $FAITH_FORWARD/firebase-services
+          - ./run-emulators.sh
+  - engineering:
       layout: even-horizontal
       panes:
         - core:
