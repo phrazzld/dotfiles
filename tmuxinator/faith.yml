@@ -4,18 +4,18 @@ name: faith
 root: ~/Development/faith-forward
 
 windows:
-  - servers:
+  - ops:
       layout: tiled
       panes:
         - mobile:
-          - cd $FAITH_FORWARD/blue-app-mobile
+          - cd $FAITH_FORWARD/blue-mobile
           - asdf local nodejs 18.14.0
           - git pull
           - git fetch
           - yarn install
           - yarn ios
         - web:
-          - cd $FAITH_FORWARD/black-app-web
+          - cd $FAITH_FORWARD/black-web
           - asdf local nodejs 18.14.0
           - git pull
           - git fetch
@@ -31,7 +31,7 @@ windows:
         - firebase emulators:
           - cd $FAITH_FORWARD/firebase-services
           - ./run-emulators.sh
-  - engineering:
+  - eng:
       layout: even-horizontal
       panes:
         - core:
@@ -42,4 +42,4 @@ on_project_start: echo "Project FAITH is starting"
 on_project_exit: echo "Project FAITH has exited"
 on_project_restart: echo "Project FAITH has restarted"
 on_project_stop: echo "Project FAITH has stopped"
-startup_window: servers
+startup_window: ops
