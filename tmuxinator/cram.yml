@@ -1,0 +1,36 @@
+# /Users/phaedrus/.config/tmuxinator/cram.yml
+
+name: cram
+root: ~/Development/memre
+
+windows:
+  - ops:
+      layout: main-vertical
+      panes:
+        - cram:
+          - cd $MEMRE/cram
+          - git fetch
+          - git pull
+          - yarn install
+          - yarn dev
+        - watcher:
+          - cd $MEMRE/cram-firebase/functions
+          - git fetch
+          - git pull
+          - yarn install
+          - yarn build:watch
+        - emulators:
+          - cd $MEMRE/cram-firebase
+          - ./run-emulators.sh
+  - eng:
+      layout: main-vertical
+      panes:
+        - core:
+          - cd $MEMRE/cram
+          - ls -alh
+on_project_first_start: echo "Project CRAM is starting for the first time"
+on_project_start: echo "Project CRAM is starting"
+on_project_exit: echo "Project CRAM has exited"
+on_project_restart: echo "Project CRAM has restarted"
+on_project_stop: echo "Project CRAM has stopped"
+startup_window: ops

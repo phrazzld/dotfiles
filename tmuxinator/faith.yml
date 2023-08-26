@@ -7,13 +7,13 @@ windows:
   - ops:
       layout: tiled
       panes:
-        - mobile:
-          - cd $FAITH_FORWARD/blue-mobile
-          - asdf local nodejs 18.14.0
-          - git pull
-          - git fetch
-          - yarn install
-          - yarn ios
+        # - mobile:
+        #   - cd $FAITH_FORWARD/blue-mobile
+        #   - asdf local nodejs 18.14.0
+        #   - git pull
+        #   - git fetch
+        #   - yarn install
+        #   - yarn ios
         - web:
           - cd $FAITH_FORWARD/black-web
           - asdf local nodejs 18.14.0
