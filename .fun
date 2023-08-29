@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Functions
-pullpasses() {
+function pullpasses() {
     if [ -n "$1" ]; then
         lpass show $(lpass ls | grep -i "$1" | awk '{ print $3 }' | sed 's/.$//')
     else
@@ -9,7 +8,7 @@ pullpasses() {
     fi
 }
 
-pullpass() {
+function pullpass() {
     if [ -n "$1" ]; then
         pullpasses "$1" | grep -i "Password:" | awk '{ print $2 }' | head -1 | pbcopy
     else
@@ -17,7 +16,7 @@ pullpass() {
     fi
 }
 
-timezsh() {
+function timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
@@ -25,7 +24,7 @@ timezsh() {
 # Encrypt directories
 # first arg: tarfile name
 # second arg: directory to encrypt
-lock() {
+function lock() {
     TARFILE=$1
     TARGET_DIR=$2
     tar czf $TARFILE $TARGET_DIR
@@ -36,7 +35,7 @@ lock() {
 # Decrypt archives
 # first arg: tarfile name
 # second arg: gpg file name
-unlock() {
+function unlock() {
     TARFILE=$1
     GPGFILE=$2
     gpg --output $TARFILE $GPGFILE
@@ -46,11 +45,11 @@ unlock() {
 ALACRITTY_CONFIG="$DEVELOPMENT/dotfiles/alacritty.yml"
 ALACRITTY_THEME_PATH="/Users/phaedrus/Development/dotfiles/alacritty-themes"
 
-golight() {
+function golight() {
     sed -i '' "s|^  - $ALACRITTY_THEME_PATH/.*|  - $ALACRITTY_THEME_PATH/rose-pine-dawn.yml|" $ALACRITTY_CONFIG
 }
 
-godark() {
+function godark() {
     sed -i '' "s|^  - $ALACRITTY_THEME_PATH/.*|  - $ALACRITTY_THEME_PATH/rose-pine.yml|" $ALACRITTY_CONFIG
 }
 
@@ -81,4 +80,27 @@ function random_quote() {
 
 function vrg() {
     $NEOVIM $(rg -il "$1")
+}
+
+function clear_port() {
+    if [ -z "$1" ]; then
+        echo "Please specify a port number."
+        return 1
+    fi
+
+    local PORT=$1
+    local PID=$(lsof -i :$PORT | grep LISTEN | awk '{print $2}' | uniq)
+
+    if [ -z "$PID" ]; then
+        echo "No process found running on port $PORT."
+        return 1
+    fi
+
+    echo "Killing process $PID on port $PORT."
+    kill -9 $PID
+    if [ $? -eq 0 ]; then
+        echo "Process on port $PORT killed successfully."
+    else
+        echo "Failed to kill process on port $PORT."
+    fi
 }
