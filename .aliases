@@ -10,7 +10,7 @@ alias berc="bundle exec rails c"
 # Gitting
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gc='conventional_commit'
 alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
