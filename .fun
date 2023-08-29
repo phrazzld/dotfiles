@@ -110,14 +110,14 @@ function conventional_commit() {
     git rev-parse --is-inside-work-tree > /dev/null 2>&1
     if [ $? -ne 0 ]; then
       echo "fatal: not a git repository (or any of the parent directories): .git."
-      exit 1
+      return 1
     fi
 
     # check if we have any changes to commit
     git diff-index --quiet --cached HEAD
     if [ $? -eq 0 ]; then
       echo "fatal: no changes added to commit."
-      exit 1
+      return 1
     fi
 
     TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
