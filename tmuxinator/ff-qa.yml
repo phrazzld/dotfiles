@@ -1,0 +1,47 @@
+# /Users/phaedrus/.config/tmuxinator/ff-qa.yml
+
+name: ff-qa
+root: ~/Development/faith-forward
+
+windows:
+  - sys:
+      layout: main-vertical
+      panes:
+        - blue-mobile:
+          - cd $FAITH_FORWARD/blue-mobile
+          - asdf local nodejs 18.14.0
+          - git checkout main
+          - git pull
+          - git fetch
+          - yarn install
+          - ./use-staging.sh
+          - yarn ios
+        - functions:
+          - cd $FAITH_FORWARD/firebase-services/functions
+          - asdf local nodejs 18.14.0
+          - git checkout main
+          - git pull
+          - git fetch
+          - yarn install
+          - firebase use faith-forward-staging && firebase deploy
+        - black-web:
+          - cd $FAITH_FORWARD/black-web
+          - asdf local nodejs 18.14.0
+          - git checkout main
+          - git pull
+          - git fetch
+          - yarn install
+          - ./use-staging.sh
+          - yarn dev
+  - eng:
+      layout: even-horizontal
+      panes:
+        - core:
+          - cd $FAITH_FORWARD
+          - l
+on_project_first_start: echo "Project FAITH-QA is starting for the first time"
+on_project_start: echo "Project FAITH-QA is starting"
+on_project_exit: echo "Project FAITH-QA has exited"
+on_project_restart: echo "Project FAITH-QA has restarted"
+on_project_stop: echo "Project FAITH-QA has stopped"
+startup_window: sys

@@ -4,7 +4,7 @@ name: cram
 root: ~/Development/memre
 
 windows:
-  - ops:
+  - sys:
       layout: main-vertical
       panes:
         - cram:
@@ -12,6 +12,8 @@ windows:
           - git fetch
           - git pull
           - yarn install
+          - ./use-emulators.sh
+          - sleep 30
           - yarn dev
         - watcher:
           - cd $MEMRE/cram-firebase/functions
@@ -33,4 +35,4 @@ on_project_start: echo "Project CRAM is starting"
 on_project_exit: echo "Project CRAM has exited"
 on_project_restart: echo "Project CRAM has restarted"
 on_project_stop: echo "Project CRAM has stopped"
-startup_window: ops
+startup_window: sys

@@ -1,0 +1,40 @@
+# /Users/phaedrus/.config/tmuxinator/ff-black.yml
+
+name: ff-black
+root: ~/Development/faith-forward
+
+windows:
+  - sys:
+      layout: main-vertical
+      panes:
+        - emulators:
+          - cd $FAITH_FORWARD/firebase-services
+          - ./run-emulators.sh
+        - functions:
+          - cd $FAITH_FORWARD/firebase-services/functions
+          - asdf local nodejs 18.14.0
+          - git pull
+          - git fetch
+          - yarn install
+          - yarn build:watch
+        - black-web:
+          - cd $FAITH_FORWARD/black-web
+          - asdf local nodejs 18.14.0
+          - git pull
+          - git fetch
+          - yarn install
+          - ./use-emulators.sh
+          - sleep 30
+          - yarn dev
+  - eng:
+      layout: even-horizontal
+      panes:
+        - core:
+          - cd $FAITH_FORWARD/black-web
+          - l
+on_project_first_start: echo "Project FAITH-BLACK is starting for the first time"
+on_project_start: echo "Project FAITH-BLACK is starting"
+on_project_exit: echo "Project FAITH-BLACK has exited"
+on_project_restart: echo "Project FAITH-BLACK has restarted"
+on_project_stop: echo "Project FAITH-BLACK has stopped"
+startup_window: sys

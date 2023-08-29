@@ -27,8 +27,7 @@ alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 alias gu='git config --local --list | grep "user"'
 
 # Looking
-alias l="exa --long"
-alias la="exa --long --all"
+alias l="exa --long --all"
 alias lt="exa --long --tree"
 alias lta="exa --long --all --tree"
 alias f='fzf --bind "enter:execute($NEOVIM {})"'
@@ -61,10 +60,14 @@ alias getquote='echo $(shuf -n 1 $DEVELOPMENT/dotfiles/quotes.txt) | fold -s -w 
 # Tmux
 alias tns='tmux new -s ship'
 alias tas='tmux attach -t ship'
-alias tnf='tmuxinator start faith'
-alias taf='tmux attach -t faith'
+alias tnf='tmuxinator start ff-core-local'
+alias taf='tmux attach -t ff-core-local'
+alias tnff='tmuxinator start faith'
+alias taff='tmuxinator attach -t faith'
 alias tl='tmux ls'
 
 alias python='python3'
 
 alias xit="exit"
+
+alias nerdfetch="$DEVELOPMENT/nerdfetch"
