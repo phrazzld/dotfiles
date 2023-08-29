@@ -1,73 +1,67 @@
-# Editing
-alias v=$NEOVIM
-alias vz="v ~/.zshrc"
-alias vn="v ~/.config/nvim/init.lua"
+# TODO: make a better agent management script that:
+#       - handles different ssh keys
+#       - shows me what keys are available
+#       - etc
+alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
+
+alias clear="clear && exec zsh"
+alias compress='tar czf'
+
 alias dev="cd $DEVELOPMENT"
+alias decompress='tar xzf'
+alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
-# Rails
-alias berc="bundle exec rails c"
+alias f='fzf --bind "enter:execute($NEOVIM {})"'
 
-# Gitting
-alias gs='git status'
+alias g='git'
+alias gs='git status --short'
 alias ga='git add'
 alias gc='conventional_commit'
 alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gdn='git diff --name-only'
 alias gap='git add -p'
 alias gch='git checkout'
 alias gchb='gch -b'
-alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
-alias rc='resolve-conflicts'
 alias gilf='git checkout main && git pull && git fetch'
 alias galf='git checkout master && git pull && git fetch'
 alias gslf='git checkout stable && git pull && git fetch'
-alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 alias gu='git config --local --list | grep "user"'
+alias gm='modified'
 
-# Looking
 alias l="exa --long --all"
 alias lt="exa --long --tree"
 alias lta="exa --long --all --tree"
-alias f='fzf --bind "enter:execute($NEOVIM {})"'
 
-# Sourcing
-alias sz="exec zsh"
-alias clear="clear && sz"
+alias nerdfetch="$DEVELOPMENT/nerdfetch"
 
-# Authenticating
-alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
-
-# Writing
 alias ponder="$DEVELOPMENT/ponder/target/release/ponder"
-alias p='ponder'
-alias scratch='v $HOME/scratch.md'
-alias watched="$DEVELOPMENT/rust/rusty-tomatoes/target/release/rusty-tomatoes movie create"
-alias seen="$DEVELOPMENT/rust/rusty-tomatoes/target/release/rusty-tomatoes movie show"
+alias p='$DEVELOPMENT/ponder/target/release/ponder'
+alias python='python3'
 
-# Compression
-alias compress='tar czf'
-alias decompress='tar xzf'
+alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
+alias rc='resolve-conflicts'
 
-# Testing
-alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
-alias yt='yarn test'
+alias sz="exec zsh"
+alias scratch='$NEOVIM $HOME/scratch.md'
 
-# Quotes
-alias getquote='echo $(shuf -n 1 $DEVELOPMENT/dotfiles/quotes.txt) | fold -s -w 120'
-
-# Tmux
+alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
+alias tl='tmux ls'
 alias tns='tmux new -s ship'
 alias tas='tmux attach -t ship'
 alias tnf='tmuxinator start ff-core-local'
 alias taf='tmux attach -t ff-core-local'
+alias tx='tmuxinator'
+alias txs='tmuxinator start'
 alias tnff='tmuxinator start faith'
 alias taff='tmuxinator attach -t faith'
-alias tl='tmux ls'
 
-alias python='python3'
+alias v=$NEOVIM
+alias vz="$NEOVIM ~/.zshrc"
+alias vn="$NEOVIM ~/.config/nvim/init.lua"
 
 alias xit="exit"
 
-alias nerdfetch="$DEVELOPMENT/nerdfetch"
+alias yt='yarn test'

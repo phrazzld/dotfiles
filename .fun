@@ -138,3 +138,8 @@ function conventional_commit() {
     echo "-----------------"
     gum confirm "commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
 }
+
+# open all modified files in the current working tree
+function modified() {
+    git status --porcelain | awk '{print $2}' | xargs $EDITOR
+}
