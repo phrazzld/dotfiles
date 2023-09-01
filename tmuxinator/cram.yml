@@ -7,6 +7,15 @@ windows:
   - sys:
       layout: main-vertical
       panes:
+        - emulators:
+          - cd $MEMRE/cram-firebase
+          - ./run-emulators.sh
+        - watcher:
+          - cd $MEMRE/cram-firebase/functions
+          - git fetch
+          - git pull
+          - yarn install
+          - yarn build:watch
         - cram:
           - cd $MEMRE/cram
           - git fetch
@@ -15,15 +24,6 @@ windows:
           - ./use-emulators.sh
           - sleep 30
           - yarn dev
-        - watcher:
-          - cd $MEMRE/cram-firebase/functions
-          - git fetch
-          - git pull
-          - yarn install
-          - yarn build:watch
-        - emulators:
-          - cd $MEMRE/cram-firebase
-          - ./run-emulators.sh
   - eng:
       layout: main-vertical
       panes:

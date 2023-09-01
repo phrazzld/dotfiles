@@ -33,6 +33,11 @@ windows:
           - yarn install
           - ./use-staging.sh
           - yarn dev
+  - discord:
+      layout: main-vertical
+      panes:
+        - core:
+          - discordo
   - eng:
       layout: even-horizontal
       panes:

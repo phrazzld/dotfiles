@@ -1,6 +1,6 @@
-# /Users/phaedrus/.config/tmuxinator/ff-black.yml
+# /Users/phaedrus/.config/tmuxinator/faith-black.yml
 
-name: ff-black
+name: faith-black
 root: ~/Development/faith-forward
 
 windows:
