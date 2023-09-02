@@ -1,6 +1,6 @@
-# /Users/phaedrus/.config/tmuxinator/ff-qa.yml
+# /Users/phaedrus/.config/tmuxinator/faith-qa.yml
 
-name: ff-qa
+name: faith-qa
 root: ~/Development/faith-forward
 
 windows:

@@ -52,6 +52,7 @@ alias t='tmux'
 alias tl='tmux ls'
 alias tx='tmuxinator'
 alias txs='tmuxinator start'
+alias txl='tmuxinator list'
 
 alias v=$NEOVIM
 alias vz="$NEOVIM ~/.zshrc"
