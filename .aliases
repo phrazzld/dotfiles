@@ -16,7 +16,8 @@ alias f='fzf --bind "enter:execute($NEOVIM {})"'
 alias g='git'
 alias gs='git status --short'
 alias ga='git add'
-alias gc='cz commit'
+# alias gc='cz commit'
+alias gc='conventional_commit'
 alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
@@ -44,8 +45,9 @@ alias python='python3'
 alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
 alias rc='resolve-conflicts'
 
-alias sz="exec zsh"
+alias s='speedtest'
 alias scratch='$NEOVIM $HOME/scratch.md'
+alias sz="exec zsh"
 
 alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 alias t='tmux'

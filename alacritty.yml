@@ -1,5 +1,5 @@
 import:
-  - /Users/phaedrus/Development/dotfiles/alacritty-themes/rose-pine-dawn.yml
+  - /Users/phaedrus/Development/dotfiles/alacritty-themes/rose-pine.yml
 
 env:
   TERM: alacritty

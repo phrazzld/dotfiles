@@ -120,7 +120,7 @@ function conventional_commit() {
       return 1
     fi
 
-    TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+    TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert" "ops")
     SCOPE=$(gum input --placeholder "scope")
 
     # since the scope is optional, wrap it in parentheses if it has a value
