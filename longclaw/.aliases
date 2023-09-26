@@ -42,6 +42,7 @@ alias python='python3'
 
 alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
 alias rc='resolve-conflicts'
+alias rubocopit="{ git diff --name-only; git diff --cached --name-only; } | sort -u | grep -v '^db/schema.rb$' | xargs rubocop -a"
 
 alias s='speedtest'
 alias scratch='$NEOVIM $HOME/scratch.md'
