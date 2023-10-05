@@ -48,7 +48,7 @@ alias s='speedtest'
 alias scratch='$NEOVIM $HOME/scratch.md'
 alias sz="exec zsh"
 
-alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
+alias trigger-build='git commit --allow-empty -m "trigger build" && git push'
 alias t='tmux'
 alias tl='tmux ls'
 alias tx='tmuxinator'
