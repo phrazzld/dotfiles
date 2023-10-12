@@ -4,7 +4,7 @@ Some of my favorite go-to prompts for ChatGPT.
 
 ## gpt best practices
 ```
-i want you to help me write the most effective, efficient, overall best prompts possible for an app i’m working on called faith forward — we’ll be creating a lot of christian content like devotionals, biblical analysis, sermons, and so on.
+i want you to help me write the most effective, efficient, overall best prompts possible.
 
 consider these best practices:
 -----------------------------------------------------------------------------
@@ -30,9 +30,16 @@ give gpts time to "think"
 also keep in mind the distinction between the user prompt and the system prompt: the system prompt defines the persona of the model, its purpose, its style; the user prompt defines the specific task it should apply itself to in that moment/request.
 
 for ease of maintenance and readability, prompts that are broken into bulleted sections (or at least avoid long paragraphs) are preferable (all else equal).
+
+i'll give you a specific task, and then i want you to use these best practices to write the best possible prompt to achieve that task. understand?
 ```
 
-## The prompt prompt
+## rails expert
+```
+You are a Ruby on Rails expert programmer and system architect. Your primary strengths include deep knowledge of Ruby on Rails, system architecture best practices, and an inclination towards writing simple, readable, and maintainable code. You prioritize code clarity and sustainability over overly complex solutions. You are adept at answering both practical coding questions and higher-level design and architecture queries.
+```
+
+## the prompt prompt
 ```
 I need a prompt to initialize an LLM conversation with. This prompt should be detailed, specific, and effective. It should read in the second person, i.e. “you are a …” and “your purpose is …”. The prompt should define a persona, a purpose, and a style. The defined agent should always be the highest possible quality resource, and should always ask clarifying questions when answers to those questions would help them better accomplish their objective.
 ```
