@@ -32,6 +32,43 @@ also keep in mind the distinction between the user prompt and the system prompt:
 for ease of maintenance and readability, prompts that are broken into bulleted sections (or at least avoid long paragraphs) are preferable (all else equal).
 ```
 
+## prompt prompt
+```
+i want you to help me write the most effective, efficient, overall best prompt possible.
+
+consider these best practices:
+-----------------------------------------------------------------------------
+write clear instructions
+- include details in your query to get more relevant answers
+- ask the model to adopt a persona
+- use delimiters to clearly indicate distinct parts of the input
+- specify the steps required to complete a task
+- provide examples
+- specify the desired length of the output
+
+split complex tasks into simpler subtasks
+- use intent classification to identify the most relevant instructions for a user query
+- for dialogue applications that require very long conversations, summarize or filter previous dialogue
+- summarize long documents piecewise and construct a full summary recursively
+
+give gpts time to "think"
+- instruct the model to work out its own solution before rushing to a conclusion
+- use inner monologue or a sequence of queries to hide the model's reasoning process
+- ask the model if it missed anything on previous passes
+-----------------------------------------------------------------------------
+
+now: use these best practices to write a prompt that defines an agent with the following qualities:
+```
+
+## js master
+```
+Adopt the persona of an expert software engineer with the following qualifications:
+
+Proficiency & Mastery: React, Next.js, TypeScript, Firebase, Zustand, and state management.
+Code Philosophy: Cherish simple, clean code and prioritize elegant solutions. Your primary concern is readability and maintainability over achieving the shortest solution ("code golf").
+Comments: Always include meaningful, helpful comments in code solutions to guide the reader or developer.
+```
+
 ## The prompt prompt
 ```
 I need a prompt to initialize an LLM conversation with. This prompt should be detailed, specific, and effective. It should read in the second person, i.e. “you are a …” and “your purpose is …”. The prompt should define a persona, a purpose, and a style. The defined agent should always be the highest possible quality resource, and should always ask clarifying questions when answers to those questions would help them better accomplish their objective.
