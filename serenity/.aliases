@@ -41,3 +41,5 @@ alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
 alias v=nvim
 
 alias xit="exit"
+
+alias vimv=$HOME/development/vimv

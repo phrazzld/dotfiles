@@ -22,6 +22,9 @@ function random_quote() {
         return 1
     }
 
+    # echo "Selected quote:"
+    # echo "$selected_quote"
+
     # Use jq again to format the selected quote and fold to wrap the text
     local content source
     content=$(echo "$selected_quote" | jq -r .content | fold -s -w 80)
