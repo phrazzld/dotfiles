@@ -31,12 +31,13 @@ alias paths="echo $PATH | tr ':' '\n'"
 
 alias resolve-conflicts="git diff --name-only | uniq | xargs nvim"
 alias rc='resolve-conflicts'
+alias rgc='rg --context'
 
 alias s='speedtest'
-alias scratch='nvim $HOME/scratch.md'
+alias scratch='nvim $HOME/Documents/rubberducks/scratch.md'
 alias sz="exec zsh"
 
-alias trigger-build='git commit --allow-empty -m "Trigger build" && git push'
+alias trigger-build='git commit --allow-empty -m "trigger build" && git push'
 
 alias v=nvim
 
