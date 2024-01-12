@@ -45,7 +45,7 @@ alias rc='resolve-conflicts'
 alias rubocopit="{ git diff --name-only; git diff --cached --name-only; } | sort -u | grep -v '^db/schema.rb$' | xargs rubocop -a"
 
 alias s='speedtest'
-alias scratch='$NEOVIM $HOME/scratch.md'
+alias scratch='$NEOVIM $HOME/Documents/rubberducks/scratch.md'
 alias sz="exec zsh"
 
 alias trigger-build='git commit --allow-empty -m "trigger build" && git push'
@@ -62,3 +62,5 @@ alias vn="$NEOVIM ~/.config/nvim/init.lua"
 alias xit="exit"
 
 alias yt='yarn test'
+
+alias vimv=$HOME/Development/vimv
