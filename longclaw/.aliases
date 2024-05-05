@@ -64,3 +64,5 @@ alias xit="exit"
 alias yt='yarn test'
 
 alias vimv=$HOME/Development/vimv
+
+alias meme=$HOME/Development/random-meme.sh

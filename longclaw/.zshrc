@@ -1,7 +1,5 @@
-autoload -U promptinit; promptinit
-prompt pure
-
 plugins=(
+  asdf
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -46,7 +44,7 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+source "$HOME/.asdf/asdf.sh"
 
 source /Users/phaedrus/.docker/init-zsh.sh || true # Added by Docker Desktop
 
@@ -60,3 +58,5 @@ if [ -f '/Users/phaedrus/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/phaedr
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(starship init zsh)"
