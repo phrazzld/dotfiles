@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias agent='eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_rsa'
 
 alias clear="clear && exec zsh"
@@ -38,7 +40,6 @@ alias nerdfetch="$DEVELOPMENT/nerdfetch"
 
 alias ponder="$DEVELOPMENT/ponder/target/release/ponder"
 alias p='$DEVELOPMENT/ponder/target/release/ponder'
-alias python='python3'
 
 alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
 alias rc='resolve-conflicts'
@@ -66,3 +67,6 @@ alias yt='yarn test'
 alias vimv=$HOME/Development/vimv
 
 alias meme=$HOME/Development/random-meme.sh
+
+alias brew="arch -x86_64 /usr/local/bin/brew"
+alias xasdf="arch -x86_64 asdf"

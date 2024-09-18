@@ -42,17 +42,6 @@ function unlock() {
     tar xzf $TARFILE
 }
 
-ALACRITTY_CONFIG="$DEVELOPMENT/dotfiles/alacritty.yml"
-ALACRITTY_THEME_PATH="/Users/phaedrus/Development/dotfiles/alacritty-themes"
-
-function golight() {
-    sed -i '' "s|^  - $ALACRITTY_THEME_PATH/.*|  - $ALACRITTY_THEME_PATH/rose-pine-dawn.yml|" $ALACRITTY_CONFIG
-}
-
-function godark() {
-    sed -i '' "s|^  - $ALACRITTY_THEME_PATH/.*|  - $ALACRITTY_THEME_PATH/rose-pine.yml|" $ALACRITTY_CONFIG
-}
-
 function random_quote() {
     # Path to the JSON file with quotes
     local json_file="$DEVELOPMENT/dotfiles/quotes.json"
@@ -78,8 +67,12 @@ function random_quote() {
     echo -e "$content\n-- $source"
 }
 
-function vrg() {
+function vrgi() {
     $NEOVIM $(rg -il "$1")
+}
+
+function vrg() {
+    $NEOVIM $(rg -l "$1")
 }
 
 function clear_port() {
@@ -142,4 +135,18 @@ function conventional_commit() {
 # open all modified files in the current working tree
 function modified() {
     git status --porcelain | awk '{print $2}' | xargs $EDITOR
+}
+
+function review-pr() {
+    # check if we have enough arguments
+    if [ $# -lt 3 ]; then
+        echo "Usage: review-pr <user> <repo> <pr-number>"
+        return 1
+    fi
+
+    local user=$1
+    local repo=$2
+    local pr_number=$3
+
+    $HOME/development/code-review-assistant/code-review-assistant $user/$repo $pr_number --github-token $GITHUB_PERSONAL_ACCESS_TOKEN --openai-key $OPENAI_API_KEY
 }
