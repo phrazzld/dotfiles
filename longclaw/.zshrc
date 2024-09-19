@@ -48,7 +48,8 @@ source "$HOME/.asdf/asdf.sh"
 
 source /Users/phaedrus/.docker/init-zsh.sh || true # Added by Docker Desktop
 
-random_quote
+# random_quote
+$HOME/development/display_random_quote.py
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
