@@ -31,7 +31,7 @@ alias gsl='git checkout stable && git pull'
 alias gu='git config --local --list | grep "user"'
 alias gm='modified'
 
-alias l="lsd --long --all"
+alias l="ls -lh --all"
 alias light="kitty +kitten themes --reload-in=all Rosé Pine Dawn"
 
 alias nerdfetch="$DEVELOPMENT/nerdfetch"
