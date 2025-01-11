@@ -31,7 +31,7 @@ alias gsl='git checkout stable && git pull'
 alias gu='git config --local --list | grep "user"'
 alias gm='modified'
 
-alias l="ls -lh --all"
+alias l="ls -lha"
 alias light="kitty +kitten themes --reload-in=all Rosé Pine Dawn"
 
 alias nerdfetch="$DEVELOPMENT/nerdfetch"
@@ -44,7 +44,7 @@ alias rc='resolve-conflicts'
 alias rubocopit="{ git diff --name-only; git diff --cached --name-only; } | sort -u | grep -v '^db/schema.rb$' | xargs rubocop -a"
 
 alias s='speedtest'
-alias scratch='$NEOVIM $HOME/Documents/rubberducks/scratch.md'
+# alias scratch='$NEOVIM $HOME/Documents/rubberducks/scratch.md'
 alias sz="exec zsh"
 
 alias trigger-build='git commit --allow-empty -m "trigger build" && git push'
