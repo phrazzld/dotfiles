@@ -1,25 +1,23 @@
 # CLAUDE.md - Dotfiles Repository Guide
 
 ## Commands
-- `python display_random_quote.py` - Display a random quote from indexed quotes
-- `python index_quotes.py` - Index quotes from Obsidian vault
-- `./handoff.sh file1 [file2 ...]` - Copy file contents to clipboard with formatting
+- `zsh -c "source ~/.zshrc"` - Reload shell configuration
 
 ## Code Style Guidelines
-- **Python**: Use PEP 8 style guide (4-space indentation, snake_case for variables/functions)
-- **Shell Scripts**: Use POSIX-compatible syntax when possible, with clear error handling
-- **Configuration Files**: Maintain consistent indentation (2 spaces for YAML)
-- **Error Handling**: Check for file existence and command availability before use
-- **Documentation**: Include usage information in script headers
+- **Shell**: Use POSIX-compatible syntax with `if [[ -n "$var" ]]; then` style conditionals
+- **Error Handling**: Check file existence (`-f`), command availability, and use error messages
+- **Functions**: Document with inline comments above each function
+- **Configuration Files**: Use 2-space indentation for YAML and consistent structure
+- **Git**: Use conventional commits (`feat:`, `fix:`, `docs:`, `style:`, `refactor:`)
 
 ## Repository Structure
-- Root directory contains utility scripts
-- `/zoboomafoo/` - Terminal configuration files
-  - `alacritty.yml` and themes
-  - `tmuxinator/` - Tmux session configurations
-- `/serenity/` - Additional configuration files
+- Root: Repository documentation and quotes.json
+- `/zoboomafoo/`: Terminal configuration files (.zshrc, .aliases, .env, .fun)
+- `/serenity/`: Kitty terminal configuration
+- `/aesthetics/`: UI theme documentation
 
 ## Best Practices
 - Keep scripts focused on single responsibilities
-- Check for required dependencies before executing
-- Support cross-platform functionality where possible
+- Use consistent error handling in shell functions
+- Check for dependencies before executing commands
+- Name functions descriptively and document their purpose
