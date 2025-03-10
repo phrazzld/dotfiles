@@ -48,9 +48,6 @@ source "$HOME/.asdf/asdf.sh"
 
 source /Users/phaedrus/.docker/init-zsh.sh || true # Added by Docker Desktop
 
-# random_quote
-# $HOME/development/sqlite_random_quote.py
-
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/phaedrus/.asdf/installs/nodejs/17.9.1/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/phaedrus/.asdf/installs/nodejs/17.9.1/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
@@ -59,7 +56,5 @@ if [ -f '/Users/phaedrus/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/phaedr
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/phaedrus/google-cloud-sdk/completion.zsh.inc'; fi
-
-unset MAILCHECK
 
 eval "$(starship init zsh)"

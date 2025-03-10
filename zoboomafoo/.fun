@@ -68,11 +68,11 @@ function random_quote() {
 }
 
 function vrgi() {
-    $NEOVIM $(rg -il "$1")
+    nvim $(rg -il "$1")
 }
 
 function vrg() {
-    $NEOVIM $(rg -l "$1")
+    nvim $(rg -l "$1")
 }
 
 function clear_port() {
