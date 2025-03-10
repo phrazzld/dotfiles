@@ -10,7 +10,7 @@ alias dev="cd $DEVELOPMENT"
 alias decompress='tar xzf'
 alias dev-chrome='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
 
-alias f='fzf --bind "enter:execute($NEOVIM {})"'
+alias f='fzf --bind "enter:execute(nvim {})"'
 
 alias g='git'
 alias gs='git status --short'
@@ -39,24 +39,20 @@ alias nerdfetch="$DEVELOPMENT/nerdfetch"
 alias ponder="$DEVELOPMENT/ponder/target/release/ponder"
 alias p='$DEVELOPMENT/ponder/target/release/ponder'
 
-alias resolve-conflicts="git diff --name-only | uniq | xargs $NEOVIM"
+alias resolve-conflicts="git diff --name-only | uniq | xargs nvim"
 alias rc='resolve-conflicts'
 alias rubocopit="{ git diff --name-only; git diff --cached --name-only; } | sort -u | grep -v '^db/schema.rb$' | xargs rubocop -a"
 
 alias s='speedtest'
-# alias scratch='$NEOVIM $HOME/Documents/rubberducks/scratch.md'
 alias sz="exec zsh"
 
 alias trigger-build='git commit --allow-empty -m "trigger build" && git push'
 alias t='tmux'
 alias tl='tmux ls'
-alias tx='tmuxinator'
-alias txs='tmuxinator start'
-alias txl='tmuxinator list'
 
-alias v=$NEOVIM
-alias vz="$NEOVIM ~/.zshrc"
-alias vn="$NEOVIM ~/.config/nvim/init.lua"
+alias v=nvim
+alias vz="nvim ~/.zshrc"
+alias vn="nvim ~/.config/nvim/init.lua"
 
 alias xit="exit"
 
@@ -68,3 +64,5 @@ alias meme=$HOME/Development/random-meme.sh
 
 alias brew="arch -x86_64 /usr/local/bin/brew"
 alias xasdf="arch -x86_64 asdf"
+
+alias vcc="v $HOME/Library/Application\ Support/Claude/claude_desktop_config.json"
