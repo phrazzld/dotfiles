@@ -15,7 +15,7 @@ source $HOME/.aliases
 
 # Environment-specific source files
 case "$HOSTNAME" in
-  "zoboomafoo")
+  *"zoboomafoo"*)
     # Work-specific configuration files
     source $HOME/.memre
     source $HOME/.secrets

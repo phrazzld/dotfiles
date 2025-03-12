@@ -107,7 +107,7 @@ function modified() {
 
 # Environment-specific functions
 case "$HOSTNAME" in
-  "zoboomafoo")
+  *"zoboomafoo"*)
     # Work-specific (zoboomafoo) functions
     
     # LastPass functions

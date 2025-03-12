@@ -42,7 +42,7 @@ alias vimv="$HOME/Development/vimv"
 
 # Environment-specific aliases
 case "$HOSTNAME" in
-  "zoboomafoo")
+  *"zoboomafoo"*)
     # Work-specific (zoboomafoo) aliases
     alias l="ls -lha"
     alias dark="kitty +kitten themes --reload-in=all Rosé Pine Moon"
