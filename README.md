@@ -12,6 +12,7 @@ This repository contains unified dotfiles that work across both personal (sereni
 - Shared `.aliases` with conditional loading based on environment
 - Common `.env` file with environment variables
 - Useful shell functions in `.fun`
+- Claude Code custom slash commands in `claude-commands/`
 
 ## Installation
 
@@ -28,7 +29,7 @@ cd ~/Development/dotfiles
 ./install.sh
 ```
 
-This will create symbolic links from your home directory to the dotfiles in this repository.
+This will create symbolic links from your home directory to the dotfiles in this repository and set up Claude Code custom slash commands.
 
 ## Environment Detection
 
@@ -42,6 +43,15 @@ esac
 ```
 
 Relevant configurations are then loaded conditionally.
+
+## Claude Code Commands
+
+Custom slash commands for Claude Code CLI are stored in the `claude-commands/` directory. These are automatically symlinked to `~/.claude/commands/` during installation. 
+
+Available commands:
+- `/clear-todos` - Execute tasks from a TODO list with structured implementation
+- `/fix-the-bug` - Systematic approach to bug diagnosis and fixing
+- `/ticket-the-plan` - Convert a plan document into structured, prioritized tasks
 
 ## License
 

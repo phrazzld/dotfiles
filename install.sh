@@ -31,8 +31,8 @@ backup_if_exists() {
   fi
 }
 
-# Setup Claude Code commands directory
-echo -e "${YELLOW}Setting up Claude Code commands...${RESET}"
+# Setup Claude Code custom slash commands directory
+echo -e "${YELLOW}Setting up Claude Code custom slash commands...${RESET}"
 # Backup existing claude commands if it's not a symlink
 if [ -d "$HOME/.claude/commands" ] && [ ! -L "$HOME/.claude/commands" ]; then
   backup_dir="$HOME/.claude/commands.bak.$(date +%Y%m%d%H%M%S)"
