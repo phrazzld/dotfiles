@@ -31,6 +31,20 @@ backup_if_exists() {
   fi
 }
 
+# Setup Claude Code commands directory
+echo -e "${YELLOW}Setting up Claude Code commands...${RESET}"
+# Backup existing claude commands if it's not a symlink
+if [ -d "$HOME/.claude/commands" ] && [ ! -L "$HOME/.claude/commands" ]; then
+  backup_dir="$HOME/.claude/commands.bak.$(date +%Y%m%d%H%M%S)"
+  echo -e "${YELLOW}Backing up $HOME/.claude/commands to $backup_dir${RESET}"
+  mv "$HOME/.claude/commands" "$backup_dir"
+fi
+
+# Ensure parent directory exists
+mkdir -p "$HOME/.claude"
+# Create symlink to the entire directory
+ln -sf "$DOTFILES_DIR/claude-commands" "$HOME/.claude/commands" && echo -e "${GREEN}✓ Claude commands directory${RESET}" || echo -e "${RED}✗ Claude commands directory${RESET}"
+
 # Reload shell
 echo -e "${GREEN}Installation complete!${RESET}"
 echo -e "${YELLOW}To apply changes immediately, run:${RESET}"
