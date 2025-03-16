@@ -23,6 +23,7 @@ Repeat explicitly for each distinct task.
 ```
 
 - Ensure every task is explicitly atomic (each can be implemented, tested, and verified independently).
+- Ensure every task can be completed in a terminal; e.g. do not include tasks such as "solicit user feedback" or "test implementation in multiple browsers".
 
 ## 2. Explicitly Prioritize Tasks
 - Think carefully about the optimal sequence:
@@ -33,9 +34,8 @@ Repeat explicitly for each distinct task.
 - If uncertainty or ambiguity arises during task decomposition, explicitly note this clearly and request clarification.
 - Document all assumptions explicitly made during ticketing clearly at the top of `TODO.md`.
 
-## 4. Verify and Summarize
+## 4. Verify
 - Explicitly cross-reference each task with `PLAN.md` to ensure comprehensive coverage.
-- Clearly summarize the total number of tasks and their priority distribution at the bottom of `TODO.md`.
 
 ## Example of Ticketed Task
 
