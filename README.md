@@ -29,7 +29,7 @@ This repository contains a unified configuration system that intelligently adapt
 Clone this repository to your development directory:
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/Development/dotfiles
+git clone https://github.com/phrazzld/dotfiles.git ~/Development/dotfiles
 ```
 
 Install configuration files and commands:
