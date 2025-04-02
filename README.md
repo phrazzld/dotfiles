@@ -1,39 +1,73 @@
-# Unified Dotfiles
+# dotfiles
 
-A consolidated collection of ZSH configuration, environment variables, aliases, and shell functions that work across multiple systems.
+A comprehensive dotfiles repository with adaptive configurations, AI prompt templates, and productivity tools that seamlessly work across multiple environments.
 
 ## Overview
 
-This repository contains unified dotfiles that work across both personal (serenity) and work (zoboomafoo) environments. The configuration adapts automatically based on the hostname or available tools.
+This repository contains a unified configuration system that intelligently adapts between personal (serenity) and work (zoboomafoo) environments through hostname detection. It serves as a single source of truth for shell configuration, AI prompts, and development workflows.
 
 ## Features
 
-- Unified `.zshrc` with environment-specific settings
-- Shared `.aliases` with conditional loading based on environment
-- Common `.env` file with environment variables
-- Useful shell functions in `.fun`
-- Claude Code custom slash commands in `claude-commands/`
+- **Environment-Aware Configuration**
+  - Unified `.zshrc` with dynamic environment detection
+  - Conditional `.aliases` that load appropriate commands per environment
+  - Shared `.env` file with common environment variables
+  - Utility functions in `.fun` for daily development tasks
+
+- **AI Tools & Templates**
+  - Claude Code custom slash commands for structured development workflows
+  - Curated collection of prompt templates for various AI assistants
+  - UI/UX aesthetic reference files for design consistency
+
+- **Best Practices**
+  - Documented coding standards and shell scripting patterns
+  - Conventional commit formatting and structured git workflows
+  - Consistent style guides across configuration files
 
 ## Installation
 
-Clone this repository to your home directory:
+Clone this repository to your development directory:
 
 ```bash
 git clone https://github.com/yourusername/dotfiles.git ~/Development/dotfiles
 ```
 
-Install by running:
+Install configuration files and commands:
 
 ```bash
 cd ~/Development/dotfiles
 ./install.sh
 ```
 
-This will create symbolic links from your home directory to the dotfiles in this repository and set up Claude Code custom slash commands.
+This creates symbolic links from your home directory to the dotfiles and sets up Claude Code slash commands.
+
+## Repository Structure
+
+- **Root**: Main configuration files (`.zshrc`, `.aliases`, `.env`, `.fun`) and documentation
+- **`/claude-commands/`**: Structured workflow commands for Claude Code CLI
+- **`/prompts/`**: Templates for ChatGPT, Claude, and other AI assistants
+- **`/aesthetics/`**: UI theme and design pattern documentation
+- **`/zoboomafoo/` & `/serenity/`**: Environment-specific reference files
+
+## Claude Code Commands
+
+The repository includes a suite of slash commands for Claude Code that enable structured software development workflows:
+
+- `/architect` - Generate technical plans for features or problems
+- `/audit` - Create security audit documentation for codebases
+- `/consult` - Document problems and request architectural assistance
+- `/debug` - Structured approach to diagnosing and fixing bugs
+- `/execute` - Implement tasks from TODO lists with best practices
+- `/plan` - Create detailed technical plans for backlog items
+- `/prime` - Gather context from key repository files
+- `/push` - Quality assurance steps before committing code
+- `/refactor` - Create structured plans for improving code quality
+- `/review` - Establish code review processes and documentation
+- `/ticket` - Convert plans into prioritized task tickets
 
 ## Environment Detection
 
-The configuration automatically detects which environment it's running in using hostname checks:
+Configuration files adapt to different environments using hostname detection:
 
 ```bash
 case "$(hostname)" in
@@ -41,17 +75,6 @@ case "$(hostname)" in
   zoboomafoo) IS_ZOBOOMAFOO=1 ;;
 esac
 ```
-
-Relevant configurations are then loaded conditionally.
-
-## Claude Code Commands
-
-Custom slash commands for Claude Code CLI are stored in the `claude-commands/` directory. These are automatically symlinked to `~/.claude/commands/` during installation. 
-
-Available commands:
-- `/clear-todos` - Execute tasks from a TODO list with structured implementation
-- `/fix-the-bug` - Systematic approach to bug diagnosis and fixing
-- `/ticket-the-plan` - Convert a plan document into structured, prioritized tasks
 
 ## License
 
