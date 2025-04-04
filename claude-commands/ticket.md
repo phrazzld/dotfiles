@@ -1,10 +1,10 @@
 # TICKET
 
-1. **Review PLAN.md**
+## 1. REVIEW PLAN.MD
 - Identify features, dependencies, and acceptance criteria
 - Note assumptions or unclear points
 
-2. **Build TODO.md**
+## 2. BUILD TODO.MD
 - Use this format:
 ```
 # TODO
@@ -15,13 +15,14 @@
   - Dependencies: List tasks or requirements
   - Priority: High, medium, low
 ```
+- Think hard
 - Keep tasks as atomic and narrowly scoped as possible
 
-3. **Prioritize**
+## 3. PRIORITIZE
 - Order tasks by priority and dependencies
 
-4. **Clarify**
+## 4. CLARIFY
 - Document assumptions and seek clarification if needed
 
-5. **Validate**
+## 5. VALIDATE
 - Ensure all PLAN.md requirements are covered

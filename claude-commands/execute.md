@@ -5,13 +5,16 @@
 
 ## 2. PLAN
 - Summarize the task
+- Think hard about the best way to complete this task
 - Outline approach
 - Justify your strategy
 
-## 3. WRITE EMPTY TESTS
+## 3. WRITE EMPTY TESTS (IF APPLICABLE)
+- Think hard about the observable effects we want to verify and the ideal set of tests that support this task
 - Write test assertions that the completion of this task should satisfy
 - All of the functionality we need to achieve with this task should be clear from the test assertions
 - Remember: Describe the observable effect to verify, **not** the method by which it's achieved!
+- Note: In some cases, such as strict refactors, this and other testing steps won't apply
 
 ## 4. IMPLEMENT A FAILING TEST
 - Implement one of the empty tests you wrote

@@ -8,6 +8,7 @@
 - Ensure that the context size is within the model's token limit
 - If so, run `architect --task "<task>" ./`
 - Otherwise, find the top ten most relevant files for this task's context and run `architect --task "<task>" <file paths>`
+- Note: assume the GEMINI_API_KEY is set
 
 ## 3. VALIDATE
 - Review the generated `PLAN.md` to ensure it:
