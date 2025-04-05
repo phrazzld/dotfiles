@@ -1,39 +1,58 @@
-# AUDIT
+# AUDIT: AI-Assisted Security Review
 
-## 1. Initialize Audit Document
-- Create SECURITY_AUDIT.md to log findings, hypotheses, and areas for deeper investigation.
+## 1. Initialize Audit Workspace
+- **Goal:** Set up documentation for tracking the audit process and findings.
+- **Actions:**
+    - Create `SECURITY_AUDIT.md`. Populate with initial sections: `Audit Scope & Goals`, `Methodology Notes`, `Exploratory Findings Log`, `Deep Dive Analysis Log`.
+    - Create `SECURITY_PLAN.md`. Populate with initial sections: `Executive Summary`, `Detailed Findings and Recommendations`.
+    - Add both `SECURITY_AUDIT.md` and `SECURITY_PLAN.md` to Git tracking (`git add`).
 
-## 2. Exploratory Review
-- Systematically investigate codebase for potential issues:
-  - Authentication & authorization logic.
-  - Input handling, validation, and sanitization.
-  - Session management, cookies, and tokens.
-  - Data encryption (in transit/at rest).
-  - Error handling and sensitive data exposure.
-  - Third-party libraries and dependencies.
-  - Infrastructure and configuration files.
-  - Known security anti-patterns (OWASP Top 10).
-  - Other potential security issues discovered during exploration.
+## 2. Systematic Exploratory Review
+- **Goal:** Broadly scan the codebase and related artifacts for potential security weaknesses using defined strategies.
+- **Methodology:** Employ multiple techniques. Log approach notes in `SECURITY_AUDIT.MD` under `Methodology Notes`. Examples:
+    - **Keyword Search:** Search for known dangerous functions, common misconfigurations, TODOs related to security.
+    - **Data Flow Analysis:** Trace handling of external inputs (HTTP requests, user input fields, API calls) through validation, processing, and storage/output.
+    - **Component Review:** Examine files related to specific security areas:
+        - Authentication & Authorization (Login, Roles, Permissions)
+        - Session Management (Cookies, Tokens, Lifecycles)
+        - Input Validation/Sanitization (API endpoints, Forms, DB queries)
+        - Cryptography (Encryption methods, Key management)
+        - Error Handling & Logging (Sensitive data exposure)
+        - Dependencies (Check known vulnerabilities in third-party libraries using available tools like `npm audit`, `pip check`, etc.)
+        - Configuration (Secrets management, Security headers, Infrastructure-as-Code files)
+    - **Pattern Recognition:** Look for known anti-patterns (e.g., Hardcoded secrets, SQL injection vulnerabilities, XSS possibilities, insecure defaults) informed by OWASP Top 10.
+- **Action:** As potential issues or areas needing deeper review are identified, log them immediately under `Exploratory Findings Log` in `SECURITY_AUDIT.md` including: brief description, file path(s), line number(s), initial thoughts.
 
-## 3. Document Progressively
-- In SECURITY_AUDIT.md, continuously log:
-  - Potential vulnerabilities or security concerns.
-  - Code snippets and affected components.
-  - Initial severity estimations.
-  - Areas flagged for deeper analysis.
+## 3. Deep-Dive Analysis & Verification
+- **Goal:** Investigate promising leads from the exploratory review to confirm vulnerabilities and assess potential impact.
+- **Actions:**
+    - Prioritize findings from the `Exploratory Findings Log` based on likely impact or ease of confirmation.
+    - For each prioritized item:
+        - ***Think hard***: Conduct focused code review and logical analysis to understand the potential vulnerability in detail.
+        - **Use Available Tools:** Employ any configured security tools (SAST scanners, dependency checkers) to analyze the relevant code sections or dependencies.
+        - **Document Analysis:** Record detailed findings, supporting evidence (code snippets, tool output), impact assessment (e.g., potential for data exposure, unauthorized access, DoS), and confidence level under `Deep Dive Analysis Log` in `SECURITY_AUDIT.MD`.
+        - **Severity Estimation:** Assign a preliminary severity (Low, Medium, High) based on potential impact, noting that this requires human validation.
 
-## 4. Deep-Dive Analysis
-- For promising leads:
-  - Conduct focused, detailed code inspection.
-  - Verify risks through logical analysis or available tooling.
-  - Update SECURITY_AUDIT.md with confirmed findings, impact assessments, and evidence.
+## 4. Synthesize Action Plan (`SECURITY_PLAN.MD`)
+- **Goal:** Translate confirmed findings from the deep-dive analysis into a structured, actionable remediation plan.
+- **Actions:**
+    - Populate the `Detailed Findings and Recommendations` section of `SECURITY_PLAN.MD`. For *each confirmed finding* from Step 3, create an entry with:
+        - `**Finding:**` [Clear description of the vulnerability]
+        - `**Location:**` [File(s) and line number(s)]
+        - `**Evidence:**` [Supporting code snippets or tool output summary]
+        - `**Impact Assessment:**` [Explanation of potential negative consequences]
+        - `**Preliminary Severity:**` [Low/Medium/High]
+        - `**Recommended Action:**` [***Think hard*** to propose specific technical steps for remediation. Suggest secure patterns or code examples where applicable. Frame these as recommendations requiring review.]
+        - `**Verification Steps:**` [How to confirm the fix is effective]
+    - Write a brief `Executive Summary` at the beginning of `SECURITY_PLAN.MD` highlighting the most critical findings and overall security posture observed.
 
-## 5. Synthesize Action Plan
-- Convert findings into a technical action plan (PLAN.md) including:
-  - Clearly defined issues and their impacts.
-  - Detailed technical steps for resolution.
-  - Recommended secure patterns or example fixes.
-  - Acceptance criteria and verification procedures.
-
-## 6. Finalize
-- Commit PLAN.md summarizing vulnerabilities, required actions, and detailed implementation strategy.
+## 5. Finalize and Commit
+- **Goal:** Save the completed audit documentation to version control.
+- **Actions:**
+    - Ensure both `SECURITY_AUDIT.MD` (containing the detailed logs) and `SECURITY_PLAN.MD` (containing the synthesized plan) are saved with the latest information.
+    - Stage both files (`git add SECURITY_AUDIT.MD SECURITY_PLAN.MD`).
+    - Review the staged changes (`git diff --staged`).
+    - Commit using the **Conventional Commits** format:
+        - `chore(security): Conduct security audit and generate remediation plan`
+        - Include a brief summary in the commit body if desired (e.g., "Audit identified X high, Y medium, Z low severity preliminary findings. See SECURITY_PLAN.md for details.").
+    - Report "Security audit and plan committed successfully."
