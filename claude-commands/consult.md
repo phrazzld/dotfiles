@@ -3,43 +3,45 @@
 - **Goal:** Clearly articulate the problem or need for guidance in a dedicated file.
 - **Actions:**
     - Create a new file named `CONSULT-REQUEST.md`.
-    - ***Think hard*** and populate this file with the following details:
-        - **`Goal:`** What were you originally trying to achieve? (Reference original task/plan if applicable).
-        - **`Problem/Blocker:`** Describe the specific issue you're facing or the guidance needed.
-        - **`Context/History:`** What steps have you taken so far? What have you tried? (Reference `<task>-PLAN.md`, `BUGFIXPLAN.md`, etc., if relevant).
-        - **`Key Files/Code Sections:`** Mention specific files or code areas involved.
-        - **`Error Messages (if any):`** Include relevant error output.
-        - **`Desired Outcome:`** What would a successful resolution or plan look like?
+    - ***Think hard*** and populate this file with:
+        - **`Goal:`** Original objective (Reference task/plan).
+        - **`Problem/Blocker:`** Specific issue. **If related to testing, explain why it violates `TESTING_PHILOSOPHY.MD` (e.g., "Requires extensive mocking of internal component X," "Cannot test behavior without fragile implementation coupling").**
+        - **`Context/History:`** Steps taken, attempts made (Reference `*-PLAN.md`, `BUGFIXPLAN.md`, etc.).
+        - **`Key Files/Code Sections:`** Specific code areas involved.
+        - **`Error Messages (if any):`** Relevant output.
+        - **`Desired Outcome:`** What would success look like? (e.g., "A simpler testing strategy," "A refactoring suggestion to improve testability," "A way to achieve goal X without violating Y").
 
 ## 2. Identify Context Files/Directories
-- **Goal:** Determine the necessary project context to provide to the Architect tool.
+- **Goal:** Determine necessary project context for `thinktank`.
 - **Actions:**
-    - Review `CONSULT-REQUEST.md` and identify all explicitly mentioned files or directories.
-    - Analyze the code paths related to the problem area.
-    - Consider including parent directories to provide broader context if appropriate.
-    - ***Think carefully*** to select a set of existing file and/or directory paths that give the Architect sufficient context without being excessive. Create a list of these paths.
+    - Review `CONSULT-REQUEST.md` and identify mentioned files/directories.
+    - Include relevant code paths, potentially parent directories.
+    - **Include `TESTING_PHILOSOPHY.MD` if the request involves testing.**
+    - ***Think carefully*** to select sufficient context. Create a list of paths.
 
-## 3. Invoke Architect CLI
-- **Goal:** Request assistance from the Architect tool, providing the formulated request and context.
+## 3. Invoke Thinktank CLI
+- **Goal:** Request assistance via `thinktank`.
 - **Actions:**
-    - **Construct Command:** Prepare the `architect` CLI command as follows:
+    - **Construct Command:**
         ```bash
-        architect --task-file CONSULT-REQUEST.md --output ARCHITECT-PLAN.md --verbose <path1> [path2...]
+        thinktank run --group faves CONSULT-REQUEST.md <path1> [path2...]
         ```
-        - Replace `<path1> [path2...]` with the list of context file/directory paths identified in Step 2.
-    - **(Optional Safety Check):** Consider running first with the `--dry-run` flag to verify the context files and estimated token count.
-    - **Execute Command:** Run the constructed `architect` CLI command.
-    - **Handle Errors:** If the command fails (e.g., CLI error, API error, file not found):
-        - Report the specific error message received from the CLI.
-        - Analyze the error. If it's correctable (e.g., typo in path, missing file), attempt to fix the command and retry **once**.
-        - If it fails again or is uncorrectable, report "Architect CLI invocation failed. See error above. Manual assistance required." and **stop**.
-    - **Confirm Success:** If the command completes successfully, it should create `ARCHITECT-PLAN.md`. Report "Architect CLI invocation successful. Received ARCHITECT-PLAN.md."
+        (Replace paths with list from Step 2).
+    - **Execute Command:** Run it.
+    - **Handle Errors:** Report errors, attempt **one** retry if fixable, report failure and stop if unresolvable.
+    - **Identify Output Directory:** Report success and output path.
 
-## 4. Process Architect's Response
-- **Goal:** Understand and execute the plan provided by the Architect.
+## 4. Synthesize Architect's Response (`CONSULTANT-PLAN.md`)
+- **Goal:** Understand and synthesize LLM responses into a single plan.
 - **Actions:**
-    - Carefully read the generated `ARCHITECT-PLAN.md`.
-    - Acknowledge receipt and understanding (e.g., "Initiating execution of ARCHITECT-PLAN.md.").
-    - **Execute the Plan:** Treat `ARCHITECT-PLAN.md` as the primary plan for resolving the consulted issue. If it contains actionable tasks similar to those in `TODO.MD`, use the standard `EXECUTE.MD` process for each task outlined within `ARCHITECT-PLAN.md`. This plan supersedes previous plans *for this specific issue*.
-    - Continue working through the `ARCHITECT-PLAN.md` tasks until the original problem (from Step 1) is resolved or the plan is completed.
-    - **(Optional Cleanup):** Once the Architect's plan is successfully completed and the issue resolved, consider removing the `CONSULT-REQUEST.md` and `ARCHITECT-PLAN.md` files (or archiving them appropriately).
+    - Read all model responses in the output directory.
+    - **Synthesize Plan:** ***Think hard*** to create a coherent plan from insights, solutions, and steps. **If related to testing, ensure the synthesized plan aligns with `TESTING_PHILOSOPHY.MD`.**
+    - Save synthesized plan to `CONSULTANT-PLAN.md`.
+
+## 5. Process Synthesized Plan
+- **Goal:** Execute the synthesized plan to resolve the original issue.
+- **Actions:**
+    - Read `CONSULTANT-PLAN.md`. Acknowledge receipt.
+    - **Execute Plan:** Treat `CONSULTANT-PLAN.md` as the primary plan for this issue. Use standard `EXECUTE.MD` process for tasks within it if structured similarly. This supersedes previous plans *for this issue*.
+    - Continue until resolved or plan completed.
+    - (Optional Cleanup): Remove/archive `CONSULT-REQUEST.md`, `CONSULTANT-PLAN.md`.

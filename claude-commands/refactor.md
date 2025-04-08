@@ -28,12 +28,12 @@ The plan should include:
 - Any open questions or areas that need further clarification before proceeding.
 ```
 
-## 2. Run architect with the task file
+## 2. Run thinktank with the task file
 
 Run the following command from the project root:
 
 ```bash
-architect --task-file task.md --output REFACTOR_PLAN.md ./
+thinktank run --group faves task.md ./
 ```
 
 This will analyze the codebase and generate a refactor plan in `REFACTOR_PLAN.md`.

@@ -8,22 +8,35 @@ Create a new file called diff.md.
 
 At the top of the file, add the following markdown:
 ```markdown
-# Code Review
-- Review the diff, report on issues, bugs, and improvements.
-- End with a concise markdown table of any issues found, their solutions, and a risk assessment for each issue if applicable
+# Code Review Request
+
+## Context
+- Review the following code changes (`git diff` against master branch).
+- **Reference `TESTING_PHILOSOPHY.MD` as a critical standard, especially for test code.**
+
+## Review Goals
+- Identify potential bugs, logical errors, or deviations from requirements.
+- Assess code quality (readability, maintainability, adherence to project standards).
+- **Critically evaluate tests:** Are they simple, effective, and robust? Do they follow `TESTING_PHILOSOPHY.MD`? Do they use excessive mocking? Are they testing behavior or implementation? Suggest specific improvements.
+- Suggest improvements for clarity, efficiency, or adherence to best practices.
+- Assess potential risks.
+
+## Report Format
+- Provide detailed feedback on specific issues found.
+- Conclude with a concise markdown table summarizing:
+    - Issue Description
+    - Location (File:Line)
+    - Suggested Solution / Improvement
+    - Risk Assessment (Low/Medium/High, if applicable)
 
 ## Diff
-
 ```
 
-## 2. Run `git diff` and append to diff.md
+# 2. Run git diff and append to diff.md
+Run git diff against the master branch (or relevant base branch) and append the results to diff.md.
 
-Run `git diff` against the master branch and append the results to diff.md.
+# 3. Ask thinktank to run the code review.
+Run thinktank run --group faves diff.md ./ (include ./ or relevant context files if needed for broader analysis). Note the output directory for their reviews.
 
-## 3. Ask thinktank to run the code review.
-
-Use the `thinktank` cli's default group and the diff.md file as the prompt. Specify the output directory for their reviews.
-
-## 4. Read the reviews.
-
-Go to the output directory created by the thinktank invocation and read each of the code reviews. Think hard about each of their key points and the most important findings and comments from each. Then synthesize them into one new top-level CODE_REVIEW.md file.
+# 4. Synthesize Code Review (CODE_REVIEW.MD)
+Go to the output directory created by thinktank. Read each review. Think hard to synthesize the most important findings, comments, and especially critiques related to test quality and adherence to TESTING_PHILOSOPHY.MD. Create a single, consolidated CODE_REVIEW.MD file summarizing the findings and actionable recommendations, including the summary table requested in the prompt.

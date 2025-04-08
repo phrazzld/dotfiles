@@ -3,43 +3,68 @@
 - **Goal:** Choose the next appropriate task to work on from `TODO.MD`.
 - **Action:** Scan `TODO.MD` for tasks marked `[ ]` (incomplete). Select the first task found whose prerequisites listed in its `Depends On:` field are already marked `[x]` (complete) or are 'None'. Record the exact Task Title.
 
-## 2. PLAN APPROACH
-- **Goal:** Understand the task, determine the best implementation strategy, and document it.
+## 2. PREPARE TASK PROMPT (for Implementation Plan)
+- **Goal:** Create a dedicated prompt file detailing the task for `thinktank` to generate implementation approaches.
 - **Actions:**
-    - **Analyze:** Re-read the selected task details (Action, AC Ref, Depends On) from `TODO.MD`.
-    - **Brainstorm:** ***Think hard*** about potential approaches (2-3) to implement the functionality. Consider trade-offs (simplicity, performance, maintainability, alignment with existing patterns).
-    - **Select:** ***Think hard*** to select the most suitable approach and document the reasoning for your choice.
-    - **Filename:** Sanitize the exact Task Title recorded in Step 1 to create a valid filename (e.g., lowercase, replace spaces and special characters with hyphens). Append `-PLAN.md` to this sanitized string.
-    - **Document:** Create and write the following to the new `<sanitized-task-title>-PLAN.md` file:
-        - The original Task Title.
-        - A brief summary of the task's goal.
-        - A short description of the chosen implementation approach.
-        - Key reasoning behind selecting this approach over alternatives.
+    - **Filename:** Sanitize Task Title -> `<sanitized-task-title>-TASK.md`.
+    - **Analyze:** Re-read task details (Action, AC Ref, Depends On) from `TODO.MD` and the relevant section in `PLAN.MD`.
+    - **Document Prompt:** Create `<sanitized-task-title>-TASK.md` with task details and a request for 2-3 implementation approaches, including pros/cons, and a recommended approach considering project standards and **testability principles from TESTING_PHILOSOPHY.MD**. (Similar structure to the prompt in the previous version of execute.md).
 
-## 3. WRITE FAILING TESTS (IF APPLICABLE)
-- **Goal:** Define the expected *happy path* behavior via tests before implementing the code.
+## 3. GENERATE APPROACHES WITH THINKTANK
+- **Goal:** Use `thinktank` to generate potential implementation approaches based on the task prompt and project context.
 - **Actions:**
-    - Consult the task requirements (`AC Ref:` in `TODO.MD`) and the plan (`<sanitized-task-title>-PLAN.md`).
-    - ***Think hard*** about the primary successful outcome (the "happy path") for this task.
-    - Write the minimum number of simple tests required to verify this core happy path functionality.
-    - If obvious and critical edge cases were identified during planning, consider adding minimal tests for those *after* the happy path is covered.
-    - Ensure these tests currently fail (as the functionality isn't implemented yet).
-- **Guidance:** Test *behavior/outcomes*, not implementation details. Skip this step entirely if the task isn't directly testable (e.g., documentation updates, refactoring with no behavioral change).
+    - Run `thinktank run --group faves <sanitized-task-title>-TASK.md ./` (with context error handling as in `plan.md`).
+    - Identify output directory. Report success/failure. Stop on unresolvable errors.
 
-## 4. IMPLEMENT FUNCTIONALITY
-- **Goal:** Write the code to satisfy the task requirements according to the plan and make the tests pass.
+## 4. SYNTHESIZE IMPLEMENTATION PLAN
+- **Goal:** Consolidate `thinktank` suggestions into a single, chosen implementation plan, prioritizing testability.
 - **Actions:**
-    - **Consult Standards:** Locate and review project documentation regarding coding standards (e.g., `CONTRIBUTING.MD`, `STYLEGUIDE.MD`, or other relevant files).
-    - **Write Code:** Implement the functionality based on the chosen approach documented in `<sanitized-task-title>-PLAN.md`.
-    - **Adhere Strictly:** Ensure the code rigorously follows the project's coding standards, patterns, and conventions identified above.
-- **Guidance:** Focus on clean, readable, and maintainable code that directly addresses the task requirements and passes the tests written in Step 3.
+    - Read all `thinktank` responses from the output directory.
+    - **Synthesize & Select:** ***Think hard*** to analyze suggestions. Select the most suitable approach, **strongly prioritizing testability and maintainability according to TESTING_PHILOSOPHY.MD**.
+    - **Filename:** Create `<sanitized-task-title>-PLAN.md`.
+    - **Document Plan:** Record Task Title, goal, chosen approach, and **explicit reasoning for the choice, highlighting testability considerations.**
+    - (Optional Cleanup): Remove `<sanitized-task-title>-TASK.md`.
 
-## 5. FINALIZE & COMMIT
-- **Goal:** Ensure the work is complete, integrated correctly, adheres to quality checks, and is recorded.
+## 5. IMPLEMENT FUNCTIONALITY
+- **Goal:** Write the code to satisfy the task requirements according to the synthesized implementation plan.
 - **Actions:**
-    - **Run Checks & Fix:** Execute linting, building, and testing processes. If *any* warnings or errors occur, you *must* debug the code and fix the issues. Repeat the checks until they all pass cleanly. Only report failure and stop if you are completely unable to resolve an issue after diligent attempts.
-    - **Mark Complete:** Modify the corresponding task line in `TODO.MD` by changing `[ ]` to `[x]`.
+    - **Consult Standards:** Review `CONTRIBUTING.MD`, `BEST_PRACTICES.MD`, `STYLEGUIDE.MD`, etc.
+    - **Write Code:** Implement the functionality based on `<sanitized-task-title>-PLAN.md`.
+    - **Adhere Strictly:** Follow project standards and the chosen plan.
+- **Guidance:** Focus on clean, readable code that directly addresses requirements.
+
+## 6. TESTABILITY REVIEW & REFACTOR (Inline)
+- **Goal:** Ensure the newly written code is testable according to `TESTING_PHILOSOPHY.MD` *before* writing tests.
+- **Actions:**
+    - **Review Code:** Analyze the code files just modified for Step 5.
+    - **Assess Testability:** ***Think hard*** and evaluate: "Based on `TESTING_PHILOSOPHY.MD`, can this code be tested simply? Does it require complex setup or extensive mocking (especially of internal components)?"
+    - **Identify Refactors:** If testability is poor (e.g., requires heavy mocking), identify the **minimal necessary refactoring** within the implemented code to improve its testability (e.g., extracting a pure function, improving separation of concerns, introducing an interface for an external dependency).
+    - **Perform Refactor (if needed):** Apply the identified minimal refactoring changes.
+    - **Document (if refactored):** Briefly note the testability refactor performed in `<sanitized-task-title>-PLAN.md` or as code comments.
+
+## 7. WRITE FAILING TESTS
+- **Goal:** Define expected behavior via tests, adhering strictly to the testing philosophy.
+- **Actions:**
+    - **Consult Plan & Philosophy:** Review task requirements (`AC Ref:`, `<sanitized-task-title>-PLAN.md`) and **strictly adhere to `TESTING_PHILOSOPHY.MD`**.
+    - **Write Happy Path Tests:** Write the minimum tests needed to verify the core *behavior* for the happy path, focusing on the public interface. **Prioritize tests that avoid mocking internal components.**
+    - **Write Critical Edge Case Tests:** Add tests for important error conditions or edge cases identified.
+    - **Verify Test Simplicity:** ***Think hard*** - "Are these tests simple? Do they avoid complex setup? Do they rely on mocking internal code? If yes, revisit Step 6 or the test approach itself."
+    - Ensure tests currently fail (as appropriate for TDD/BDD style).
+- **Guidance:** Test *behavior*, not implementation. **Aggressively avoid unnecessary mocks.** If mocking seems unavoidable for internal logic, it's a failure signal.
+
+## 8. RUN IMPLEMENTATION & TESTS
+- **Goal:** Make the implementation code pass the newly written tests.
+- **Actions:**
+    - Run the code and tests.
+    - Debug and modify the *implementation code* (from Step 5/6) until all tests written in Step 7 pass.
+    - **Do NOT modify tests to make them pass unless the test itself was flawed.**
+
+## 9. FINALIZE & COMMIT
+- **Goal:** Ensure work is complete, passes all checks, and is recorded.
+- **Actions:**
+    - **Run Checks & Fix:** Execute linting, building, and the **full test suite**. Fix *any* code issues causing failures.
+    - **Mark Complete:** Update `TODO.MD`: `[ ]` -> `[x]`.
     - **Commit Changes:**
-        - Stage all relevant changed/new files, including the new `<sanitized-task-title>-PLAN.md` file and the code/test changes (`git add`). Review the diff (`git diff --staged`) to ensure correctness and adherence to standards.
-        - Create a commit message using the Conventional Commits specification (`type(scope): subject`). The `type` must accurately reflect the work (e.g., `feat`, `fix`, `refactor`, `test`, `chore`, `docs`). The description should clearly state what was accomplished. Reference the related task if helpful (e.g., in the commit body).
-        - Execute the commit (`git commit`). If the commit itself fails (e.g., hooks), attempt to resolve the issue or report the specific error and stop.
+        - Stage *all* relevant changed/new files (`<sanitized-task-title>-PLAN.md`, implementation code, test code, refactored code). Review diff (`git diff --staged`).
+        - Use Conventional Commits (`type(scope): subject`). Include brief description of any inline testability refactors in the commit body if applicable. Reference the task.
+        - Execute `git commit`. Handle hooks/errors. Report success or failure.
