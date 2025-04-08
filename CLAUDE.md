@@ -19,8 +19,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Root: Documentation and installation script
 - `/dotfiles/`: Configuration files (.zshrc, .aliases, .env, .fun)
 - `/claude-commands/`: Custom Claude Code slash commands
-- `/aesthetics/`: UI theme documentation (deleted)
-- `/prompts/`: AI prompt templates (deleted)
+- `/docs/`: Documentation on best practices and testing philosophy
+- `/professional/`: Professional documents like CV and resume
 
 ## Environment Detection
 ```bash

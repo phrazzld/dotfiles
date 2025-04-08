@@ -16,8 +16,6 @@ This repository contains a unified configuration system that intelligently adapt
 
 - **AI Tools & Templates**
   - Claude Code custom slash commands for structured development workflows
-  - Curated collection of prompt templates for various AI assistants
-  - UI/UX aesthetic reference files for design consistency
 
 - **Best Practices**
   - Documented coding standards and shell scripting patterns
@@ -46,8 +44,8 @@ This creates symbolic links from your home directory to the configuration files 
 - **Root**: Documentation and installation script
 - **`/dotfiles/`**: Configuration files (`.zshrc`, `.aliases`, `.env`, `.fun`)
 - **`/claude-commands/`**: Structured workflow commands for Claude Code CLI
-- **`/prompts/`**: Templates for ChatGPT, Claude, and other AI assistants (deleted)
-- **`/aesthetics/`**: UI theme and design pattern documentation (deleted)
+- **`/docs/`**: Documentation on best practices and testing philosophy
+- **`/professional/`**: Professional documents like CV and resume
 
 ## Claude Code Commands
 
