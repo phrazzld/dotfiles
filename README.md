@@ -1,6 +1,6 @@
-# dotfiles
+# codex
 
-A comprehensive dotfiles repository with adaptive configurations, AI prompt templates, and productivity tools that seamlessly work across multiple environments.
+A comprehensive configuration repository with adaptive configurations, AI prompt templates, and productivity tools that seamlessly work across multiple environments.
 
 ## Overview
 
@@ -29,25 +29,25 @@ This repository contains a unified configuration system that intelligently adapt
 Clone this repository to your development directory:
 
 ```bash
-git clone https://github.com/phrazzld/dotfiles.git ~/Development/dotfiles
+git clone https://github.com/phrazzld/codex.git ~/Development/codex
 ```
 
 Install configuration files and commands:
 
 ```bash
-cd ~/Development/dotfiles
+cd ~/Development/codex
 ./install.sh
 ```
 
-This creates symbolic links from your home directory to the dotfiles and sets up Claude Code slash commands.
+This creates symbolic links from your home directory to the configuration files and sets up Claude Code slash commands.
 
 ## Repository Structure
 
-- **Root**: Main configuration files (`.zshrc`, `.aliases`, `.env`, `.fun`) and documentation
+- **Root**: Documentation and installation script
+- **`/dotfiles/`**: Configuration files (`.zshrc`, `.aliases`, `.env`, `.fun`)
 - **`/claude-commands/`**: Structured workflow commands for Claude Code CLI
-- **`/prompts/`**: Templates for ChatGPT, Claude, and other AI assistants
-- **`/aesthetics/`**: UI theme and design pattern documentation
-- **`/zoboomafoo/` & `/serenity/`**: Environment-specific reference files
+- **`/prompts/`**: Templates for ChatGPT, Claude, and other AI assistants (deleted)
+- **`/aesthetics/`**: UI theme and design pattern documentation (deleted)
 
 ## Claude Code Commands
 

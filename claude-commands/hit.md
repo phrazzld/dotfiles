@@ -1,4 +1,4 @@
-# QUICK EXECUTE
+# HIT
 
 ## 1. SELECT TASK
 

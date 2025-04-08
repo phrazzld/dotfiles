@@ -10,31 +10,6 @@ function timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-function random_quote() {
-  # Path to the JSON file with quotes
-  local json_file="$HOME/Development/dotfiles/quotes.json"
-
-  # Check if the file exists and is readable
-  if [[ ! -r $json_file ]]; then
-    echo "Unable to read the quotes file: $json_file" >&2
-    return 1
-  fi
-
-  # Use jq to extract the quotes and randomly select one
-  local selected_quote
-  selected_quote=$(jq -c '.quotes[]' "$json_file" | shuf -n 1) || {
-    echo "Failed to select a quote from the file: $json_file" >&2
-    return 1
-  }
-
-  # Use jq again to format the selected quote and fold to wrap the text
-  local content source
-  content=$(echo "$selected_quote" | jq -r .content | fold -s -w 80)
-  source=$(echo "$selected_quote" | jq -r .source)
-  # Print the formatted quote
-  echo -e "$content\n-- $source"
-}
-
 function vrg() {
   nvim $(rg -l "$1")
 }
@@ -109,7 +84,7 @@ function modified() {
 case "$HOSTNAME" in
   *"zoboomafoo"*)
     # Work-specific (zoboomafoo) functions
-    
+
     # LastPass functions
     function pullpasses() {
       if [ -n "$1" ]; then
@@ -126,7 +101,7 @@ case "$HOSTNAME" in
         echo "Error: missing search term"
       fi
     }
-    
+
     # Encryption functions
     function lock() {
       TARFILE=$1
@@ -142,7 +117,7 @@ case "$HOSTNAME" in
       gpg --output $TARFILE $GPGFILE
       tar xzf $TARFILE
     }
-    
+
     # PR review function
     function review-pr() {
       # check if we have enough arguments
@@ -158,7 +133,7 @@ case "$HOSTNAME" in
       $HOME/development/code-review-assistant/code-review-assistant $user/$repo $pr_number --github-token $GITHUB_PERSONAL_ACCESS_TOKEN --openai-key $OPENAI_API_KEY
     }
     ;;
-    
+
   "serenity")
     # Personal machine (serenity) functions
     # Currently no exclusive serenity functions

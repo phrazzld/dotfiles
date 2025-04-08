@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Dotfiles installation script
-# This script creates symlinks from the home directory to the dotfiles in this directory
+# Codex installation script
+# This script creates symlinks from the home directory to the configuration files in this directory
 
 # Colors for output
 RED='\033[0;31m'
@@ -10,17 +10,18 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 RESET='\033[0m'
 
-# Dotfiles directory (assumes script is run from the dotfiles directory)
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Codex directory (assumes script is run from the codex directory)
+CODEX_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CONFIG_SUBDIR="$CODEX_DIR/dotfiles"
 
-echo -e "${BLUE}Installing dotfiles from $DOTFILES_DIR${RESET}"
+echo -e "${BLUE}Installing configuration files from $CODEX_DIR${RESET}"
 
 # Create symlinks for core configuration files
-echo -e "${YELLOW}Creating symlinks for core dotfiles...${RESET}"
-ln -sf "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc" && echo -e "${GREEN}✓ .zshrc${RESET}" || echo -e "${RED}✗ .zshrc${RESET}"
-ln -sf "$DOTFILES_DIR/.aliases" "$HOME/.aliases" && echo -e "${GREEN}✓ .aliases${RESET}" || echo -e "${RED}✗ .aliases${RESET}"
-ln -sf "$DOTFILES_DIR/.env" "$HOME/.env" && echo -e "${GREEN}✓ .env${RESET}" || echo -e "${RED}✗ .env${RESET}"
-ln -sf "$DOTFILES_DIR/.fun" "$HOME/.fun" && echo -e "${GREEN}✓ .fun${RESET}" || echo -e "${RED}✗ .fun${RESET}"
+echo -e "${YELLOW}Creating symlinks for core configuration files...${RESET}"
+ln -sf "$CONFIG_SUBDIR/.zshrc" "$HOME/.zshrc" && echo -e "${GREEN}✓ .zshrc${RESET}" || echo -e "${RED}✗ .zshrc${RESET}"
+ln -sf "$CONFIG_SUBDIR/.aliases" "$HOME/.aliases" && echo -e "${GREEN}✓ .aliases${RESET}" || echo -e "${RED}✗ .aliases${RESET}"
+ln -sf "$CONFIG_SUBDIR/.env" "$HOME/.env" && echo -e "${GREEN}✓ .env${RESET}" || echo -e "${RED}✗ .env${RESET}"
+ln -sf "$CONFIG_SUBDIR/.fun" "$HOME/.fun" && echo -e "${GREEN}✓ .fun${RESET}" || echo -e "${RED}✗ .fun${RESET}"
 
 # Create backup of existing configurations if they exist
 backup_if_exists() {
@@ -43,7 +44,7 @@ fi
 # Ensure parent directory exists
 mkdir -p "$HOME/.claude"
 # Create symlink to the entire directory
-ln -sf "$DOTFILES_DIR/claude-commands" "$HOME/.claude/commands" && echo -e "${GREEN}✓ Claude commands directory${RESET}" || echo -e "${RED}✗ Claude commands directory${RESET}"
+ln -sf "$CODEX_DIR/claude-commands" "$HOME/.claude/commands" && echo -e "${GREEN}✓ Claude commands directory${RESET}" || echo -e "${RED}✗ Claude commands directory${RESET}"
 
 # Reload shell
 echo -e "${GREEN}Installation complete!${RESET}"

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 - `zsh -c "source ~/.zshrc"` - Reload shell configuration
-- `./install.sh` - Install dotfiles by creating symlinks
+- `./install.sh` - Install configuration files by creating symlinks
 - `shellcheck filename.sh` - Validate shell scripts
 
 ## Code Style Guidelines
@@ -16,10 +16,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Types**: Prefer strong typing when applicable (TypeScript strict mode)
 
 ## Repository Structure
-- Root: Configuration files (.zshrc, .aliases, .env, .fun)
-- `/aesthetics/`: UI theme documentation
+- Root: Documentation and installation script
+- `/dotfiles/`: Configuration files (.zshrc, .aliases, .env, .fun)
 - `/claude-commands/`: Custom Claude Code slash commands
-- `/prompts/`: AI prompt templates
+- `/aesthetics/`: UI theme documentation (deleted)
+- `/prompts/`: AI prompt templates (deleted)
 
 ## Environment Detection
 ```bash
