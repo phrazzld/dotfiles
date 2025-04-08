@@ -44,6 +44,10 @@ fi
 # Ensure parent directory exists
 mkdir -p "$HOME/.claude"
 # Create symlink to the entire directory
+if [ -L "$HOME/.claude/commands" ]; then
+  # Remove existing symlink first to prevent recursive symlinks
+  rm "$HOME/.claude/commands"
+fi
 ln -sf "$CODEX_DIR/claude-commands" "$HOME/.claude/commands" && echo -e "${GREEN}✓ Claude commands directory${RESET}" || echo -e "${RED}✗ Claude commands directory${RESET}"
 
 # Reload shell
