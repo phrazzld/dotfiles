@@ -64,7 +64,7 @@
 - **Goal:** Ensure work is complete, passes all checks, and is recorded.
 - **Actions:**
     - **Run Checks & Fix:** Execute linting, building, and the **full test suite**. Fix *any* code issues causing failures.
-    - **Mark Complete:** Update `TODO.MD`: `[ ]` -> `[x]`.
+    - **Move to DONE:** Remove the completed task from `TODO.MD` and move it to `DONE.MD` with date of completion.
     - **Commit Changes:**
         - Stage *all* relevant changed/new files (`<sanitized-task-title>-PLAN.md`, implementation code, test code, refactored code). Review diff (`git diff --staged`).
         - Use Conventional Commits (`type(scope): subject`). Include brief description of any inline testability refactors in the commit body if applicable. Reference the task.
