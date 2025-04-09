@@ -25,9 +25,11 @@
 ## 3. GENERATE PLAN WITH THINKTANK
 - **Goal:** Use `thinktank` to generate potential implementation plans from multiple LLMs based on the task description and project context.
 - **Actions:**
-    - **Initial Attempt (Full Context):** Run the following command:
+    - **Initial Attempt (Relevant Context):** 
+        1. Find the top ten most relevant files for context
+        2. Run the following command:
         ```bash
-        thinktank run --group faves TASK-PROMPT.md ./
+        thinktank run --group faves TASK-PROMPT.md [top-ten-relevant-files]
         ```
     - **Handle Errors:** If `thinktank` fails:
         - Report the specific error message.

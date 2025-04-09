@@ -13,7 +13,9 @@
 ## 3. GENERATE APPROACHES WITH THINKTANK
 - **Goal:** Use `thinktank` to generate potential implementation approaches based on the task prompt and project context.
 - **Actions:**
-    - Run `thinktank run --group faves <sanitized-task-title>-TASK.md ./` (with context error handling as in `plan.md`).
+    - **Initial Attempt (Relevant Context):** 
+        1. Find the top ten most relevant files for context
+        2. Run `thinktank run --group faves <sanitized-task-title>-TASK.md [top-ten-relevant-files]`
     - If you encounter an error, write it to a persistent logfile and try again.
     - Identify output directory. Report success/failure. Stop on unresolvable errors.
 

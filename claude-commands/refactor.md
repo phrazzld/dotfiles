@@ -33,7 +33,9 @@ The plan should include:
 Run the following command from the project root:
 
 ```bash
-thinktank run --group faves task.md ./
+# First find the top ten most relevant files for context
+# Then run thinktank with the identified context
+thinktank run --group faves task.md [top-ten-relevant-files]
 ```
 
 This will analyze the codebase and generate a refactor plan in `REFACTOR_PLAN.md`.

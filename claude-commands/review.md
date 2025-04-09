@@ -36,7 +36,8 @@ At the top of the file, add the following markdown:
 Run git diff against the master branch (or relevant base branch) and append the results to diff.md.
 
 # 3. Ask thinktank to run the code review.
-- Run thinktank run --group faves diff.md ./ (include ./ or relevant context files if needed for broader analysis).
+- Find the top ten most relevant files for context
+- Run thinktank run --group faves diff.md [top-ten-relevant-files]
 - Note the output directory for their reviews.
 - If you encounter an error, write the full log output -- including the error -- to a logfile. Then try again.
 
