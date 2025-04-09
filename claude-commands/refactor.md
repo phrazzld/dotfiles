@@ -38,6 +38,8 @@ thinktank run --group faves task.md ./
 
 This will analyze the codebase and generate a refactor plan in `REFACTOR_PLAN.md`.
 
+If you encounter an error, write the error to a persistent logfile. Then try again.
+
 ## 3. Read the refactor plan
 
 Go to the `REFACTOR_PLAN.md` file and read the generated plan to understand the proposed refactoring steps and recommendations.

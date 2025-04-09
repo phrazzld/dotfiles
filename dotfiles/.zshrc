@@ -95,3 +95,10 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 . "/Users/phaedrus/.deno/env"
+# pnpm
+export PNPM_HOME="/Users/phaedrus/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

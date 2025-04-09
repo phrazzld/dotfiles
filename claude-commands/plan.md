@@ -29,15 +29,9 @@
         ```bash
         thinktank run --group faves TASK-PROMPT.md ./
         ```
-    - **Handle Context Errors:** If the initial attempt fails specifically due to context size limitations or related errors:
-        - Report: "Initial `thinktank` run failed due to context size. Identifying relevant files."
-        - ***Think hard*** to identify the top ~10 most relevant files and/or directories crucial for providing context for the task in `TASK-PROMPT.md`.
-        - **Retry (Reduced Context):** Run `thinktank` again, providing only the identified relevant paths:
-            ```bash
-            thinktank run --group faves TASK-PROMPT.md <relevant_path_1> [relevant_path_2...]
-            ```
-    - **Handle Other Errors:** If `thinktank` fails for other reasons (API keys, other errors):
+    - **Handle Errors:** If `thinktank` fails:
         - Report the specific error message.
+        - Write the error to a persistent log file.
         - Analyze the error. Attempt to fix and retry **once** if feasible.
         - If unresolvable, report "Thinktank CLI invocation failed. See error above. Manual assistance required." and **stop**.
     - **Identify Output Directory:** If the command completes successfully, identify the output directory path created by `thinktank`. Report "Thinktank CLI invocation successful. Responses saved in <output-directory-path>."

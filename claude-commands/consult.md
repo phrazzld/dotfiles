@@ -28,7 +28,7 @@
         ```
         (Replace paths with list from Step 2).
     - **Execute Command:** Run it.
-    - **Handle Errors:** Report errors, attempt **one** retry if fixable, report failure and stop if unresolvable.
+    - **Handle Errors:** Report errors. Write any errors you encounter to a persistent log file. Attempt **one** retry if fixable, report failure and stop if unresolvable.
     - **Identify Output Directory:** Report success and output path.
 
 ## 4. Synthesize Architect's Response (`CONSULTANT-PLAN.md`)

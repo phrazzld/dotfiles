@@ -36,7 +36,9 @@ At the top of the file, add the following markdown:
 Run git diff against the master branch (or relevant base branch) and append the results to diff.md.
 
 # 3. Ask thinktank to run the code review.
-Run thinktank run --group faves diff.md ./ (include ./ or relevant context files if needed for broader analysis). Note the output directory for their reviews.
+- Run thinktank run --group faves diff.md ./ (include ./ or relevant context files if needed for broader analysis).
+- Note the output directory for their reviews.
+- If you encounter an error, write the full log output -- including the error -- to a logfile. Then try again.
 
 # 4. Synthesize Code Review (CODE_REVIEW.MD)
 Go to the output directory created by thinktank. Read each review. Think hard to synthesize the most important findings, comments, and especially critiques related to test quality and adherence to TESTING_PHILOSOPHY.MD. Create a single, consolidated CODE_REVIEW.MD file summarizing the findings and actionable recommendations, including the summary table requested in the prompt.

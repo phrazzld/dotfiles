@@ -14,6 +14,7 @@
 - **Goal:** Use `thinktank` to generate potential implementation approaches based on the task prompt and project context.
 - **Actions:**
     - Run `thinktank run --group faves <sanitized-task-title>-TASK.md ./` (with context error handling as in `plan.md`).
+    - If you encounter an error, write it to a persistent logfile and try again.
     - Identify output directory. Report success/failure. Stop on unresolvable errors.
 
 ## 4. SYNTHESIZE IMPLEMENTATION PLAN
@@ -28,7 +29,7 @@
 ## 5. IMPLEMENT FUNCTIONALITY
 - **Goal:** Write the code to satisfy the task requirements according to the synthesized implementation plan.
 - **Actions:**
-    - **Consult Standards:** Review `CONTRIBUTING.MD`, `BEST_PRACTICES.MD`, `STYLEGUIDE.MD`, etc.
+    - **Consult Standards:** Review `CONTRIBUTING.MD`, `BEST_PRACTICES.MD`, etc.
     - **Write Code:** Implement the functionality based on `<sanitized-task-title>-PLAN.md`.
     - **Adhere Strictly:** Follow project standards and the chosen plan.
 - **Guidance:** Focus on clean, readable code that directly addresses requirements.
