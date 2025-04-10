@@ -33,7 +33,12 @@
     Analyze the task description within the project context. Propose potential implementation plans. For each plan:
     1.  Outline the main approach and key steps.
     2.  Discuss potential pros and cons (consider maintainability, performance, alignment with existing code).
-    3.  **Critically evaluate the TESTABILITY of the approach according to TESTING_PHILOSOPHY.MD.** How easily can this approach be tested with simple, reliable tests, minimizing mocks?
+    3.  **Evaluate alignment with standards:** How well does this approach align with:
+        - Core design principles in `CORE_PRINCIPLES.md` (especially simplicity and modularity)
+        - Architectural patterns in `ARCHITECTURE_GUIDELINES.md` (particularly separation of concerns)
+        - Coding practices in `CODING_STANDARDS.md` (leveraging language features appropriately)
+        - Testability principles in `TESTING_STRATEGY.md` (can it be tested with simple, reliable tests, minimizing mocks?)
+        - Documentation patterns in `DOCUMENTATION_APPROACH.md` (design decisions clearly expressible)
     4.  Highlight any potential risks or challenges.
 
     Recommend the best overall plan, explicitly justifying the choice based on requirements, project standards, and **prioritizing long-term maintainability and testability.**
@@ -62,7 +67,14 @@
     - Read all the individual model response files (`*.md`).
     - **Synthesize:** ***Think hard*** and synthesize the proposed steps, approaches, considerations (especially testability evaluations), and potential challenges from the various LLM responses into a single, comprehensive, and actionable plan.
     - **Verify Scope:** Ensure the synthesized plan represents a single atomic unit of functionality that can be implemented in one pull request.
-    - **Prioritize:** When resolving contradictions or choosing between approaches, give significant weight to the plan that offers the best **testability** and **maintainability** according to `TESTING_PHILOSOPHY.MD`, even if slightly more complex initially, unless there's a compelling reason otherwise (e.g., major performance impact). Document this reasoning.
+    - **Prioritize:** When resolving contradictions or choosing between approaches, give significant weight to the plan that best aligns with our standards hierarchy:
+      1. First, prioritize simplicity and clarity (`CORE_PRINCIPLES.md`)
+      2. Second, ensure strong separation of concerns (`ARCHITECTURE_GUIDELINES.md`)
+      3. Third, maximize testability with minimal mocking (`TESTING_STRATEGY.md`)
+      4. Fourth, follow idiomatic coding patterns (`CODING_STANDARDS.md`)
+      5. Fifth, support clear documentation of design decisions (`DOCUMENTATION_APPROACH.md`)
+      
+      Accept additional complexity only when it demonstrably serves these principles. Document this reasoning thoroughly.
     - Save this synthesized plan to `PLAN.MD`.
     - (Optional Cleanup): Remove the temporary `TASK-PROMPT.md` file.
 
