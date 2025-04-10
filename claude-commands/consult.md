@@ -24,7 +24,7 @@
 - **Actions:**
     - **Construct Command:**
         ```bash
-        thinktank run --group faves CONSULT-REQUEST.md <path1> [path2...]
+        thinktank run --models google:gemini-2.5-pro-exp-03-25 CONSULT-REQUEST.md <path1> [path2...]
         ```
         (Replace paths with list from Step 2).
     - **Execute Command:** Run it.

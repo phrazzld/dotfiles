@@ -37,7 +37,7 @@ Run git diff against the master branch (or relevant base branch) and append the 
 
 # 3. Ask thinktank to run the code review.
 - Find the top ten most relevant files for context
-- Run thinktank run --group faves diff.md [top-ten-relevant-files]
+- Run thinktank run --models google:gemini-2.5-pro-exp-03-25 diff.md [top-ten-relevant-files]
 - Note the output directory for their reviews.
 - If you encounter an error, write the full log output -- including the error -- to a logfile. Then try again.
 
