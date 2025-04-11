@@ -2,6 +2,7 @@
 ## 1. SELECT TASK
 - **Goal:** Choose the next appropriate task to work on from `TODO.MD`.
 - **Action:** Scan `TODO.MD` for tasks marked `[ ]` (incomplete). Select the first task found whose prerequisites listed in its `Depends On:` field are already marked `[x]` (complete) or are 'None'. Record the exact Task Title.
+- **Mark In-Progress:** After selecting a task, update it in `TODO.MD` by changing `[ ]` to `[~]` to indicate it's in progress.
 
 ## 2. PREPARE TASK PROMPT (for Implementation Plan)
 - **Goal:** Create a dedicated prompt file detailing the task for `thinktank` to generate implementation approaches.
@@ -93,7 +94,8 @@
 - **Goal:** Ensure work is complete, passes all checks, and is recorded.
 - **Actions:**
     - **Run Checks & Fix:** Execute linting, building, and the **full test suite**. Fix *any* code issues causing failures.
-    - **Move to DONE:** Remove the completed task from `TODO.MD` and move it to `DONE.MD` with date of completion.
+    - **Update Task Status:** Change the task status in `TODO.MD` from `[~]` (in progress) to `[x]` (complete).
+    - **Move to DONE:** Move the completed task from `TODO.MD` to `DONE.MD` with date of completion.
     - **Commit Changes:**
         - Stage *all* relevant changed/new files (`<sanitized-task-title>-PLAN.md`, implementation code, test code, refactored code). Review diff (`git diff --staged`).
         - Use Conventional Commits (`type(scope): subject`). Include brief description of any inline testability refactors in the commit body if applicable. Reference the task.

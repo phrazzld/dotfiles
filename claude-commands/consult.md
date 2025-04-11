@@ -1,7 +1,9 @@
 # CONSULT
-## 1. Formulate Consultation Request
-- **Goal:** Clearly articulate the problem or need for guidance in a dedicated file.
+## 1. SELECT TASK AND FORMULATE CONSULTATION REQUEST
+- **Goal:** Select a task and clearly articulate the problem or need for guidance in a dedicated file.
 - **Actions:**
+    - **Select Task:** If not already working on a task, scan `TODO.MD` for tasks marked `[ ]` (incomplete). Select the first task found whose prerequisites listed in its `Depends On:` field are already marked `[x]` (complete) or are 'None'. Record the exact Task Title.
+    - **Mark In-Progress:** After selecting a task, update it in `TODO.MD` by changing `[ ]` to `[~]` to indicate it's in progress.
     - Create a new file named `CONSULT-REQUEST.md`.
     - ***Think hard*** and populate this file with:
         - **`Goal:`** Original objective (Reference task/plan).
@@ -59,4 +61,5 @@
     - Read `CONSULTANT-PLAN.md`. Acknowledge receipt.
     - **Execute Plan:** Treat `CONSULTANT-PLAN.md` as the primary plan for this issue. Use standard `EXECUTE.MD` process for tasks within it if structured similarly. This supersedes previous plans *for this issue*.
     - Continue until resolved or plan completed.
+    - **Update Task Status:** If the task is resolved, change the task status in `TODO.MD` from `[~]` (in progress) to `[x]` (complete) and move it to `DONE.MD` with date of completion.
     - (Optional Cleanup): Remove/archive `CONSULT-REQUEST.md`, `CONSULTANT-PLAN.md`.
