@@ -21,23 +21,20 @@
 
 ## 3. CRITICAL SELF-ASSESSMENT
 - **Goal:** Evaluate the *current state* of your work against the grounded context.
-- **Actions:** ***Think hard*** and answer the following questions explicitly:
-    - **Alignment:** Is the work done *so far* and the immediate *next step* directly contributing to the goal in `<task-title>-PLAN.md`?
-    - **Efficiency:** Is the current approach still the simplest, most direct way *according to the plan*? Or has it become overly complex?
-    - **Progress:** Are you making tangible progress, or are you stuck, looping, or repeatedly failing checks?
-    - **Compliance:** Does the current direction fully comply with project standards and ACs? Specifically, does it align with:
-        - Core principles of simplicity and modularity (`CORE_PRINCIPLES.md`)?
-        - Architectural patterns and separation of concerns (`ARCHITECTURE_GUIDELINES.md`)?
-        - Coding conventions and practices (`CODING_STANDARDS.md`)?
-        - Testing principles that minimize mocking (`TESTING_STRATEGY.md`)?
-        - Documentation approaches that explain rationale (`DOCUMENTATION_APPROACH.md`)?
-    - **Standards-Based Evaluation:** Assess the implementation against our key standards:
-        - **Simplicity Check:** Is the code becoming overly complex? Are responsibilities clear? (`CORE_PRINCIPLES.md`)
-        - **Architecture Check:** Does the code maintain separation of concerns? Do dependencies point inward? (`ARCHITECTURE_GUIDELINES.md`)
-        - **Code Quality Check:** Does the implementation follow our coding standards? Are types used effectively? (`CODING_STANDARDS.md`) 
-        - **Testability Check:** Does writing tests require complex mocks for internal components? (`TESTING_STRATEGY.md`)
-        - **Documentation Check:** Can design decisions be clearly explained? Are the "whys" documented? (`DOCUMENTATION_APPROACH.md`)
-    - **Improvement:** Considering the current state, is there now a *demonstrably better* way to complete the *remaining* work?
+- **Actions:** 
+    - Create a file called `breathe-assessment.md`.
+    - Copy the content from `prompts/breathe.md` to the file.
+    - Add the current task context at the top:
+        ```markdown
+        ## Task Context
+        - **Task:** [Current task title]
+        - **Work State:** [Brief summary of current progress, approaches tried, and ongoing challenges]
+        ```
+    - Run the assessment through architect:
+        ```bash
+        architect --instructions breathe-assessment.md --output BREATHE_RESULT.md docs/philosophy/ [relevant-files-to-task]
+        ```
+    - Review the `BREATHE_RESULT.md` file.
 
 ## 4. REPORT FINDINGS & RECOMMENDATION
 - **Goal:** Communicate the assessment results clearly and propose the next step.

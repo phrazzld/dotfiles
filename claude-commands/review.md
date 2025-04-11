@@ -6,39 +6,10 @@
 
 Create a new file called diff.md.
 
-At the top of the file, add the following markdown:
+Copy the content from `prompts/review.md` into `diff.md`.
+
+Add a "## Diff" section at the end of the file:
 ```markdown
-# Code Review Request
-
-## Context
-- Review the following code changes (`git diff` against master branch).
-- **Reference the following standards documents for your review:**
-  - `CORE_PRINCIPLES.md` - For foundational software design principles
-  - `ARCHITECTURE_GUIDELINES.md` - For structural and architectural patterns
-  - `CODING_STANDARDS.md` - For implementation-level practices and conventions
-  - `TESTING_STRATEGY.md` - For test design principles and patterns
-  - `DOCUMENTATION_APPROACH.md` - For documentation quality and practices
-
-## Review Goals
-- Identify potential bugs, logical errors, or deviations from requirements.
-- Assess code quality (readability, maintainability, adherence to project standards).
-- **Evaluate against standards:** Assess how the code adheres to our documented standards:
-  - Does it embody the simplicity, modularity, and explicitness outlined in `CORE_PRINCIPLES.md`?
-  - Does it follow the architectural patterns and separation of concerns in `ARCHITECTURE_GUIDELINES.md`?
-  - Does it conform to the coding conventions detailed in `CODING_STANDARDS.md`?
-  - Are tests simple, effective, and robust per the guidance in `TESTING_STRATEGY.md`? Do they avoid excessive mocking of internal components?
-  - Is documentation clear, accurate, and focused on the "why" as recommended in `DOCUMENTATION_APPROACH.md`?
-- Suggest improvements for clarity, efficiency, or adherence to best practices.
-- Assess potential risks.
-
-## Report Format
-- Provide detailed feedback on specific issues found.
-- Conclude with a concise markdown table summarizing:
-    - Issue Description
-    - Location (File:Line)
-    - Suggested Solution / Improvement
-    - Risk Assessment (Low/Medium/High, if applicable)
-
 ## Diff
 ```
 
@@ -46,8 +17,8 @@ At the top of the file, add the following markdown:
 Run git diff against the master branch (or relevant base branch) and append the results to diff.md.
 
 # 3. Ask architect to run the code review.
-- Find the top ten most relevant files for context
-- Run architect --instructions diff.md [top-ten-relevant-files] --output CODE_REVIEW.md
+- Find the top ten most relevant files for additional context
+- Run architect --instructions diff.md --output CODE_REVIEW.md docs/philosophy/ [top-ten-relevant-files]
 - If you encounter an error, write the full log output -- including the error -- to a logfile. Then try again.
 
 # 4. Review the Code Review (CODE_REVIEW.MD)

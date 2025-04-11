@@ -5,51 +5,42 @@
 - **Mark In-Progress:** After selecting a task, update it in `TODO.MD` by changing `[ ]` to `[~]` to indicate it's in progress.
 
 ## 2. PREPARE TASK PROMPT (for Implementation Plan)
-- **Goal:** Create a dedicated prompt file detailing the task for `thinktank` to generate implementation approaches.
+- **Goal:** Create a dedicated prompt file for `architect` to generate implementation approaches.
 - **Actions:**
     - **Filename:** Sanitize Task Title -> `<sanitized-task-title>-TASK.md`.
     - **Analyze:** Re-read task details (Action, AC Ref, Depends On) from `TODO.MD` and the relevant section in `PLAN.MD`.
-    - **Document Prompt:** Create `<sanitized-task-title>-TASK.md` with task details and a request for 2-3 implementation approaches, including pros/cons, and a recommended approach considering all project standards:
-        - Core principles of simplicity and modularity (`CORE_PRINCIPLES.md`)
-        - Architectural patterns and separation of concerns (`ARCHITECTURE_GUIDELINES.md`)
-        - Coding conventions and practices (`CODING_STANDARDS.md`)
-        - Testability principles minimizing mocks (`TESTING_STRATEGY.md`)
-        - Documentation approaches for design decisions (`DOCUMENTATION_APPROACH.md`)
-      
-      (Similar structure to the prompt in the previous version of execute.md).
+    - **Retrieve Base Prompt:** Copy the content from `prompts/execute.md` to use as the base for your task prompt.
+    - **Customize Prompt:** Create `<sanitized-task-title>-TASK.md` by adding task-specific details to the base prompt:
+        - Add task title, description, and acceptance criteria at the top.
+        - Keep all the original instructions from the base prompt.
+        - Ensure the prompt maintains the focus on standards alignment.
 
-## 3. GENERATE APPROACHES WITH ARCHITECT
-- **Goal:** Use `architect` to generate potential implementation approaches based on the task prompt and project context.
+## 3. GENERATE IMPLEMENTATION PLAN WITH ARCHITECT
+- **Goal:** Use `architect` to generate an implementation plan based on the task prompt and project context.
 - **Actions:**
-    - **Initial Attempt (Relevant Context):**
-        1. Find the top ten most relevant files for context
-        2. Run `architect --instructions <sanitized-task-title>-TASK.md [top-ten-relevant-files]`
+    - **Find Task Context:**
+        1. Find the top ten most relevant files for task-specific context
+    - **Run Architect:**
+        1. Run `architect --instructions <sanitized-task-title>-TASK.md --output <sanitized-task-title>-PLAN.md docs/philosophy/ [top-ten-relevant-files]`
     - If you encounter an error, write it to a persistent logfile and try again.
-    - Identify output directory. Report success/failure. Stop on unresolvable errors.
-
-## 4. SYNTHESIZE IMPLEMENTATION PLAN
-- **Goal:** Consolidate `architect` suggestions into a single, chosen implementation plan, prioritizing testability.
-- **Actions:**
-    - Read all `architect` responses from the output directory.
-    - **Synthesize & Select:** ***Think hard*** to analyze suggestions. Select the most suitable approach, **prioritizing according to our standards hierarchy:**
+    - Report success/failure. Stop on unresolvable errors.
+    - **Review Plan:** Verify the implementation plan aligns with our standards hierarchy:
         1. Simplicity and clarity over cleverness (`CORE_PRINCIPLES.md`)
-        2. Clean separation of concerns (`ARCHITECTURE_GUIDELINES.md`) 
+        2. Clean separation of concerns (`ARCHITECTURE_GUIDELINES.md`)
         3. Straightforward testability with minimal mocking (`TESTING_STRATEGY.md`)
         4. Adherence to coding conventions (`CODING_STANDARDS.md`)
         5. Support for clear documentation (`DOCUMENTATION_APPROACH.md`)
-    - **Filename:** Create `<sanitized-task-title>-PLAN.md`.
-    - **Document Plan:** Record Task Title, goal, chosen approach, and **explicit reasoning for the choice, including how it aligns with each of our standards documents and any trade-offs made between competing principles.**
     - (Optional Cleanup): Remove `<sanitized-task-title>-TASK.md`.
 
-## 5. IMPLEMENT FUNCTIONALITY
-- **Goal:** Write the code to satisfy the task requirements according to the synthesized implementation plan.
+## 4. IMPLEMENT FUNCTIONALITY
+- **Goal:** Write the code to satisfy the task requirements according to the implementation plan.
 - **Actions:**
     - **Consult Standards:** Review `CONTRIBUTING.MD`, `CODING_STANDARDS.md`, `ARCHITECTURE_GUIDELINES.md`, etc.
     - **Write Code:** Implement the functionality based on `<sanitized-task-title>-PLAN.md`.
     - **Adhere Strictly:** Follow project standards and the chosen plan.
 - **Guidance:** Focus on clean, readable code that directly addresses requirements.
 
-## 6. TESTABILITY REVIEW & REFACTOR (Inline)
+## 5. TESTABILITY REVIEW & REFACTOR (Inline)
 - **Goal:** Review the newly written code against all standards documents *before* writing tests, with special attention to testability.
 - **Actions:**
     - **Review Code:** Analyze the code files just modified for Step 5.
@@ -68,12 +59,12 @@
     - **Perform Refactor (if needed):** Apply the identified minimal refactoring changes.
     - **Document (if refactored):** Briefly note any refactoring performed in `<sanitized-task-title>-PLAN.md` or as code comments, specifying which standard(s) the refactoring helps satisfy.
 
-## 7. WRITE FAILING TESTS
+## 6. WRITE FAILING TESTS
 - **Goal:** Define expected behavior via tests, adhering strictly to the testing philosophy.
 - **Actions:**
     - **Consult All Standards:** Review task requirements (`AC Ref:`, `<sanitized-task-title>-PLAN.md`) and adhere to all standards, with particular focus on testing:
         - Ensure tests reflect the simplicity principle (`CORE_PRINCIPLES.md`)
-        - Test through public interfaces as defined in the architecture (`ARCHITECTURE_GUIDELINES.md`) 
+        - Test through public interfaces as defined in the architecture (`ARCHITECTURE_GUIDELINES.md`)
         - Follow coding standards in test code too (`CODING_STANDARDS.md`)
         - **Strictly adhere to testing principles, avoiding mocks of internal components** (`TESTING_STRATEGY.md`)
         - Document test rationale where needed (`DOCUMENTATION_APPROACH.md`)
@@ -83,14 +74,14 @@
     - Ensure tests currently fail (as appropriate for TDD/BDD style).
 - **Guidance:** Test *behavior*, not implementation. **Aggressively avoid unnecessary mocks.** If mocking seems unavoidable for internal logic, it's a failure signal.
 
-## 8. RUN IMPLEMENTATION & TESTS
+## 7. RUN IMPLEMENTATION & TESTS
 - **Goal:** Make the implementation code pass the newly written tests.
 - **Actions:**
     - Run the code and tests.
-    - Debug and modify the *implementation code* (from Step 5/6) until all tests written in Step 7 pass.
+    - Debug and modify the *implementation code* (from Step 4/5) until all tests written in Step 6 pass.
     - **Do NOT modify tests to make them pass unless the test itself was flawed.**
 
-## 9. FINALIZE & COMMIT
+## 8. FINALIZE & COMMIT
 - **Goal:** Ensure work is complete, passes all checks, and is recorded.
 - **Actions:**
     - **Run Checks & Fix:** Execute linting, building, and the **full test suite**. Fix *any* code issues causing failures.

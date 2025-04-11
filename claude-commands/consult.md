@@ -36,30 +36,28 @@
 - **Actions:**
     - **Construct Command:**
         ```bash
-        architect --instructions CONSULT-REQUEST.md <path1> [path2...]
+        architect --instructions CONSULT-REQUEST.md --output CONSULTANT-PLAN.md docs/philosophy/ <specific-context-files>
         ```
-        (Replace paths with list from Step 2).
+        (Replace specific-context-files with relevant code paths from Step 2).
     - **Execute Command:** Run it.
     - **Handle Errors:** Report errors. Write any errors you encounter to a persistent log file. Attempt **one** retry if fixable, report failure and stop if unresolvable.
     - **Identify Output Directory:** Report success and output path.
 
-## 4. Process Architect's Response (`CONSULTANT-PLAN.md`)
-- **Goal:** Understand and synthesize LLM responses into a single plan.
+## 4. Review Architect's Response
+- **Goal:** Understand and review the implementation plan from architect.
 - **Actions:**
-    - Read the architect-generated plan.
-    - **Synthesize Plan:** ***Think hard*** to create a coherent plan from insights, solutions, and steps. **Ensure the synthesized plan aligns with our complete standards framework:**
+    - Read the architect-generated plan in `CONSULTANT-PLAN.md`.
+    - **Verify Standards Alignment:** Confirm the plan aligns with our complete standards framework:
       - Promotes simplicity and minimizes complexity (`CORE_PRINCIPLES.md`)
       - Maintains strong separation of concerns (`ARCHITECTURE_GUIDELINES.md`)
       - Follows established coding conventions (`CODING_STANDARDS.md`)
       - Enables straightforward testing with minimal mocking (`TESTING_STRATEGY.md`)
       - Supports clear documentation of rationale (`DOCUMENTATION_APPROACH.md`)
-    - Save synthesized plan to `CONSULTANT-PLAN.md`.
 
-## 5. Process Synthesized Plan
-- **Goal:** Execute the synthesized plan to resolve the original issue.
+## 5. Execute Plan
+- **Goal:** Execute the plan to resolve the original issue.
 - **Actions:**
-    - Read `CONSULTANT-PLAN.md`. Acknowledge receipt.
     - **Execute Plan:** Treat `CONSULTANT-PLAN.md` as the primary plan for this issue. Use standard `EXECUTE.MD` process for tasks within it if structured similarly. This supersedes previous plans *for this issue*.
     - Continue until resolved or plan completed.
     - **Update Task Status:** If the task is resolved, change the task status in `TODO.MD` from `[~]` (in progress) to `[x]` (complete).
-    - (Optional Cleanup): Remove/archive `CONSULT-REQUEST.md`, `CONSULTANT-PLAN.md`.
+    - (Optional Cleanup): Remove/archive `CONSULT-REQUEST.md`.

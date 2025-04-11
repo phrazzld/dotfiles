@@ -22,36 +22,22 @@
 
 ## 3. PREPARE TASK FILE
 - Create a file named `TASK-PROMPT.md`.
-- Write the following into `TASK-PROMPT.md`:
+- Copy the content from `prompts/plan.md` as the base for your task prompt.
+- Add the following to the top of the file, before the existing content:
     ```markdown
-    # Task Planning Request
-
     ## Task Description
     [Insert properly scoped task description from Steps 1-2]
-
-    ## Request
-    Analyze the task description within the project context. Propose potential implementation plans. For each plan:
-    1.  Outline the main approach and key steps.
-    2.  Discuss potential pros and cons (consider maintainability, performance, alignment with existing code).
-    3.  **Evaluate alignment with standards:** How well does this approach align with:
-        - Core design principles in `CORE_PRINCIPLES.md` (especially simplicity and modularity)
-        - Architectural patterns in `ARCHITECTURE_GUIDELINES.md` (particularly separation of concerns)
-        - Coding practices in `CODING_STANDARDS.md` (leveraging language features appropriately)
-        - Testability principles in `TESTING_STRATEGY.md` (can it be tested with simple, reliable tests, minimizing mocks?)
-        - Documentation patterns in `DOCUMENTATION_APPROACH.md` (design decisions clearly expressible)
-    4.  Highlight any potential risks or challenges.
-
-    Recommend the best overall plan, explicitly justifying the choice based on requirements, project standards, and **prioritizing long-term maintainability and testability.**
     ```
 
 ## 4. GENERATE PLAN WITH ARCHITECT
 - **Goal:** Use `architect` to generate potential implementation plans based on the properly scoped task description and project context.
 - **Actions:**
-    - **Initial Attempt (Relevant Context):** 
-        1. Find the top ten most relevant files for context
-        2. Run the following command:
+    - **Find Task Context:**
+        1. Find the top ten most relevant files for task-specific context
+    - **Run Architect:** 
+        1. Run the following command:
         ```bash
-        architect --instructions TASK-PROMPT.md [top-ten-relevant-files] --output PLAN.md
+        architect --instructions TASK-PROMPT.md --output PLAN.md docs/philosophy/ [top-ten-relevant-files]
         ```
     - **Handle Errors:** If `architect` fails:
         - Report the specific error message.
@@ -75,4 +61,4 @@
     - (Optional Cleanup): Remove the temporary `TASK-PROMPT.md` file.
 
 ## 6. CHECKOUT BRANCH
-- Switch to a new git branch for implementing the work described in the synthesized `PLAN.MD`.
+- Switch to a new git branch for implementing the work described in the `PLAN.MD`.

@@ -33,23 +33,24 @@
         - **Document Analysis:** Record detailed findings, supporting evidence (code snippets, tool output), impact assessment (e.g., potential for data exposure, unauthorized access, DoS), and confidence level under `Deep Dive Analysis Log` in `SECURITY_AUDIT.MD`.
         - **Severity Estimation:** Assign a preliminary severity (Low, Medium, High) based on potential impact, noting that this requires human validation.
 
-## 4. Synthesize Action Plan (`SECURITY_PLAN.MD`)
-- **Goal:** Translate confirmed findings from the deep-dive analysis into a structured, actionable remediation plan.
+## 4. Create Remediation Plan
+- **Goal:** Organize findings from the deep-dive analysis into a structured, actionable remediation plan.
 - **Actions:**
-    - Populate the `Detailed Findings and Recommendations` section of `SECURITY_PLAN.MD`. For *each confirmed finding* from Step 3, create an entry with:
-        - `**Finding:**` [Clear description of the vulnerability]
-        - `**Location:**` [File(s) and line number(s)]
-        - `**Evidence:**` [Supporting code snippets or tool output summary]
-        - `**Impact Assessment:**` [Explanation of potential negative consequences]
-        - `**Preliminary Severity:**` [Low/Medium/High]
-        - `**Recommended Action:**` [***Think hard*** to propose specific technical steps for remediation. Suggest secure patterns or code examples where applicable. Frame these as recommendations requiring review.]
-        - `**Verification Steps:**` [How to confirm the fix is effective]
-    - Write a brief `Executive Summary` at the beginning of `SECURITY_PLAN.MD` highlighting the most critical findings and overall security posture observed.
+    - Use architect to generate a comprehensive security plan based on findings:
+        ```bash
+        architect --instructions SECURITY_AUDIT.md --output SECURITY_PLAN.md docs/philosophy/ [relevant-security-files]
+        ```
+    - Review the remediation plan in `SECURITY_PLAN.MD`. Verify it includes:
+        - A clear executive summary
+        - Detailed findings with locations, evidence, and impact assessments
+        - Severity ratings (Low/Medium/High)
+        - Specific remediation steps for each finding
+        - Verification procedures to confirm fixes
 
 ## 5. Finalize and Commit
 - **Goal:** Save the completed audit documentation to version control.
 - **Actions:**
-    - Ensure both `SECURITY_AUDIT.MD` (containing the detailed logs) and `SECURITY_PLAN.MD` (containing the synthesized plan) are saved with the latest information.
+    - Ensure both `SECURITY_AUDIT.MD` (containing the detailed logs) and `SECURITY_PLAN.MD` (containing the remediation plan) are saved with the latest information.
     - Stage both files (`git add SECURITY_AUDIT.MD SECURITY_PLAN.MD`).
     - Review the staged changes (`git diff --staged`).
     - Commit using the **Conventional Commits** format:

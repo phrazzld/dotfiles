@@ -32,6 +32,7 @@
 ## 3. Design and Execute Tests
 - **Goal:** Systematically test the hypotheses to gather evidence.
 - **Actions:**
+    - Retrieve the debugging prompt template from `prompts/debug.md`.
     - Prioritize hypotheses (e.g., start with the most likely or easiest to test).
     - For the current hypothesis, design a specific, minimal test to validate or refute it. Define clearly in `BUGFIXPLAN.MD` under `Test Log:`:
         - `Hypothesis Tested:` (Link back to the hypothesis)
@@ -45,14 +46,21 @@
 ## 4. Analyze Results and Refine
 - **Goal:** Interpret test results and update understanding, iterating until the root cause is identified.
 - **Actions:**
-    - Review the `Conclusion:` from the latest test log entry.
-    - Update the status of tested hypotheses in the `Hypotheses:` section of `BUGFIXPLAN.md`.
-    - If the root cause is not yet clear:
-        - ***Think hard*** based on the evidence gathered.
-        - Refine existing hypotheses or formulate new ones based on the results. Record these in `BUGFIXPLAN.md`.
-        - Return to Step 3 to test the next prioritized/refined hypothesis.
-    - If a hypothesis is strongly supported and appears to explain the *entire* bug behavior described in `BUG.MD`:
-        - Proceed to Step 5.
+    - Create a debug request file `DEBUG-REQUEST.md` by:
+        - Copying the content from `prompts/debug.md` as the base template
+        - Adding current bug analysis state at the top (bug description, current hypotheses, test results)
+    - Run architect with the debug request:
+        ```bash
+        architect --instructions DEBUG-REQUEST.md --output DEBUG-ANALYSIS.md docs/philosophy/ [relevant-files-to-bug]
+        ```
+    - Review architect's analysis in `DEBUG-ANALYSIS.md` and:
+        - Update the status of tested hypotheses in the `Hypotheses:` section of `BUGFIXPLAN.md`.
+        - If the root cause is not yet clear:
+            - ***Think hard*** based on the evidence gathered.
+            - Refine existing hypotheses or formulate new ones based on the results. Record these in `BUGFIXPLAN.md`.
+            - Return to Step 3 to test the next prioritized/refined hypothesis.
+        - If a hypothesis is strongly supported and appears to explain the *entire* bug behavior described in `BUG.MD`:
+            - Proceed to Step 5.
 
 ## 5. Implement and Verify Fix
 - **Goal:** Correct the code based on the identified root cause and confirm the fix works.
