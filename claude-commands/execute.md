@@ -18,19 +18,19 @@
       
       (Similar structure to the prompt in the previous version of execute.md).
 
-## 3. GENERATE APPROACHES WITH THINKTANK
-- **Goal:** Use `thinktank` to generate potential implementation approaches based on the task prompt and project context.
+## 3. GENERATE APPROACHES WITH ARCHITECT
+- **Goal:** Use `architect` to generate potential implementation approaches based on the task prompt and project context.
 - **Actions:**
     - **Initial Attempt (Relevant Context):**
         1. Find the top ten most relevant files for context
-        2. Run `thinktank run --models google:gemini-2.5-pro-exp-03-25 <sanitized-task-title>-TASK.md [top-ten-relevant-files]`
+        2. Run `architect --instructions <sanitized-task-title>-TASK.md [top-ten-relevant-files]`
     - If you encounter an error, write it to a persistent logfile and try again.
     - Identify output directory. Report success/failure. Stop on unresolvable errors.
 
 ## 4. SYNTHESIZE IMPLEMENTATION PLAN
-- **Goal:** Consolidate `thinktank` suggestions into a single, chosen implementation plan, prioritizing testability.
+- **Goal:** Consolidate `architect` suggestions into a single, chosen implementation plan, prioritizing testability.
 - **Actions:**
-    - Read all `thinktank` responses from the output directory.
+    - Read all `architect` responses from the output directory.
     - **Synthesize & Select:** ***Think hard*** to analyze suggestions. Select the most suitable approach, **prioritizing according to our standards hierarchy:**
         1. Simplicity and clarity over cleverness (`CORE_PRINCIPLES.md`)
         2. Clean separation of concerns (`ARCHITECTURE_GUIDELINES.md`) 
@@ -95,7 +95,6 @@
 - **Actions:**
     - **Run Checks & Fix:** Execute linting, building, and the **full test suite**. Fix *any* code issues causing failures.
     - **Update Task Status:** Change the task status in `TODO.MD` from `[~]` (in progress) to `[x]` (complete).
-    - **Move to DONE:** Move the completed task from `TODO.MD` to `DONE.MD` with date of completion.
     - **Commit Changes:**
         - Stage *all* relevant changed/new files (`<sanitized-task-title>-PLAN.md`, implementation code, test code, refactored code). Review diff (`git diff --staged`).
         - Use Conventional Commits (`type(scope): subject`). Include brief description of any inline testability refactors in the commit body if applicable. Reference the task.

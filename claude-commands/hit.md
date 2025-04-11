@@ -46,7 +46,6 @@
 - **Actions:**
     - **Run Checks & Fix:** Execute linting, building, and testing processes. If *any* warnings or errors occur, you *must* debug the code and fix the issues. Repeat the checks until they all pass cleanly. Only report failure and stop if you are completely unable to resolve an issue after diligent attempts.
     - **Update Task Status:** Change the task status in `TODO.MD` from `[~]` (in progress) to `[x]` (complete).
-    - **Move to DONE:** Move the completed task from `TODO.MD` to `DONE.MD` with date of completion.
     - **Commit Changes:**
         - Stage all relevant changed/new files, including the new `<sanitized-task-title>-PLAN.md` file and the code/test changes (`git add`). Review the diff (`git diff --staged`) to ensure correctness and adherence to standards.
         - Create a commit message using the Conventional Commits specification (`type(scope): subject`). The `type` must accurately reflect the work (e.g., `feat`, `fix`, `refactor`, `test`, `chore`, `docs`). The description should clearly state what was accomplished. Reference the related task if helpful (e.g., in the commit body).

@@ -16,26 +16,27 @@ Analyze the entire codebase and provide a detailed plan for refactoring it to ac
 - Improve simplicity and readability of the code.
 - Enhance maintainability.
 - Reduce the size of the codebase where possible, without sacrificing functionality or readability.
+- Break up large files (approaching or exceeding 1000 lines) into smaller, more focused modules.
 - Ensure that 100% of the existing functionality is maintained.
 
 The plan should include:
 
 - An overview of the current codebase structure and any areas that particularly need refactoring.
-- A breakdown of specific refactoring tasks, such as removing duplicate code, improving naming conventions, restructuring modules, etc.
+- A breakdown of specific refactoring tasks, such as removing duplicate code, improving naming conventions, restructuring modules, and splitting large files (>1000 lines) into smaller components.
 - Implementation details for complex refactoring tasks, possibly with code snippets or examples.
 - Potential challenges or risks associated with the refactoring, and how to mitigate them.
 - A testing strategy to ensure that functionality remains intact after refactoring.
 - Any open questions or areas that need further clarification before proceeding.
 ```
 
-## 2. Run thinktank with the task file
+## 2. Run architect with the task file
 
 Run the following command from the project root:
 
 ```bash
 # First find the top ten most relevant files for context
-# Then run thinktank with the identified context
-thinktank run --group faves task.md [top-ten-relevant-files]
+# Then run architect with the identified context
+architect --instructions task.md [top-ten-relevant-files] --output REFACTOR_PLAN.md
 ```
 
 This will analyze the codebase and generate a refactor plan in `REFACTOR_PLAN.md`.
