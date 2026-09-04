@@ -21,3 +21,5 @@ export PATH="$PATH:$HOME/Development/workbench/bin"
 - `toggle-theme` - Toggle the system and Codex theme
 - `meet` - Local meeting transcription + diarization launcher (record, session, watch, transcribe)
 - `herdr-fzf-workspace` - Instant fuzzy finder workspace switcher for Herdr popups
+- `herdr-focus-agent` - Click-to-space helper: Herdr workspace/tab focus plus Hyprland raise
+- `sudo` - PATH wrapper that toasts when an Omarchy agent needs a password; click runs `herdr-focus-agent`

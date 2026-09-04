@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# PATH wrapper around /usr/bin/sudo. Notify when an Omarchy coding agent needs
+# a password. Interactive shells and `sudo -n` probes are left alone.
+real=/usr/bin/sudo
+if [[ ! -x $real ]]; then
+  echo "sudo wrapper: $real missing" >&2
+  exit 127
+fi
+
+noninteractive=0
+for arg in "$@"; do
+  [[ $arg == -- ]] && break
+  if [[ $arg == --non-interactive || $arg == -n ]]; then
+    noninteractive=1
+    break
+  fi
+  if [[ $arg == -* && $arg != --* && $arg == *n* ]]; then
+    noninteractive=1
+    break
+  fi
+done
+
+agent=0
+[[ -n ${AGENT:-} || -n ${OMPCODE:-} ]] && agent=1
+
+herdr_lookup() {
+  timeout 0.4s herdr "$@" 2>/dev/null || true
+}
+
+notify_agent_sudo() {
+  command -v omarchy-notification-send >/dev/null 2>&1 || return 0
+
+  local ws_label="" ws_num="" agent_kind="" body click=()
+
+  if [[ ${HERDR_ENV:-} == 1 ]] && command -v herdr >/dev/null 2>&1; then
+    if [[ -n ${HERDR_WORKSPACE_ID:-} ]]; then
+      local ws_json
+      ws_json=$(herdr_lookup workspace get "$HERDR_WORKSPACE_ID")
+      ws_label=$(jq -r '.result.workspace.label // empty' <<<"$ws_json" 2>/dev/null || true)
+      ws_num=$(jq -r '.result.workspace.number // empty' <<<"$ws_json" 2>/dev/null || true)
+    fi
+    if [[ -n ${HERDR_PANE_ID:-} ]]; then
+      local pane_json
+      pane_json=$(herdr_lookup pane get "$HERDR_PANE_ID")
+      agent_kind=$(jq -r '.result.pane.agent // empty' <<<"$pane_json" 2>/dev/null || true)
+    fi
+  fi
+
+  if [[ -n $ws_num || -n $ws_label || -n ${HERDR_PANE_ID:-} ]]; then
+    body="Go to Herdr"
+    [[ -n $ws_num ]] && body+=" workspace ${ws_num}"
+    [[ -n $ws_label ]] && body+=" “${ws_label}”"
+    [[ -n ${HERDR_PANE_ID:-} ]] && body+=" · pane ${HERDR_PANE_ID}"
+    [[ -n $agent_kind ]] && body+=" (${agent_kind})"
+    body+="."
+  else
+    body="A coding agent is waiting for your password."
+  fi
+  [[ -n ${PWD:-} ]] && body+=$'\n'"cwd: ${PWD}"
+
+  if [[ ${HERDR_ENV:-} == 1 && -n ${HERDR_PANE_ID:-} ]] && command -v herdr >/dev/null 2>&1; then
+    body+=$'\n'"herdr-focus-agent ${HERDR_PANE_ID}"
+    click=(--exec herdr-focus-agent "$HERDR_PANE_ID")
+  fi
+
+  omarchy-notification-send \
+    --app-name Agent \
+    -g 󰌆 \
+    -u critical \
+    "Agent needs sudo" \
+    "$body" \
+    "${click[@]}" >/dev/null 2>&1 || true
+}
+
+if (( agent && ! noninteractive )) && ! "$real" -n true >/dev/null 2>&1; then
+  notify_agent_sudo
+fi
+
+exec "$real" "$@"
