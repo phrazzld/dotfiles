@@ -1,7 +1,6 @@
 # Public portable environment first; optional private values remain local.
 [[ -r "$HOME/.config/workbench/env.public.zsh" ]] && source "$HOME/.config/workbench/env.public.zsh"
 [[ -r "$HOME/.config/workbench/env.local.private.zsh" ]] && source "$HOME/.config/workbench/env.local.private.zsh"
-[[ -r "$HOME/.config/powder/env.zsh" ]] && source "$HOME/.config/powder/env.zsh"
 
 # Completion
 fpath=(/usr/share/zsh/vendor-completions $fpath)
