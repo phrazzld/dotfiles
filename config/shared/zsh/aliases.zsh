@@ -1,5 +1,6 @@
 # Short, unsurprising workflow aliases.
 alias o='omp'
+alias c='codex --dangerously-bypass-approvals-and-sandbox'
 
 alias gs='git status --short'
 alias ga='git add'
