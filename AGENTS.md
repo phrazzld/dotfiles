@@ -1,46 +1,18 @@
-# Agent Instructions
+# workbench
 
-═══════════════════════════════════════════════════════
-FAST APPLY - PRIMARY FILE EDIT TOOL - USE THIS FOR EDITS
-═══════════════════════════════════════════════════════
+Public source for workstation configuration, not a store for private machine
+state. Keep secrets and private operational details out of this repository;
+machine-local overrides remain untracked.
 
-IMPORTANT: Use `edit_file` over `str_replace` or full file writes.
+Editing source does not authorize installation, live configuration changes,
+privilege grants, timer activation, or host administration. Follow the current
+task's authority and the preview/apply boundaries in `README.md`. Host manifests
+own installed paths; deployments use immutable releases and preserve backups,
+not live links into this mutable checkout.
 
-This tool handles:
-• Automatic indentation correction
-• Fuzzy matching for code blocks
-• Faster execution than alternatives
+The private Daybook board is optional, task-relevant coordination context.
+Consult it only when authorized work needs private operational knowledge or a
+handoff; public source work must not depend on access to it. Do not copy board
+contents here. Refer to secret stores by name, never by value.
 
-→ Prefer this over manual file editing tools.
-→ Works with partial code snippets—no need for full file content.
-
-═══════════════════════════════════════════════════════
-FAST CONTEXT - PRIMARY CODE SEARCH TOOL - USE THIS FIRST
-═══════════════════════════════════════════════════════
-
-IMPORTANT: If you need to explore the codebase, use `warpgrep_codebase_search` FIRST instead of manually running search commands. 
-
-This tool runs parallel grep and readfile calls to locate relevant files and line ranges. Ideal for:
-• "Find where authentication is handled"
-• "Locate the payment processing logic"
-• "Find the bug where users get redirected incorrectly"
-
-Pass a targeted natural language query describing what you're trying to accomplish. Add inferred context when helpful.
-
-→ Always start your search here.
-→ Use classical search tools afterward if needed to fill gaps.
-
-CANNOT BE CALLED IN PARALLEL - one invocation at a time.
-
-## Repo Gate
-
-Run `scripts/check.sh` before committing. It is the host-agnostic gate used by
-GitHub Actions and validates shell syntax plus ShellCheck error-level findings.
-
-## Agent message board
-
-The daybook's `meta/agents-board/` is the shared bulletin board for agents —
-where an agent talks to itself, to other agents, and to its future selves.
-Read `index.md` at session start; post durable operational knowledge (machine
-access, gotchas, handoffs) when you learn it. Point at secret locations by
-name; never write secret values here or in the daybook.
+`README.md` owns operating procedures and the repository check command.

@@ -22,14 +22,15 @@ Applying creates an immutable release under `~/.local/share/workbench/releases`
 and backs up adopted files under `~/.local/state/workbench/backups`. It never
 links live configuration directly into the mutable checkout.
 
+Source edits do not authorize applying profiles, granting privileges, activating
+timers, or administering a host. Those operations require explicit task scope.
+
 ## Agent message board
 
-Agents keep a shared message board in the daybook at `daybook/meta/agents-board/`.
-It is where agents talk to themselves, to other agents, and to their future
-selves — post operational knowledge there (machine access, gotchas, handoffs)
-and read it before working. Charter: `meta/agents-board/README.md`. This repo
-must not hold secrets; the board references machine-local stores (`~/.secrets`,
-Mint) by name only.
+The private Daybook board at `daybook/meta/agents-board/` can supply operational
+context or handoffs when an authorized task needs it. It is not a prerequisite
+for public source work. Keep private board contents out of this repository;
+refer to secret stores by name, never by value.
 
 ## Secret scanning
 
