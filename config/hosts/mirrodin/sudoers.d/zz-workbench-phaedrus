@@ -1,0 +1,4 @@
+# Full unattended administration approved by the operator on 2026-09-07.
+# Account-wide: every process under phaedrus can elevate, not only agents.
+# Install as a root:root 0440 copy; never symlink the writable checkout.
+phaedrus mirrodin = (ALL:ALL) NOPASSWD: ALL
